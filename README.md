@@ -3,11 +3,8 @@
 ## Länkar
 
 * [Instruktioner](https://github.com/FEND16/cms-php-mysql/blob/master/group_assignment_simple_cms.md)
-
 * [Trello](https://trello.com/b/tEPopVij/php-gruppuppgift)
-
 * [PHP Dokumentation](http://php.net/docs.php)
-
 * [Molnserver](https://www.000webhost.com/)
 
 ----
@@ -22,7 +19,7 @@ Slutprodukten är tänkt att bli en blogg om Front end / webbutveckling där vi 
 
 ### Sidor / flödesschema
 
-[Vireframe här] <https://drive.google.com/file/d/0B-YWuZQGy3G2VXpyRkZTQmRhbzg/view?usp=sharing>
+[Wireframe här](https://drive.google.com/file/d/0B-YWuZQGy3G2VXpyRkZTQmRhbzg/view?usp=sharing)
 
 ### Databas
 
@@ -76,6 +73,5 @@ Ligger i databasen
 
 ## Bra-att-ha-resurser
 
-* [CMS video tutorial] <https://www.youtube.com/watch?v=UbsAdx58ch0&list=PLfdtiltiRHWF0O8kS5D_3-nTzsFiPMOfM>
-
-* [PHP creating a blog] <https://thenewboston.com/videos.php?cat=74&video=19652)>
+* [CMS video tutorial](https://www.youtube.com/watch?v=UbsAdx58ch0&list=PLfdtiltiRHWF0O8kS5D_3-nTzsFiPMOfM)
+* [PHP creating a blog](https://thenewboston.com/videos.php?cat=74&video=19652)
