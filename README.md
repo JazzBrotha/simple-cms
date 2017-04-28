@@ -5,7 +5,7 @@
 * [Instruktioner](https://github.com/FEND16/cms-php-mysql/blob/master/group_assignment_simple_cms.md)
 * [Trello](https://trello.com/b/tEPopVij/php-gruppuppgift)
 * [PHP Dokumentation](http://php.net/docs.php)
-* [Molnserver](https://www.000webhost.com/)
+* ~~[Molnserver](https://www.000webhost.com/)~~ [molnserver](https://www.heliohost.org)
 
 ----
 
@@ -23,8 +23,20 @@ Slutprodukten är tänkt att bli en blogg om Front end / webbutveckling där vi 
 
 ### Databas
 
-namn: id1482697_cms
+Setup för att köra localhost + db i molnet: [logga in](https://www.heliohost.org) och välj 'remote mySQL' i panelen. Lägg till din publika IP till listan. I panelen finns också phpMyAdmin mm.
+
+host: [johnny.heliohost.org](johnny.heliohost.org)
+db: phpgrupp_cms
+user: phpgrupp
 pass: se slack
+
+```php
+$pdo = new PDO(
+    "mysql:host=johnny.heliohost.org;dbname=phpgrupp_cms;charset=utf8",
+    "phpgrupp",
+    "xxxxxxxx"
+    );
+```
 
 #### tabeller
 
