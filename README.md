@@ -6,6 +6,7 @@
 * [Trello](https://trello.com/b/tEPopVij/php-gruppuppgift)
 * [PHP Dokumentation](http://php.net/docs.php)
 * ~~[Molnserver](https://www.000webhost.com/)~~ [molnserver](https://www.heliohost.org)
+* mejl: phpgruppuppgift@gmail.com
 
 ----
 
@@ -80,6 +81,13 @@ Ligger i databasen
   * `Admin extends User`
 
 * `Post` --> `new Post(header, summary, body etc...)`
+
+----
+
+## Bibliotek
+
+* [Bootstrap 4 alpha](https://v4-alpha.getbootstrap.com/)
+* [TinyMCE](https://www.tinymce.com/docs/)
 
 ----
 
