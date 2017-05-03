@@ -14,7 +14,7 @@ En annan person i gruppen måste alltid godkänna innan något pushas in i `mast
 
 Mergea en pull request:
 1. Meddela i Slack att du ska göra en review så det inte blir några kollisioner.
-2. Öppna pull requesten och tryck på "review". Läs igenom ändringarna.
+2. Öppna pull requesten och tryck på "Add your review". Läs igenom ändringarna.
 3. Godkänn om det ser bra ut eller lämna kommentar om något behöver ändras.
 4. Tryck på &#8964; på mergeknappen och välj "squash and merge" för att slå ihop alla commits till en.
 5. Ta bort den gamla branchen
