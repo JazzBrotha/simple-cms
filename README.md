@@ -12,16 +12,16 @@ Grundstruktur. Kan komma att ändras under arbetets gång.
   - `validation` - Validation för användare
     - `new_user.php` - Postar en användare till databasen baserad på klassen `User`
     - `validate_login.php` - Validarar inloggningen av en användare
-  - `views` - Allt som syns utåt
+  - `views` - Allt visuellt
     - `page`
       - `show.php` - Visningssida för varje post
-    - `public`
-      - `login.php` - Loginformulär för användare
+    - `public` - Visning för besökare
+      - `login.php` - Loginformulär för existerande användare
       - `register.php` - Formulär för att skapa en ny användare
     - `templates` - Mallar som används på många sidor
-      - `footer.php` - Footer för alla sidor
-      - `header.php` - Header för alla sidor
-    - `user` - Visning när man är inloggad
+      - `footer.php` - Footer
+      - `header.php` - Header
+    - `user` - Visning för användare inloggad
       - `add.php` - Lägga till en post
       - `edit.php` - Ändra en post
       - `list.php` - Översikt över sina individuella posts
