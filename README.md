@@ -2,6 +2,16 @@
 
 ## Arbetsmetod
 
+### Versionshantering
+En annan person i gruppen måste alltid godkänna innan något pushas in i `master`. På det sättet håller vi `master` så buggfri som möjligt. Kom ihåg att ta bort den gamla branchen efter du mergeat en pull request. Commits skrivs helst på engelska. Vi arbetar enligt följande mönster:
+1. Skapa en ny `branch` varje gång du ska arbeta på en ändring i appen. Enklast är att döpa branchen så den indikerar vilken ändring du arbetar på. Ex, om du arbetar med footern döper du din nya branch till `footer`. Använd [A-Za-z] för namngivning av branches, alltså inga siffror, speciella tecken eller å,ä,ö.
+2. Versionshantera lokalt på det sättet som passar dig bäst men det kan vara en säkerhetsåtgärd att göra commits med jämna mellanrum.
+3. Innan du pushar upp din nya branch så måste du alltid göra en `git pull` på din `master` branch, så den alltid är uppdaterad.
+4. Pusha upp din nya branch till GitHub.
+5. Gör en pull request från din nya branch intill `master`.
+
+### Naming conventions
+
 ## Mapp och filstruktur
 Grundstruktur. Kan komma att ändras under arbetets gång.
 * `app` - Huvudinnehåll
