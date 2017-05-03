@@ -39,7 +39,7 @@ Grundstruktur. Kan komma att ändras under arbetets gång.
   - `add.php`
   - `edit.php`
   - `list.php`
-* `index.php` - Funktionalitet för appaens landningssida
+* `index.php` - Funktionalitet för appens landningssida
 * `page.php` - Funktionalitet för varje post
 
 ## Upplägg & struktur
