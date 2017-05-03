@@ -1,14 +1,31 @@
 # simple-cms
 
-## Länkar
+## Arbetsmetod
 
-* [Instruktioner](https://github.com/FEND16/cms-php-mysql/blob/master/group_assignment_simple_cms.md)
-* [Trello](https://trello.com/b/tEPopVij/php-gruppuppgift)
-* [PHP Dokumentation](http://php.net/docs.php)
-* ~~[Molnserver](https://www.000webhost.com/)~~ [molnserver](https://www.heliohost.org)
-* mejl: phpgruppuppgift@gmail.com
-
-----
+## Mapp och filstruktur
+Grundstruktur. Kan komma att ändras under arbetets gång.
+* `app` - Huvudinnehåll
+  - `resources` - Stödfiler
+    - `error.php` - Errorhantering i utvecklingssyfte
+    - `pdo.php` - Uppkoppling till databasen
+    - `password.php` - Lösenord för anslutning till databasen. OBS! Ska endast ligga lokalt
+  - `validation` - Validation för användare
+    - `new_user.php` - Postar en användare till databasen baserad på klassen `User`
+    - `validate_login.php` - Validarar inloggningen av en användare
+  - `views` - Allt det som syns utåt
+    - `page`
+      - `show.php` - Visningssida för varje post
+    - `public`
+      - `login.php` - Loginformulär för användare
+      - `register.php` - Formulär för att skapa en ny användare
+    - `templates` - Mallar som används på många sidor
+      - `footer.php` - Footer för alla sidor
+      - `header.php` - Header för alla sidor
+    - `user`
+    - `home.php`
+  - `classes.php`
+  - `functions.php`
+  - `start.php`
 
 ## Upplägg & struktur
 
@@ -82,14 +99,18 @@ Ligger i databasen
 
 * `Post` --> `new Post(header, summary, body etc...)`
 
-----
-
 ## Bibliotek
 
 * [Bootstrap 4 alpha](https://v4-alpha.getbootstrap.com/)
 * [TinyMCE](https://www.tinymce.com/docs/)
 
-----
+## Länkar
+
+* [Instruktioner](https://github.com/FEND16/cms-php-mysql/blob/master/group_assignment_simple_cms.md)
+* [Trello](https://trello.com/b/tEPopVij/php-gruppuppgift)
+* [PHP Dokumentation](http://php.net/docs.php)
+* [molnserver](https://www.heliohost.org)
+* mejl: phpgruppuppgift@gmail.com
 
 ## Bra-att-ha-resurser
 
