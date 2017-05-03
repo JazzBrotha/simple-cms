@@ -12,7 +12,7 @@ Grundstruktur. Kan komma att ändras under arbetets gång.
   - `validation` - Validation för användare
     - `new_user.php` - Postar en användare till databasen baserad på klassen `User`
     - `validate_login.php` - Validarar inloggningen av en användare
-  - `views` - Allt det som syns utåt
+  - `views` - Allt som syns utåt
     - `page`
       - `show.php` - Visningssida för varje post
     - `public`
@@ -21,11 +21,26 @@ Grundstruktur. Kan komma att ändras under arbetets gång.
     - `templates` - Mallar som används på många sidor
       - `footer.php` - Footer för alla sidor
       - `header.php` - Header för alla sidor
-    - `user`
-    - `home.php`
-  - `classes.php`
-  - `functions.php`
-  - `start.php`
+    - `user` - Visning när man är inloggad
+      - `add.php` - Lägga till en post
+      - `edit.php` - Ändra en post
+      - `list.php` - Översikt över sina individuella posts
+    - `home.php` - Visning av appens landingssida
+  - `classes.php` - Klasser för att skapa posts och användare
+  - `functions.php` - Hjälpfunktioner som exempelvis lösenordshashing
+  - `start.php` - Länkar ihop allt i `app` och sätter rootmappar för projektet
+* `assets` - Icke-php innehåll
+  - `js`
+  - `css`
+* `public` - All funktionalitet för sidor som alla ser (Se `public` under `views` för mer info)
+  - `login.php`
+  - `register.php`
+* `user` - All funktionalitet för sidor som bara användare ser (Se `user` under `views` för mer info)
+  - `add.php`
+  - `edit.php`
+  - `list.php`
+* `index.php` - Funktionalitet för appaens landningssida
+* `page.php` - Funktionalitet för varje post
 
 ## Upplägg & struktur
 
