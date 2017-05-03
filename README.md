@@ -10,7 +10,11 @@ En annan person i gruppen måste alltid godkänna innan något pushas in i `mast
 4. Pusha upp din nya branch till GitHub.
 5. Gör en pull request från din nya branch intill `master`.
 
-### Naming conventions
+### Naming conventions && best practice
+* Försök hålla liknande syntax som resten av dokumentet.
+* Namnge funktioner med `snake_case` och variabler med `camelCase`. Klasser ska börja med stor bokstav, t.ex. `class User`.
+* JavaScript ska hellst skrivas i ES6. Försök följa AirBnb:s [styleguide](https://github.com/airbnb/javascript).
+* Försök använda Bootstraps färdiga CSS-klasser så mycket som möjligt. Namnge dina klasser likt Bootstrap gör. I övrigt försök följa AirBnb:s [styleguide](https://github.com/airbnb/css).
 
 ## Mapp och filstruktur
 Grundstruktur. Kan komma att ändras under arbetets gång.
