@@ -1,5 +1,8 @@
 <?php
-class User {
+//Class User constructs a user and stores it
+
+class User 
+{
     public $username;
     public $password;
     public $firstname;
