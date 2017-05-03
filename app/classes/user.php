@@ -1,4 +1,6 @@
 <?php
+//Class User constructs a user and stores it
+
 class User 
 {
     public $username;

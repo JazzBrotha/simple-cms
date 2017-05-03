@@ -7,9 +7,9 @@
     <table>
       <thead>
         <tr>
-          <th>Label</th>
+          <th>Post id</th>
+          <th>Created</th>
           <th>Title</th>
-          <th>Slug</th>
           <th></th>
           <th></th>
         </tr>
@@ -17,11 +17,11 @@
       <tbody>
         <?php foreach($pages as $page): ?>
           <tr>
-            <td><?php echo escape($page['label']); ?></td>
-            <td><?php echo escape($page['title']); ?></td>
-            <td><a href="<?php echo BASE_URL; ?>/page.php?page=<?php echo escape($page['slug']); ?>"><?php echo escape($page['slug']); ?></a></td>
-            <td><a href="<?php echo BASE_URL; ?>/user/edit.php?id=<?php echo escape($page['id']); ?>">Edit</a></td>
-            <td><a href="<?php echo BASE_URL; ?>/user/delete.php?id=<?php echo escape($page['id']); ?>">Delete</a></td>
+            <td><?php echo escape($page['post_id']); ?></td>
+            <td><?php echo escape($page['created']); ?></td>
+            <td><a href="<?php echo BASE_URL; ?>/page.php?post=<?php echo escape($page['post_id']); ?>"><?php echo escape($page['title']); ?></a></td>
+            <td><a href="<?php echo BASE_URL; ?>/user/edit.php?post_id=<?php echo escape($page['post_id']); ?>">Edit</a></td>
+            <td><a href="<?php echo BASE_URL; ?>/user/delete.php?post_id=<?php echo escape($page['post_id']); ?>">Delete</a></td>
           </tr>
         <?php endforeach; ?>
       </tbody>

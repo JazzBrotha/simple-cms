@@ -1,4 +1,5 @@
-<?php require VIEW_ROOT . '/templates/header.php'; ?>
+<?php require VIEW_ROOT . '/templates/header.php'; 
+?>
 
   <?php if (!$page) { ?>
     <p>No post found, sorry.</p>
