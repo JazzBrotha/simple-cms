@@ -1,6 +1,7 @@
 # simple-cms
 
 ## Arbetsmetod
+Alla ändringar av README.md görs direkt i `master` på GitHub och inte lokalt eller i andra brancher.
 
 ### Versionshantering
 En annan person i gruppen måste alltid godkänna innan något pushas in i `master`. På det sättet håller vi `master` så buggfri som möjligt. Kom ihåg att ta bort den gamla branchen efter du mergeat en pull request. Commits skrivs helst på engelska. Vi arbetar enligt följande mönster:
