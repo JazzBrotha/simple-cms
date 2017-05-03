@@ -15,13 +15,13 @@ Grundstruktur. Kan komma att ändras under arbetets gång.
   - `views` - Allt visuellt
     - `page`
       - `show.php` - Visningssida för varje post
-    - `public` - Visning för besökare
+    - `public` - Det som alla ser
       - `login.php` - Loginformulär för existerande användare
       - `register.php` - Formulär för att skapa en ny användare
     - `templates` - Mallar som används på många sidor
       - `footer.php` - Footer
       - `header.php` - Header
-    - `user` - Visning för användare inloggad
+    - `user` - Det som bara inloggad användare ser
       - `add.php` - Lägga till en post
       - `edit.php` - Ändra en post
       - `list.php` - Översikt över sina individuella posts
@@ -32,10 +32,10 @@ Grundstruktur. Kan komma att ändras under arbetets gång.
 * `assets` - Icke-php innehåll
   - `js`
   - `css`
-* `public` - All funktionalitet för sidor som alla ser (Se `public` under `views` för mer info)
+* `public` - Funktionalitet för sidor som alla ser (Se `public` under `views` för mer info)
   - `login.php`
   - `register.php`
-* `user` - All funktionalitet för sidor som bara användare ser (Se `user` under `views` för mer info)
+* `user` - Funktionalitet för sidor som bara användare ser (Se `user` under `views` för mer info)
   - `add.php`
   - `edit.php`
   - `list.php`
