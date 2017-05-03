@@ -4,7 +4,7 @@
   <?php if (empty($pages)): ?>
     <p>No posts at the moment.</p>
   <?php else: ?>
-    <table>
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>Post id</th>
