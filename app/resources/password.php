@@ -1,0 +1,2 @@
+<?php
+$password = "nackademin666";
