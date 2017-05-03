@@ -2,11 +2,11 @@
 require 'app/start.php';
 require 'app/classes/posts.php';
 
-if (empty($_GET['post'])) {
+if (empty($_GET['post_id'])) {
   $page = false;
 } else {
 
-  //moved to function in Posts class
+  //moved to Posts->get_full_post()
   // $slug = $_GET['page'];
   // $page = $pdo->prepare("
   //   SELECT *
