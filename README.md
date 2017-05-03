@@ -67,7 +67,9 @@ Slutprodukten är tänkt att bli en blogg om Front end / webbutveckling där vi 
 
 ### Sidor / flödesschema
 
-[Wireframe här](https://drive.google.com/file/d/0B-YWuZQGy3G2VXpyRkZTQmRhbzg/view?usp=sharing)
+* [Wireframe här](https://drive.google.com/file/d/0B-YWuZQGy3G2VXpyRkZTQmRhbzg/view?usp=sharing)
+* [Mockup - Blogg](https://drive.google.com/file/d/0B-YWuZQGy3G2ZTgzMENmdWNpQ0E/view)
+* [Mockup - Log in edit page](https://drive.google.com/open?id=0B-YWuZQGy3G2c0VvUXdMRFBXSFk)
 
 ### Databas
 
