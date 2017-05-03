@@ -19,6 +19,8 @@ Mergea en pull request:
 4. Tryck på &#8964; på mergeknappen och välj "squash and merge" för att slå ihop alla commits till en.
 5. Ta bort den gamla branchen
 
+Tips: Om du inte vill göra en ny commit efter du gjort ändringar lokalt eller när du gör en `git pull` lägger du till `--amend --no-edit` efter kommandot, alltså t.ex. `git pull origin master --amend --no-edit`. Om du vill se dina senaste ändringar efter en `git pull`, exempelvis för att se eventuella merge conflicts tydligare, så kan du skriva `git diff`.
+
 ### Naming conventions & best practice
 * Försök hålla liknande syntax som resten av dokumentet.
 * Namnge funktioner med `snake_case` och variabler med `camelCase`. Klasser ska börja med stor bokstav, t.ex. `class User`.
