@@ -1,4 +1,4 @@
-<?php require VIEW_ROOT . '/templates/header.php'; 
+<?php require VIEW_ROOT . '/public/templates/header.php';
 ?>
 
   <?php if (!$page) { ?>
@@ -15,4 +15,4 @@
     <?php } ?>
 
 
-<?php require VIEW_ROOT . '/templates/footer.php'; ?>
+<?php require VIEW_ROOT . '/public/templates/footer.php'; ?>

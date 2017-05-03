@@ -1,4 +1,4 @@
-<?php require VIEW_ROOT . '/templates/header.php'; ?>
+<?php require VIEW_ROOT . '/public/templates/header.php'; ?>
 
     <div class="container mt-5">
         <div class="row">
@@ -46,4 +46,4 @@
             </div>
 
 
-<?php require VIEW_ROOT . '/templates/footer.php'; ?>
+<?php require VIEW_ROOT . '/public/templates/footer.php'; ?>

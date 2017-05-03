@@ -1,4 +1,5 @@
-<?php require VIEW_ROOT . '/templates/header.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/header.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
 
 <h2>Edit post</h2>
 
@@ -27,4 +28,4 @@
     </div>
 </form>
 
-<?php require VIEW_ROOT . '/templates/footer.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/footer.php'; ?>

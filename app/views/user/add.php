@@ -1,4 +1,5 @@
-<?php require VIEW_ROOT . '/templates/header.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/header.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
 
 <h2>Add post</h2>
 <form method="POST" action="<?php echo BASE_URL; ?>/user/add.php" class="d-flex mt-2" autocomplete="off">
@@ -25,4 +26,4 @@
     </div>
 </form>
 
-<?php require VIEW_ROOT . '/templates/footer.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/footer.php'; ?>
