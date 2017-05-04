@@ -4,3 +4,4 @@ composer.lock
 password.php
 README.md
 .vscode
+htmlpurifier-4.9.2-standalone
