@@ -1,4 +1,5 @@
-<?php require VIEW_ROOT . '/templates/header.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/header.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
 
   <h2>Your posts</h2>
   <?php if (empty($pages)): ?>
@@ -30,4 +31,4 @@
 
 <a href="<?php echo BASE_URL; ?>/user/add.php">Add page</a>
 
-<?php require VIEW_ROOT . '/templates/footer.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/footer.php'; ?>

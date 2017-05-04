@@ -1,12 +1,10 @@
-<?php 
-require VIEW_ROOT . '/templates/header.php'; 
-require APP_ROOT . '/password.php';
-?>
+<?php require VIEW_ROOT . '/user/templates/header.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
+<?php require APP_ROOT . '/password.php'; ?>
 
 <!--JS for editor-->
 <script src="<?php echo 'https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=' . $mce_key; ?>"></script>
 <script src="<?php echo BASE_URL . '/assets/js/editor.js' ?>"></script>
-
 
 <h2>Add post</h2>
 <form method="POST" action="<?php echo BASE_URL; ?>/user/add.php" class="d-flex mt-2" autocomplete="off">
@@ -40,10 +38,10 @@ require APP_ROOT . '/password.php';
             <input type="submit" class="btn btn-primary" value="Add">
         </div>
 
-                
+
 
 
     </div>
 </form>
 
-<?php require VIEW_ROOT . '/templates/footer.php'; ?>
+<?php require VIEW_ROOT . '/user/templates/footer.php'; ?>
