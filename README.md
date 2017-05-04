@@ -30,40 +30,48 @@ Tips: Om du inte vill göra en ny commit efter du gjort ändringar lokalt eller 
 ## Mapp och filstruktur
 Grundstruktur. Kan komma att ändras under arbetets gång.
 * `app` - Huvudinnehåll
-  - `resources` - Stödfiler
-    - `error.php` - Errorhantering i utvecklingssyfte
-    - `pdo.php` - Uppkoppling till databasen
-    - `password.php` - Lösenord för anslutning till databasen. OBS! Ska endast ligga lokalt
-  - `validation` - Validation för användare
-    - `new_user.php` - Postar en användare till databasen baserad på klassen `User`
-    - `validate_login.php` - Validarar inloggningen av en användare
+  - `classes` - Klasser
+    - `post.php` - Hanterar _en_ enskild post: Skapar ny m konstruktor + metoder för att lägga till samt uppdatera i databas
+    - `posts.php` - Hanterar urval av poster: metoder för att hämta alla, hämta en etc.
+    - `user.php` - Hanterar _en_ användare: skapar + lagrar i db.
   - `views` - Allt visuellt
     - `page`
       - `show.php` - Visningssida för varje post
     - `public` - Det som alla ser
       - `login.php` - Loginformulär för existerande användare
       - `register.php` - Formulär för att skapa en ny användare
-    - `templates` - Mallar som används på många sidor
-      - `footer.php` - Footer
-      - `header.php` - Header
+      - `templates` - Mallar som används på många sidor
+        - `footer.php` - Footer
+        - `header.php` - Header
+        - `sidebar.php` - Sidebar
     - `user` - Det som bara inloggad användare ser
       - `add.php` - Lägga till en post
       - `edit.php` - Ändra en post
       - `list.php` - Översikt över sina individuella posts
+      - `templates` - Mallar som används på många sidor
+        - `footer.php` - Footer
+        - `header.php` - Header
+        - `sidenav.php`
     - `home.php` - Visning av appens landingssida
-  - `classes.php` - Klasser för att skapa posts och användare
   - `functions.php` - Hjälpfunktioner som exempelvis lösenordshashing
-  - `start.php` - Länkar ihop allt i `app` och sätter rootmappar för projektet
+  - `password.php` - Lösenord för anslutning till databasen. **OBS!** Ska endast ligga lokalt!
+  - `start.php` - Länkar ihop allt i `app`: Rootmappar för projektet. Visar error `ini_set(display_errors)`.`PDO`-objektet, Uppkoppling till databasen.
 * `assets` - Icke-php innehåll
-  - `js`
   - `css`
+    - `blog.css`
+    - `dashboard.css`
+    - `main.css`
+  - `js`
+    - `editor.js` - JS för att köra WYSIWYG-editor
+    - `main.js`
 * `public` - Funktionalitet för sidor som alla ser (Se `public` under `views` för mer info)
-  - `login.php`
-  - `register.php`
+  - `login.php` - Hanterar o validerar loginförsök
+  - `register.php` - Postar en användare till databasen baserad på klassen `User`
 * `user` - Funktionalitet för sidor som bara användare ser (Se `user` under `views` för mer info)
-  - `add.php`
-  - `edit.php`
-  - `list.php`
+  - `add.php` - Postar ett inlägg till databasen baserad på klassen `Post`
+  - `delete.php` - Tar bort ett inlägg
+  - `edit.php` - Uppdaterar ett inlägg till databasen baserat på klassen `Post`
+  - `list.php` - Hanterar en användares posts
 * `index.php` - Funktionalitet för appens landningssida
 * `page.php` - Funktionalitet för varje post
 
@@ -71,7 +79,7 @@ Grundstruktur. Kan komma att ändras under arbetets gång.
 
 Anteckningar från 27/4
 
-### idé
+### Idé
 
 Slutprodukten är tänkt att bli en blogg om Front end / webbutveckling där vi i gruppen kan posta tips o tricks inom vårt område, intressanta artiklar vi läst etc. Ambitionen är att lägga upp sidan live så att den kan bli en del av våra portfolios.
 
@@ -85,10 +93,10 @@ Slutprodukten är tänkt att bli en blogg om Front end / webbutveckling där vi 
 
 Setup för att köra localhost + db i molnet: [logga in](https://www.heliohost.org) och välj 'remote mySQL' i panelen. Lägg till din publika IP till listan. I panelen finns också phpMyAdmin mm.
 
-host: [johnny.heliohost.org](johnny.heliohost.org)
-db: phpgrupp_cms
-user: phpgrupp
-pass: se slack
+* host: [johnny.heliohost.org](johnny.heliohost.org)
+* db: phpgrupp_cms
+* user: phpgrupp
+* pass: se slack
 
 ```php
 $pdo = new PDO(
@@ -121,10 +129,10 @@ Ligger i databasen
 * _post\_id_ -- `INT, PRIMARY, A_I`
 * _user\_id_ -- `INT`, foreign key --> users (`ON DELETE RESTRICT RESTRICT, ON UPDATE CASCADE`) *
 * _title_ -- `VARCHAR, LENGTH 26` (rubrik)
-* _summary_ -- `TEXT` (ingress/pufftext)
 * _body_ -- `TEXT` (brödtext)
 * _tags_ -- `VARCHAR, LENGTH 260` (taggar, separerade av komma)
-* _date_ -- `TIMESTAMP, CURRENT_TIMESTAMP`
+* _created_ -- `TIMESTAMP, CURRENT_TIMESTAMP`
+* _updated_ -- `TIMESTAMP, DEFAULT NULL`
 
 ##### likes
 
@@ -139,7 +147,10 @@ Ligger i databasen
   * `Contributor extends User`
   * `Admin extends User`
 
+* `Users.php` - **finns inte än** Tänkt att hantera alla användare, för admin tex.
+
 * `Post` --> `new Post(header, summary, body etc...)`
+* `Posts` --> get_all_posts(), get_full_post() etc... 
 
 ## Bibliotek
 
