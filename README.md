@@ -106,9 +106,7 @@ $pdo = new PDO(
     );
 ```
 
-#### tabeller
-
-Ligger i databasen
+#### Tabeller i databasen
 
 ##### users
 
