@@ -10,7 +10,6 @@ class User
     public $email;
     public $profession;
     public $description;
-    // public $created;
     public $is_admin;
     public $pdo;
 
@@ -22,7 +21,6 @@ class User
         $this->email = $email;
         $this->profession = noScript($profession);
         $this->description = noScript($description);
-        // $this->created = date('Y-m-d H:i:s');
         $this->is_admin = false;
         $this->pdo = $pdo;
     }

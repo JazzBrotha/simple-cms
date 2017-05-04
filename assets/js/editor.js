@@ -12,6 +12,7 @@
 
   tinymce.init({
       selector: '#text-area',
+      block_formats: 'Paragraph=p;Header 2=h2;Header 3=h3',
       height: 400,
       theme: 'modern',
       plugins: [
@@ -28,8 +29,17 @@
           { title: 'Test template 2', content: 'Test 2' }
       ],
       content_css: [
-          '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-          '//www.tinymce.com/css/codepen.min.css'
+          'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css',
+          '../assets/css/blog.css',
+          '../assets/css/main.css'
       ],
-      plugin_preview_width: 1000
+      plugin_preview_width: 1000,
+      style_formats: [{
+          title: 'Headers',
+          items: [
+              { title: 'Header 4', format: 'h4' },
+              { title: 'Header 5', format: 'h5' },
+              { title: 'Header 6', format: 'h6' }
+          ]
+      }, ]
   });
