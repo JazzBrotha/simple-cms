@@ -21,7 +21,7 @@ class Posts {
     }
 
     public static function get_full_post($pdo) {
-        $post_id = $_GET['post'];
+        $post_id = $_GET['post_id'];
         $page = $pdo->prepare("SELECT * 
             FROM posts
             WHERE post_id = :id
