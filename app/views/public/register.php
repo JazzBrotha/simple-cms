@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <h2 class="text-center">Create account</h2>
-                <form method="POST" action="..\..\..\public\new_user.php" class="d-flex mt-2">
+                <form method="POST" action="<?php BASE_URL . '/public/register.php'?>" class="d-flex mt-2">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="username">Choose a username</label>
@@ -37,7 +37,7 @@
                             <textarea name="description" class="form-control" rows="3" maxlength="200" placeholder="Tell us something about yourself!"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn" id="register-user-button">
+                            <input type="submit" class="btn btn-primary" id="register-user-button">
                         <div>
                     </div>
                 </form>

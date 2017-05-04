@@ -14,10 +14,12 @@ En annan person i gruppen måste alltid godkänna innan något pushas in i `mast
 
 Mergea en pull request:
 1. Meddela i Slack att du ska göra en review så det inte blir några kollisioner.
-2. Öppna pull requesten och tryck på "review". Läs igenom ändringarna.
+2. Öppna pull requesten och tryck på "Add your review". Läs igenom ändringarna.
 3. Godkänn om det ser bra ut eller lämna kommentar om något behöver ändras.
 4. Tryck på &#8964; på mergeknappen och välj "squash and merge" för att slå ihop alla commits till en.
 5. Ta bort den gamla branchen
+
+Tips: Om du inte vill göra en ny commit efter du gjort ändringar lokalt eller när du gör en `git pull` lägger du till `--amend --no-edit` efter kommandot, alltså t.ex. `git pull origin master --amend --no-edit`. Om du vill se dina senaste ändringar efter en `git pull`, exempelvis för att se eventuella merge conflicts tydligare, så kan du skriva `git diff`.
 
 ### Naming conventions & best practice
 * Försök hålla liknande syntax som resten av dokumentet.
