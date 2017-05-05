@@ -37,16 +37,16 @@
   <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
         <div class="container">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu <i class="fa fa-bars"></i>
+                Menu
             </button>
             <a class="navbar-brand" href="<?php echo BASE_URL; ?>/index.php">Home</a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="">About</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>/public/about.php">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Contact</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>/public/contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL; ?>/public/login.php">Login</a>
