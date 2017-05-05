@@ -7,12 +7,13 @@ Alla ändringar av README.md görs direkt i `master` på GitHub och inte lokalt 
 En annan person i gruppen måste alltid godkänna innan något pushas in i `master`. På det sättet håller vi `master` så buggfri som möjligt. Commits skrivs helst på engelska. Vi arbetar enligt följande mönster:
 1. Skapa en ny `branch` varje gång du ska arbeta på en ändring i appen. Enklast är att namnge branchen så den indikerar vilken ändring du arbetar på. Ex, om du arbetar med footern döper du din nya branch till `footer`. Använd [A-Za-z] för namngivning av branches, alltså inga siffror, speciella tecken eller å,ä,ö.
 2. Versionshantera lokalt på det sättet som passar dig bäst men det kan vara en säkerhetsåtgärd att göra commits med jämna mellanrum.
-3. Uppdatera din `master` branch genom `git pull origin master` och se om din `master` är på den senaste commiten. Om inga ändringar har skett kan du gå vidare till punkt 7.
+3. Uppdatera din `master` branch genom `git pull origin master` och se om din `master` är på den senaste commiten. Om inga ändringar har skett kan du gå vidare till punkt 8.
 4. Lös eventuella merge conflicts.
 5. Byt till din developer branch genom `git checkout <branch name>`.
 6. Slå ihop ändringarna i din `master` med din developer branch: `git rebase master`.
-7. Pusha upp din nya branch till GitHub via `git push <branch name>`.
-8. Gör en pull request från din nya branch intill `master`.
+7. Lägga till alla filer till staging arean  via `git add *` och gör en ny commit `git commit -m "<commit message>"`.
+8. Pusha upp din nya branch till GitHub via `git push <branch name>`.
+9. Gör en pull request från din nya branch intill `master`.
 
 Mergea en pull request:
 1. Meddela i Slack att du ska göra en review så det inte blir några kollisioner.
