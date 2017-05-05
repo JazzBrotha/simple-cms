@@ -27,6 +27,11 @@ Tips: Om du inte vill göra en ny commit efter du gjort ändringar lokalt eller 
 * JavaScript ska hellst skrivas i ES6. Försök följa AirBnb:s [styleguide](https://github.com/airbnb/javascript).
 * Försök använda Bootstraps färdiga CSS-klasser så mycket som möjligt. Namnge dina egna klasser likt Bootstrap gör. I övrigt försök följa AirBnb:s [styleguide](https://github.com/airbnb/css).
 
+### Säkerhet
+* Alla lösenord hashas.
+* All user input som ska skrivas ut rensas på skadlig kod med funktionen `noScript()` i `functions.php` _innan lagring_, lämpligen i `User` eller `Post`-konstruktorn.
+* All user input som _inte_ ska tolkas som HTML (t.ex post title) escape:as med `escape()` i `functions.php` på stället där den ska skrivas ut. ex `<h2><?php echo escape($page['title']); ?></h2>`
+
 ## Mapp och filstruktur
 Grundstruktur. Kan komma att ändras under arbetets gång.
 * `app` - Huvudinnehåll
@@ -154,6 +159,7 @@ $pdo = new PDO(
 
 * [Bootstrap 4 alpha](https://v4-alpha.getbootstrap.com/)
 * [TinyMCE](https://www.tinymce.com/docs/)
+* [HTML Purifier](http://htmlpurifier.org)
 
 ## Länkar
 
