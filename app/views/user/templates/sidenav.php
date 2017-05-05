@@ -6,7 +6,7 @@
           <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Reports</a>
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/user/edit_user.php?user_id=<?php echo $userId; ?>">Edit account details</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Analytics</a>
