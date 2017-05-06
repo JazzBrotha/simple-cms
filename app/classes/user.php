@@ -55,8 +55,9 @@ class User
             profession = :profession,
             description = :description
             WHERE user_id = :user_id
-            -- WHERE username = :username
+            AND username = :username
             ");
+            var_dump($update);
         
         return $update->execute([
             ':firstname' => $this->firstname,
@@ -64,8 +65,8 @@ class User
             ':email' => $this->email,
             ':profession' => $this->profession,
             ':description' => $this->description,
-            ':user_id' => $userId
-            // ':username' => $this->username
+            ':user_id' => $userId,
+            ':username' => $this->username
         ]);
         
     }

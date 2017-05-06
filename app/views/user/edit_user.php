@@ -2,11 +2,11 @@
 <?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
 
 <h2>Edit user</h2>
-<form method="POST" action="<?php echo BASE_URL; ?>/user/edit_user.php" class="d-flex mt-2">
+<form method="POST" action="<?php echo BASE_URL . '/user/edit_user.php?user_id=' . $_GET['user_id'] ?>" class="d-flex mt-2">
     <div class="col-md-6">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="username" class="form-control" maxlength="20" value="<?php echo $user['username']?>" disabled>
+            <input type="text" name="username" class="form-control" maxlength="20" value="<?php echo $user['username']?>" readonly>
         </div>
         <div class="form-group">
             <label for="password">Password</label>

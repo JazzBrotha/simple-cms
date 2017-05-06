@@ -4,13 +4,13 @@ require '../app/start.php';
 require APP_ROOT . '/classes/users.php';
 require APP_ROOT . '/classes/user.php';
 
-$userId = 1;
+//hämta från session
+$userId = $_GET['user_id'];
 
 if (!empty($_POST)) {
 
   $updateUser = new User($_POST['username'], null, $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['profession'], $_POST['description'], $pdo);
-  //från session sedan
-  $updateUser->update_user($_GET['user_id']);
+  $updateUser->update_user($userId);
   
   header('Location: ' . BASE_URL . '/user/list.php');
 
