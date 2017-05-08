@@ -149,14 +149,14 @@ $pdo = new PDO(
 
 ### Klasser
 
-* `User` --> `functions`: posta inlägg, like:a, redigera sin profil, ta bort sitt konto...
-  * `Contributor extends User`
+* `User` --> Modifiera _en_ användare. Skapa användare, redigera sin profil...
   * `Admin extends User`
+* `Users.php` - Hanterar hämtar/användare. get_full_user() etc...
 
-* `Users.php` - **finns inte än** Tänkt att hantera alla användare, för admin tex.
+* `Post` --> Skapa/editera poster. `new Post()`
+* `Posts` --> Hantera/hämtar en eller flera poster. get_all_posts(), get_full_post() etc... 
 
-* `Post` --> `new Post(header, summary, body etc...)`
-* `Posts` --> get_all_posts(), get_full_post() etc... 
+* `Likes` --> Hanterar likes.
 
 ## Bibliotek
 
