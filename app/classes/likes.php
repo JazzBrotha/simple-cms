@@ -9,4 +9,16 @@ class Likes {
         $result = $likes->fetch(PDO::FETCH_ASSOC);
         return $result['COUNT(*)'];
     }
+
+    public static function add_like($postId, $userId, $pdo) {
+        $like = $pdo->prepare(
+            "INSERT INTO likes
+            (post_id, user_id)
+            VALUES (:postId, :userId)"
+        );
+        return $like->execute([
+            ':postId' => $postId,
+            ':userId' => $userId
+        ]);
+    }
 }

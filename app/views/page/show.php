@@ -12,7 +12,7 @@
                     <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
                   <?php endforeach; ?>
                   <div class="mt-3">
-                    <span class="meta"><?php echo $page['likes']?> likes | Like</span>
+                    <span class="meta"><?php echo $page['likes']?> likes | <a href="<?php echo BASE_URL; ?>/user/like.php?post_id=<?php echo $page['post_id']; ?>">Like</a></span>
                     <span class="meta">Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']->format('jS M Y'); ?></span>
                   </div>
                   <?php if ($page['updated'] !== null) { ?>

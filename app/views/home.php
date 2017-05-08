@@ -31,7 +31,8 @@
             <h2 class="post-title"><?php echo escape($page['title']); ?></h2>
             <h3 class="post-subtitle"><?php echo $summary ?>...</h3>
           </a>
-          <p class="post-meta"><?php echo Likes::count_likes($page['post_id'], $pdo); ?> Likes | Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']; ?></p>
+          <p class="post-meta"><span class="border-right"><?php echo Likes::count_likes($page['post_id'], $pdo); ?> Likes </span> 
+          Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']; ?></p>
           <?php foreach (explode(',',$page['tags']) as $tag): ?>
           <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
           <?php endforeach; ?>
