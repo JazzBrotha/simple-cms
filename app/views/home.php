@@ -21,10 +21,13 @@
     <p>Sorry, no posts at the moment</p>
   <?php else: ?>
       <?php foreach ($pages as $page): ?>
+        <?php $plainTextBody = strip_tags($page['body']);
+              $summary = substr($plainTextBody, 0, 50);
+        ?>
         <div class="post-preview">
           <a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
             <h2 class="post-title"><?php echo escape($page['title']); ?></h2>
-            <h3 class="post-subtitle">Summary</h3>
+            <h3 class="post-subtitle"><?php echo $summary ?>...</h3>
           </a>
           <p class="post-meta">Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']; ?></p>
           <?php foreach (explode(',',$page['tags']) as $tag): ?>
