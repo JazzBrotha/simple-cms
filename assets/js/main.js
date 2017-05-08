@@ -4,10 +4,3 @@
 //   e.preventDefault();
 //   swal('Grattis, du har loggat in!');
 // });
-
-function loginError() {
-console.log('hej');
-}
-
-
-// sweetAlert("Sorry...", "Username already exists!", "error");
