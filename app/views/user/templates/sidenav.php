@@ -9,7 +9,7 @@
           <a class="nav-link" href="<?php echo BASE_URL; ?>/user/add.php">CREATE POST</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">EDIT PROFILE</a>
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/user/edit_user.php?user_id=<?php echo $userId; ?>">EDIT PROFILE</a>
         </li>
       </ul>
     </nav>
