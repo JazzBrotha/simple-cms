@@ -7,10 +7,11 @@ Alla ändringar av README.md görs direkt i `master` på GitHub och inte lokalt 
 En annan person i gruppen måste alltid godkänna innan något pushas in i `master`. På det sättet håller vi `master` så buggfri som möjligt. Commits skrivs helst på engelska. Vi arbetar enligt följande mönster:
 1. Skapa en ny `branch` varje gång du ska arbeta på en ändring i appen. Enklast är att namnge branchen så den indikerar vilken ändring du arbetar på. Ex, om du arbetar med footern döper du din nya branch till `footer`. Använd [A-Za-z] för namngivning av branches, alltså inga siffror, speciella tecken eller å,ä,ö.
 2. Versionshantera lokalt på det sättet som passar dig bäst men det kan vara en säkerhetsåtgärd att göra commits med jämna mellanrum.
-3. Innan du pushar upp din nya branch så måste du alltid göra en `git pull` på din `master` branch, så den alltid är uppdaterad.
-4. Lös eventuella merge conflicts.
-5. Pusha upp din nya branch till GitHub.
-6. Gör en pull request från din nya branch intill `master`.
+3. Lägga till alla filer till staging arean  via `git add *` och gör en ny commit `git commit -m "<commit message>"`.
+4. Uppdatera din `master` branch genom `git pull origin master`.
+5. Lös eventuella merge conflicts.
+6. Pusha upp din nya branch till GitHub via `git push <branch name>`.
+7. Gör en pull request från din nya branch intill `master`.
 
 Mergea en pull request:
 1. Meddela i Slack att du ska göra en review så det inte blir några kollisioner.
@@ -27,43 +28,56 @@ Tips: Om du inte vill göra en ny commit efter du gjort ändringar lokalt eller 
 * JavaScript ska hellst skrivas i ES6. Försök följa AirBnb:s [styleguide](https://github.com/airbnb/javascript).
 * Försök använda Bootstraps färdiga CSS-klasser så mycket som möjligt. Namnge dina egna klasser likt Bootstrap gör. I övrigt försök följa AirBnb:s [styleguide](https://github.com/airbnb/css).
 
+### Säkerhet
+* Alla lösenord hashas.
+* All user input som ska skrivas ut rensas på skadlig kod med funktionen `noScript()` i `functions.php` _innan lagring_, lämpligen i `User` eller `Post`-konstruktorn.
+* All user input som _inte_ ska tolkas som HTML (t.ex post title) escape:as med `escape()` i `functions.php` på stället där den ska skrivas ut. ex `<h2><?php echo escape($page['title']); ?></h2>`
+
 ## Mapp och filstruktur
 Grundstruktur. Kan komma att ändras under arbetets gång.
 * `app` - Huvudinnehåll
-  - `resources` - Stödfiler
-    - `error.php` - Errorhantering i utvecklingssyfte
-    - `pdo.php` - Uppkoppling till databasen
-    - `password.php` - Lösenord för anslutning till databasen. OBS! Ska endast ligga lokalt
-  - `validation` - Validation för användare
-    - `new_user.php` - Postar en användare till databasen baserad på klassen `User`
-    - `validate_login.php` - Validarar inloggningen av en användare
+  - `classes` - Klasser
+    - `post.php` - Hanterar _en_ enskild post: Skapar ny m konstruktor + metoder för att lägga till samt uppdatera i databas
+    - `posts.php` - Hanterar urval av poster: metoder för att hämta alla, hämta en etc.
+    - `user.php` - Hanterar _en_ användare: skapar + lagrar i db.
   - `views` - Allt visuellt
     - `page`
       - `show.php` - Visningssida för varje post
     - `public` - Det som alla ser
       - `login.php` - Loginformulär för existerande användare
       - `register.php` - Formulär för att skapa en ny användare
-    - `templates` - Mallar som används på många sidor
-      - `footer.php` - Footer
-      - `header.php` - Header
+      - `templates` - Mallar som används på många sidor
+        - `footer.php` - Footer
+        - `header.php` - Header
+        - `sidebar.php` - Sidebar
     - `user` - Det som bara inloggad användare ser
       - `add.php` - Lägga till en post
       - `edit.php` - Ändra en post
       - `list.php` - Översikt över sina individuella posts
+      - `templates` - Mallar som används på många sidor
+        - `footer.php` - Footer
+        - `header.php` - Header
+        - `sidenav.php`
     - `home.php` - Visning av appens landingssida
-  - `classes.php` - Klasser för att skapa posts och användare
   - `functions.php` - Hjälpfunktioner som exempelvis lösenordshashing
-  - `start.php` - Länkar ihop allt i `app` och sätter rootmappar för projektet
+  - `password.php` - Lösenord för anslutning till databasen. **OBS!** Ska endast ligga lokalt!
+  - `start.php` - Länkar ihop allt i `app`: Rootmappar för projektet. Visar error `ini_set(display_errors)`.`PDO`-objektet, Uppkoppling till databasen.
 * `assets` - Icke-php innehåll
-  - `js`
   - `css`
+    - `blog.css`
+    - `dashboard.css`
+    - `main.css`
+  - `js`
+    - `editor.js` - JS för att köra WYSIWYG-editor
+    - `main.js`
 * `public` - Funktionalitet för sidor som alla ser (Se `public` under `views` för mer info)
-  - `login.php`
-  - `register.php`
+  - `login.php` - Hanterar o validerar loginförsök
+  - `register.php` - Postar en användare till databasen baserad på klassen `User`
 * `user` - Funktionalitet för sidor som bara användare ser (Se `user` under `views` för mer info)
-  - `add.php`
-  - `edit.php`
-  - `list.php`
+  - `add.php` - Postar ett inlägg till databasen baserad på klassen `Post`
+  - `delete.php` - Tar bort ett inlägg
+  - `edit.php` - Uppdaterar ett inlägg till databasen baserat på klassen `Post`
+  - `list.php` - Hanterar en användares posts
 * `index.php` - Funktionalitet för appens landningssida
 * `page.php` - Funktionalitet för varje post
 
@@ -71,7 +85,7 @@ Grundstruktur. Kan komma att ändras under arbetets gång.
 
 Anteckningar från 27/4
 
-### idé
+### Idé
 
 Slutprodukten är tänkt att bli en blogg om Front end / webbutveckling där vi i gruppen kan posta tips o tricks inom vårt område, intressanta artiklar vi läst etc. Ambitionen är att lägga upp sidan live så att den kan bli en del av våra portfolios.
 
@@ -85,10 +99,10 @@ Slutprodukten är tänkt att bli en blogg om Front end / webbutveckling där vi 
 
 Setup för att köra localhost + db i molnet: [logga in](https://www.heliohost.org) och välj 'remote mySQL' i panelen. Lägg till din publika IP till listan. I panelen finns också phpMyAdmin mm.
 
-host: [johnny.heliohost.org](johnny.heliohost.org)
-db: phpgrupp_cms
-user: phpgrupp
-pass: se slack
+* host: [johnny.heliohost.org](johnny.heliohost.org)
+* db: phpgrupp_cms
+* user: phpgrupp
+* pass: se slack
 
 ```php
 $pdo = new PDO(
@@ -98,9 +112,7 @@ $pdo = new PDO(
     );
 ```
 
-#### tabeller
-
-Ligger i databasen
+#### Tabeller i databasen
 
 ##### users
 
@@ -121,10 +133,10 @@ Ligger i databasen
 * _post\_id_ -- `INT, PRIMARY, A_I`
 * _user\_id_ -- `INT`, foreign key --> users (`ON DELETE RESTRICT RESTRICT, ON UPDATE CASCADE`) *
 * _title_ -- `VARCHAR, LENGTH 26` (rubrik)
-* _summary_ -- `TEXT` (ingress/pufftext)
 * _body_ -- `TEXT` (brödtext)
 * _tags_ -- `VARCHAR, LENGTH 260` (taggar, separerade av komma)
-* _date_ -- `TIMESTAMP, CURRENT_TIMESTAMP`
+* _created_ -- `TIMESTAMP, CURRENT_TIMESTAMP`
+* _updated_ -- `TIMESTAMP, DEFAULT NULL`
 
 ##### likes
 
@@ -135,16 +147,20 @@ Ligger i databasen
 
 ### Klasser
 
-* `User` --> `functions`: posta inlägg, like:a, redigera sin profil, ta bort sitt konto...
-  * `Contributor extends User`
+* `User` --> Modifiera _en_ användare. Skapa användare, redigera sin profil...
   * `Admin extends User`
+* `Users.php` - Hanterar hämtar/användare. get_full_user() etc...
 
-* `Post` --> `new Post(header, summary, body etc...)`
+* `Post` --> Skapa/editera poster. `new Post()`
+* `Posts` --> Hantera/hämtar en eller flera poster. get_all_posts(), get_full_post() etc... 
+
+* `Likes` --> Hanterar likes.
 
 ## Bibliotek
 
 * [Bootstrap 4 alpha](https://v4-alpha.getbootstrap.com/)
 * [TinyMCE](https://www.tinymce.com/docs/)
+* [HTML Purifier](http://htmlpurifier.org)
 
 ## Länkar
 
