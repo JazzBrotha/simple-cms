@@ -2,11 +2,10 @@
 
 
 
-//Before output: Makes sure text is not interpreted as HTML 
+//Before output: Makes sure text is not interpreted as HTML
 function escape($text) {
   return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 }
-
 
 //After input: Makes sure no hostile scripts are stored in db
 function noScript($text) {
