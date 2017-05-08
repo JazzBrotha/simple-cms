@@ -1,14 +1,19 @@
 <?php
 
+session_start();
+
 require '../app/start.php';
 
+// if(isset($_POST['submitLogin'])) {
 
+// }
 
 if (!empty($_POST)) {
 require APP_ROOT . '/classes/user.php';
 
 $username = $_POST['username']; 
 $pwd = $_POST['password']; 
+
 
 // de-hashing
 $select = "SELECT * FROM users WHERE username='$username'";
@@ -33,11 +38,17 @@ $user = $result->fetch();
 
 if (!$user){
 	echo "Your username or password is incorrect"; 
-} if($user) {
+} 
+if($user) {
+	
+	$_SESSION["username"]=$user["username"];
+	$_SESSION["user_id"]=$user["user_id"];
 	header('Location: ' . BASE_URL . '/user/list.php');
 }
 }
 }
 require VIEW_ROOT . '/public/login.php';
+
+	var_dump($_SESSION['username']);
 
 ?>

@@ -11,6 +11,9 @@
         <li class="nav-item">
           <a class="nav-link" href="<?php echo BASE_URL; ?>/user/edit_user.php?user_id=<?php echo $userId; ?>">EDIT PROFILE</a>
         </li>
+      <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/public/logout.php">LOG OUT</a>
+        </li>
       </ul>
     </nav>
 

@@ -8,7 +8,7 @@ En annan person i gruppen måste alltid godkänna innan något pushas in i `mast
 1. Skapa en ny `branch` varje gång du ska arbeta på en ändring i appen. Enklast är att namnge branchen så den indikerar vilken ändring du arbetar på. Ex, om du arbetar med footern döper du din nya branch till `footer`. Använd [A-Za-z] för namngivning av branches, alltså inga siffror, speciella tecken eller å,ä,ö.
 2. Versionshantera lokalt på det sättet som passar dig bäst men det kan vara en säkerhetsåtgärd att göra commits med jämna mellanrum.
 3. Lägga till alla filer till staging arean  via `git add *` och gör en ny commit `git commit -m "<commit message>"`.
-4. Uppdatera din `master` branch genom `git pull origin master`.
+4. Uppdatera din `master` branch genom `git pull origin master`. Om du vill slippa skriva en anledning till varför du gör en merge så skriver du istället `git pull origin master --no-edit`. Om inte det funkar kan du prova byta plats på `no-edit`: `git pull --no-edit origin master` 
 5. Lös eventuella merge conflicts.
 6. Pusha upp din nya branch till GitHub via `git push <branch name>`.
 7. Gör en pull request från din nya branch intill `master`.
@@ -20,7 +20,7 @@ Mergea en pull request:
 4. Tryck på &#8964; på mergeknappen och välj "squash and merge" för att slå ihop alla commits till en.
 5. Ta bort den gamla branchen
 
-Tips: Om du inte vill göra en ny commit efter du gjort ändringar lokalt eller när du gör en `git pull` lägger du till `--amend --no-edit` efter kommandot, alltså t.ex. `git pull origin master --amend --no-edit`. Om du vill se dina senaste ändringar efter en `git pull`, exempelvis för att se eventuella merge conflicts tydligare, så kan du skriva `git diff`.
+Tips: Om du inte vill göra en ny commit efter du gjort ändringar lokalt lägger du till `--amend --no-edit` efter kommandot, alltså `git commit --amend --no-edit`. Om du vill se dina senaste ändringar efter en `git pull`, exempelvis för att se eventuella merge conflicts tydligare, så kan du skriva `git diff`.
 
 ### Naming conventions & best practice
 * Försök hålla liknande syntax som resten av dokumentet.
