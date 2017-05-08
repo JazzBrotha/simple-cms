@@ -72,7 +72,7 @@
     <ul>
       <?php foreach ($pages as $page): ?>
         <li><a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
-      <?php echo $page['title']; ?></a></li>
+      <?php echo escape($page['title']); ?></a></li>
       <?php endforeach; ?>
     </ul>
   <?php endif; ?>

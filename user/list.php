@@ -7,12 +7,4 @@ require '../app/classes/posts.php';
 $user_id = 1; 
 $pages = Posts::get_user_posts($pdo, $user_id);
 
-//moved to function Posts->get_user_posts
-
-// $pages = $pdo->query("
-//   SELECT id, label, title, slug
-//   FROM pages
-//   ORDER BY created DESC
-// ")->fetchAll(PDO::FETCH_ASSOC);
-
 require VIEW_ROOT . '/user/list.php';
