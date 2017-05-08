@@ -1,89 +1,48 @@
 <?php require VIEW_ROOT . '/public/templates/header.php'; ?>
 
-<div class="col-sm-8 blog-main">
+<header class="masthead" style="background-image:url(<?php echo BASE_URL; ?>/assets/img/home-bg.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="site-heading">
+                        <h1>Front End Blog</h1>
+                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <div class="blog-post">
-    <h2 class="blog-post-title">Sample blog post</h2>
-    <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+<div class="container">
+ <div class="row">
 
-    <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-    <hr>
-    <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-    <blockquote>
-      <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-    </blockquote>
-    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-    <h2>Heading</h2>
-    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-    <h3>Sub-heading</h3>
-    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-    <pre><code>Example code block</code></pre>
-    <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-    <h3>Sub-heading</h3>
-    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <ul>
-      <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-      <li>Donec id elit non mi porta gravida at eget metus.</li>
-      <li>Nulla vitae elit libero, a pharetra augue.</li>
-    </ul>
-    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-    <ol>
-      <li>Vestibulum id ligula porta felis euismod semper.</li>
-      <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-      <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-    </ol>
-    <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-  </div><!-- /.blog-post -->
-
-  <div class="blog-post">
-    <h2 class="blog-post-title">Another blog post</h2>
-    <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
-
-    <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-    <blockquote>
-      <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-    </blockquote>
-    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-  </div><!-- /.blog-post -->
-
-  <div class="blog-post">
-    <h2 class="blog-post-title">New feature</h2>
-    <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
-
-    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <ul>
-      <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-      <li>Donec id elit non mi porta gravida at eget metus.</li>
-      <li>Nulla vitae elit libero, a pharetra augue.</li>
-    </ul>
-    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-  </div><!-- /.blog-post -->
-
-  <nav class="blog-pagination">
-    <a class="btn btn-outline-primary" href="#">Older</a>
-    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-  </nav>
-
+<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
   <?php if (empty($pages)): ?>
     <p>Sorry, no posts at the moment</p>
   <?php else: ?>
-    <ul>
       <?php foreach ($pages as $page): ?>
-        <li><a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
-      <?php echo $page['title']; ?></a></li>
+        <div class="post-preview">
+          <a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
+            <h2 class="post-title"><?php echo $page['title']; ?></h2>
+            <h3 class="post-subtitle">Summary</h3>
+          </a>
+          <p class="post-meta">Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']; ?></p>
+          <?php foreach (explode(',',$page['tags']) as $tag): ?>
+          <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
+          <?php endforeach; ?>
+        </div><!-- /.blog-post -->
+         <hr>
       <?php endforeach; ?>
-    </ul>
   <?php endif; ?>
 
-  <a href="<?php echo BASE_URL; ?>/public/login.php">Login</a>
+  <div class="clearfix">
+                    <a class="btn btn-secondary float-right" href="#">Older Posts &rarr;</a>
+                </div>
 
 </div><!-- /.blog-main -->
+ <hr>
 
+</div><!-- /.row -->
 
-
-
-  <?php require VIEW_ROOT . '/public/templates/sidebar.php'; ?>
-
+</div><!-- /.container -->
 <?php require VIEW_ROOT . '/public/templates/footer.php'; ?>

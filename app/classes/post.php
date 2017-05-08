@@ -1,4 +1,5 @@
 <?php
+
 // Class posts handles creation and modification of ONE specific post
 
 class Post {
@@ -10,9 +11,9 @@ class Post {
 
     public function __CONSTRUCT($userId, $title, $body, $tags, $pdo) {
         $this->userId = $userId;
-        $this->title = $title;
-        $this->body = $body;
-        $this->tags = $tags;
+        $this->title = noScript($title);
+        $this->body = noScript($body);
+        $this->tags = noScript($tags);
         $this->pdo = $pdo;
     }
 

@@ -12,27 +12,19 @@
     <div class="col-md-10">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" value="<?php echo escape($page['title']); ?>" class="form-control" maxlength="50"
+            <input type="text" name="title" id="title" value="<?php echo $page['title']; ?>" class="form-control" maxlength="50"
                 required>
         </div>
-        <!--<div class="form-group">
-            <label for="label">Label</label>
-            <input type="text" name="label" id="label" value="<?php echo escape($page['label']); ?>" class="form-control" maxlength="20" required>
-        </div>-->
-        <!--<div class="form-group">
-            <label for="slug">Slug</label>
-            <input type="text" name="slug" id="slug" value="<?php echo escape($page['slug']); ?>" class="form-control" maxlength="30" required>
-        </div>-->
         <div class="form-group">
             <label for="body">Body</label>
-            <textarea name="body" id="text-area" class="form-control" required><?php echo escape($page['body']); ?></textarea>
+            <textarea name="body" id="text-area" class="form-control" required><?php echo $page['body']; ?></textarea>
         </div>
         <div class="form-group">
             <label for="tags">Tags:</label>
-            <input type="text" name="tags" id="tags" value="<?php echo escape($page['tags']); ?>" class="form-control" maxlength="30"
+            <input type="text" name="tags" id="tags" value="<?php echo $page['tags']; ?>" class="form-control" maxlength="30"
                 required>
         </div>
-        <input type="hidden" name="post_id" value="<?php echo escape($page['post_id']); ?>">
+        <input type="hidden" name="post_id" value="<?php echo $page['post_id']; ?>">
         <div class="form-group">
             <button class="btn btn-primary" id="post-preview-btn">Preview</button>
             <input type="submit" class="btn btn-primary" value="Update">

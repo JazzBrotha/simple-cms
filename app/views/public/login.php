@@ -5,6 +5,7 @@
         <div class="col-sm-6">
             <h2 class="text-center">Login</h2>
             <form method="POST" action="<?php echo BASE_URL; ?>/public/login.php"> 
+
                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input type="text" class="form-control" name="username">

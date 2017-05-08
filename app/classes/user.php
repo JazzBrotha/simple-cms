@@ -10,19 +10,17 @@ class User
     public $email;
     public $profession;
     public $description;
-    // public $created;
     public $is_admin;
     public $pdo;
 
     public function __CONSTRUCT($username, $password, $firstname, $lastname, $email, $profession, $description, $pdo) {
         $this->username = $username;
         $this->password = $password;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
+        $this->firstname = noScript($firstname);
+        $this->lastname = noScript($lastname);
         $this->email = $email;
-        $this->profession = $profession;
-        $this->description = $description;
-        // $this->created = date('Y-m-d H:i:s');
+        $this->profession = noScript($profession);
+        $this->description = noScript($description);
         $this->is_admin = false;
         $this->pdo = $pdo;
     }
