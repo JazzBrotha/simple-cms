@@ -40,10 +40,9 @@
                 </div>
 
 </div><!-- /.blog-main -->
+ <hr>
+
 </div><!-- /.row -->
 
 </div><!-- /.container -->
- <hr>
-
-
 <?php require VIEW_ROOT . '/public/templates/footer.php'; ?>
