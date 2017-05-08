@@ -1,7 +1,6 @@
 <?php require VIEW_ROOT . '/user/templates/header.php'; ?>
 <?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
 
-
   <h2>Your posts</h2>
   <?php if (empty($pages)): ?>
     <p>No posts at the moment.</p>
