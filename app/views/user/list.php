@@ -1,21 +1,6 @@
 <?php require VIEW_ROOT . '/user/templates/header.php'; ?>
 <?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
 
-<?php
-    if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
-$userId = $_SESSION["user_id"];
-
-$user = $pdo->prepare("SELECT *
-    FROM posts
-    WHERE user_id = '$userId'
-    ");
-$user->execute();
-$userPosts = $user->fetchAll();
-?>
-
   <h2>Your posts</h2>
   <?php if (empty($userPosts)): ?>
     <p>No posts at the moment.</p>
