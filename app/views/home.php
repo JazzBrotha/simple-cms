@@ -18,18 +18,22 @@
 
 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
   <?php if (empty($pages)): ?>
-    <p>Sorry, no posts at the moment</p>
+    <h1>No posts at the moment</h1>
   <?php else: ?>
-      <?php foreach ($pages as $page): ?>
-        <?php $plainTextBody = strip_tags($page['body']);
+      <?php foreach ($pagesSplit[0] as $page): ?>
+        <?php
+              $plainTextBody = strip_tags($page['body']);
               $summary = substr($plainTextBody, 0, 50);
+              $user->bindParam(':id', $page['user_id']);
+              $user->execute();
+              $userName = $user->fetch();
         ?>
         <div class="post-preview">
           <a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
             <h2 class="post-title"><?php echo escape($page['title']); ?></h2>
             <h3 class="post-subtitle"><?php echo $summary ?>...</h3>
           </a>
-          <p class="post-meta">Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']; ?></p>
+          <p class="post-meta">Posted by <a href=""><?php echo $userName['username']; ?></a> on <?php echo $page['created']; ?></p>
           <?php foreach (explode(',',$page['tags']) as $tag): ?>
           <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
           <?php endforeach; ?>
@@ -39,8 +43,8 @@
   <?php endif; ?>
 
   <div class="clearfix">
-                    <a class="btn btn-secondary float-right" href="#">Older Posts &rarr;</a>
-                </div>
+      <a class="btn btn-secondary float-right" href="#">Older Posts &rarr;</a>
+  </div>
 
 </div><!-- /.blog-main -->
  <hr>

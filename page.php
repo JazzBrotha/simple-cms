@@ -8,7 +8,7 @@ if (empty($_GET['post_id'])) {
 
 
   $page = Posts::get_full_post($pdo);
-  
+
   if ($page) {
     $page['created'] = new DateTime($page['created']);
     if ($page['updated']) {
