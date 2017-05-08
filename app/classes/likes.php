@@ -21,4 +21,26 @@ class Likes {
             ':userId' => $userId
         ]);
     }
+
+    public static function remove_like($postId, $userId, $pdo) {
+        $like = $pdo->prepare(
+            "DELETE FROM likes
+            WHERE post_id = :postId
+            AND user_id = :userId;"
+        );
+        return $like->execute([
+            ':postId' => $postId,
+            ':userId' => $userId
+        ]);
+    }
+
+    //returns true if post is liked by user and false if not
+    public static function check_like($postId, $userId, $pdo) {
+        $hasLiked = $pdo->prepare(
+            "SELECT COUNT(*) FROM likes
+            WHERE post_id = $postId AND user_id = $userId;");
+        $hasLiked->execute();
+        $result = $hasLiked->fetch(PDO::FETCH_ASSOC);
+        return ($result['COUNT(*)'] !== 0);
+    }
 }
