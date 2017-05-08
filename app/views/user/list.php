@@ -30,6 +30,5 @@
     </table>
   <?php endif; ?>
 
-<a href="<?php echo BASE_URL; ?>/user/add.php">Add page</a>
 
 <?php require VIEW_ROOT . '/user/templates/footer.php'; ?>

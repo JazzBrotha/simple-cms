@@ -7,4 +7,5 @@ require '../app/classes/posts.php';
 $userId = 1; 
 $pages = Posts::get_user_posts($pdo, $userId);
 
+
 require VIEW_ROOT . '/user/list.php';
