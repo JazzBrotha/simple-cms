@@ -9,6 +9,7 @@
                   <?php } else { ?>
                     <h1><?php echo escape($page['title']); ?></h1>
                     <h2 class="subheading">Summary</h2>
+                  <span class="meta"><?php echo $page['likes']?> likes | Like</span>
                   <span class="meta">Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']->format('jS M Y'); ?></span>
                   <?php if ($page['updated'] !== null) { ?>
                   <span class="meta">Last updated on <?php echo $page['updated']->format('jS M Y h:i a'); ?></span>
