@@ -1,7 +1,8 @@
 <?php
-session_start();
+require '../app/start.php';
 
-echo "You are logged out";
-
+if (!isset($_SESSION)) {
+  session_start();
+}
 session_destroy();
-
+header('Location: ' . BASE_URL . '/index.php');
