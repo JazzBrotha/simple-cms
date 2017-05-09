@@ -22,8 +22,19 @@ class Posts {
 
     public static function get_full_post($pdo) {
         $post_id = $_GET['post_id'];
-        $page = $pdo->prepare("SELECT * 
+        $page = $pdo->prepare("SELECT
+            posts.post_id,
+            posts.title, 
+            posts.body, 
+            posts.tags, 
+            posts.created,
+            posts.updated, 
+            posts.user_id,
+            users.firstname, 
+            users.lastname  
             FROM posts
+            INNER JOIN users 
+            ON posts.user_id = users.user_id
             WHERE post_id = :id
             LIMIT 1
             ");
