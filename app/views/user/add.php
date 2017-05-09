@@ -13,18 +13,6 @@
             <label for="title">Title</label>
             <input type="text" name="title" id="title" class="form-control" maxlength="50" required>
         </div>
-        <!--<div class="form-group">
-            <label for="label">Label</label>
-            <input type="text" name="label" id="label" class="form-control" maxlength="20" required>
-        </div>-->
-        <!--<div class="form-group">
-            <label for="slug">Slug</label>
-            <input type="text" name="slug" id="slug" class="form-control" maxlength="30" required>
-        </div>-->
-        <!--<div class="form-group">
-            <label for="body">Body</label>
-            <textarea name="body" id="body" cols-"30" rows="10" resize="none" class="form-control" required></textarea>
-        </div>-->
         <div class="form-group">
             <label for="body">Post body:</label>
             <textarea id="text-area" name="body"></textarea>
@@ -37,10 +25,6 @@
             <button class="btn btn-primary" id="post-preview-btn">Preview</button>
             <input type="submit" class="btn btn-primary" value="Add">
         </div>
-
-
-
-
     </div>
 </form>
 

@@ -140,10 +140,11 @@ $pdo = new PDO(
 
 ##### likes
 
-* _post\_id_ -- `INT`, foreign key --> posts (`ON DELETE RESTRICT , ON UPDATE CASCADE`) *
-* _user\_id_ -- `INT`, foreign key --> users (`ON DELETE RESTRICT, ON UPDATE CASCADE`) *
+* _like\_id_ -- `INT, PRIMARY, A_I`
+* _post\_id_ -- `INT`, ~~foreign key --> posts (`ON DELETE RESTRICT , ON UPDATE CASCADE`)~~*
+* _user\_id_ -- `INT`, ~~foreign key --> users (`ON DELETE RESTRICT, ON UPDATE CASCADE`)~~*
 
-\* bestämmer vad som händer om vi försöker ta bort/ändra id på en användare/post som är länkad i en annan tabell. Vi får kolla vilken option som är bäst, Kan ändras under 'relation view'.
+\* post_id och user_id i likes är inte längre länkad till de andra tabellerna.
 
 ### Klasser
 
@@ -161,6 +162,7 @@ $pdo = new PDO(
 * [Bootstrap 4 alpha](https://v4-alpha.getbootstrap.com/)
 * [TinyMCE](https://www.tinymce.com/docs/)
 * [HTML Purifier](http://htmlpurifier.org)
+* [Sweet Alert](http://t4t5.github.io/sweetalert/)
 
 ## Länkar
 

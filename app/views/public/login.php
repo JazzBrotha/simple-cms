@@ -3,7 +3,7 @@
 <section class="container mt-5">
     <div class="row">
         <div class="col-sm-6">
-            <?php if($_GET['forced']): ?>
+            <?php if(!empty($_GET) && $_GET['forced']): ?>
                 <div class="alert alert-warning" role="alert">You need to log in to do that.</div>
             <?php endif ?>
             <h2 class="text-center">Login</h2>
