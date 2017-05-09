@@ -21,24 +21,27 @@
   <?php if (empty($pages)): ?>
     <h1>No posts at the moment</h1>
   <?php else: ?>
-      <?php foreach ($pagesSplit[0] as $page): ?>
+      <?php foreach ($pages as $page): ?>
         <?php
               $plainTextBody = strip_tags($page['body']);
               $summary = substr($plainTextBody, 0, 50);
-              $user->bindParam(':id', $page['user_id']);
-              $user->execute();
-              $userName = $user->fetch(PDO::FETCH_ASSOC);
-              $likes->bindParam(':post_id', $page['post_id']);
-              $likes->execute();
-              $result = $likes->fetch(PDO::FETCH_ASSOC);
         ?>
+
         <div class="post-preview" id="posts">
+            <!--print title-->
           <a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
             <h2 class="post-title"><?php echo escape($page['title']); ?></h2>
+            <!--print summary-->
             <h3 class="post-subtitle"><?php echo $summary ?>...</h3>
           </a>
-          <p class="post-meta"><span class="border-right"><?php echo $result['COUNT(*)']; ?> Likes </span>
-            Posted by <a href=""><?php echo $userName['username']; ?></a> on <?php echo $page['created']; ?></p>
+          <!--print likes-->
+          <p class="post-meta"><span class="border-right"><?php echo Likes::count_likes($page['post_id'], $pdo); ?> Likes </span>
+          <!--print author-->
+          Posted by <a href="<?php echo BASE_URL . '/user.php?user_id=' . $page['user_id'];?>">
+          <?php echo $page['firstname'] . " " . $page['lastname']; ?></a>
+          <!--print dates-->
+          on <?php echo $page['created']; ?></p>
+          <!--print tags-->
           <?php foreach (explode(',',$page['tags']) as $tag): ?>
           <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
           <?php endforeach; ?>
