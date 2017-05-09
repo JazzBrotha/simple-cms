@@ -27,7 +27,7 @@
               $summary = substr($plainTextBody, 0, 50);
         ?>
 
-        <div class="post-preview" id="posts">
+        <div class="post-preview">
             <!--print title-->
           <a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
             <h2 class="post-title"><?php echo escape($page['title']); ?></h2>
@@ -51,7 +51,7 @@
   <?php endif; ?>
 
   <div class="clearfix">
-      <a class="btn btn-secondary float-right" id="older-posts" onclick="getSummary(posts)">Older Posts &rarr;</a>
+      <a class="btn btn-secondary float-right" id="older-posts">Older Posts &rarr;</a>
   </div>
 
 </div><!-- /.blog-main -->

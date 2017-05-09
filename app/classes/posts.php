@@ -14,7 +14,10 @@ class Posts {
             users.lastname
             FROM posts
             INNER JOIN users
-            ON posts.user_id = users.user_id");
+            ON posts.user_id = users.user_id
+            ORDER BY post_id DESC
+            LIMIT 10
+            ");
         $stmt->execute();
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $posts;
@@ -31,7 +34,7 @@ class Posts {
             posts.updated,
             posts.user_id,
             users.firstname,
-            users.lastname  
+            users.lastname
             FROM posts
             INNER JOIN users
             ON posts.user_id = users.user_id

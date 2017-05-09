@@ -3,7 +3,7 @@ require 'app/start.php';
 require 'app/classes/posts.php';
 require 'app/classes/likes.php';
 
-if (session_status() == PHP_SESSION_NONE) {
+if (!isset($_SESSION)) {
     session_start();
 }
 
