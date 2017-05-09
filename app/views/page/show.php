@@ -12,7 +12,16 @@
                     <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
                   <?php endforeach; ?>
                   <div class="mt-3">
-                    <span class="meta">Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']->format('jS M Y'); ?></span>
+                    <span class="meta"><span class="border-right border-white"><?php echo $page['likes']?> likes </span>
+                    
+                    <?php if ($page['user_liked']):?>
+                    <a href="<?php echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=unlike'; ?>">Unlike</a></span>
+                    <?php else: ?>
+                    <a href="<?php echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=like'; ?>">Like</a></span>
+                    <?php endif; ?> 
+                    
+                    <span class="meta">Posted by <a href=""><?php echo $page['user_id'] ?></a> 
+                    on <?php echo $page['created']->format('jS M Y'); ?></span>
                   </div>
                   <?php if ($page['updated'] !== null) { ?>
                   <span class="meta">Last updated on <?php echo $page['updated']->format('jS M Y h:i a'); ?></span>

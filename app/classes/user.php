@@ -57,7 +57,6 @@ class User
             WHERE user_id = :user_id
             AND username = :username
             ");
-            var_dump($update);
         
         return $update->execute([
             ':firstname' => $this->firstname,

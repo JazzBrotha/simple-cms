@@ -1,3 +1,16 @@
 .bg-black {
-  background-color: black;
+    background-color: black;
+}
+
+
+/*adds a thin separator for inline elements*/
+
+.border-right {
+    padding-right: 0.5rem;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    margin-right: 0.5rem;
+}
+
+.border-white {
+    border-color: #FFFFFF;
 }

@@ -19,6 +19,7 @@
  <div class="row">
 
 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+
   <?php if (empty($pages)): ?>
     <h1>No posts at the moment</h1>
   <?php else: ?>
@@ -28,14 +29,18 @@
               $summary = substr($plainTextBody, 0, 50);
               $user->bindParam(':id', $page['user_id']);
               $user->execute();
-              $userName = $user->fetch();
+              $userName = $user->fetch(PDO::FETCH_ASSOC);
+              $likes->bindParam(':post_id', $page['post_id']);
+              $likes->execute();
+              $result = $likes->fetch(PDO::FETCH_ASSOC);
         ?>
         <div class="post-preview">
           <a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
             <h2 class="post-title"><?php echo escape($page['title']); ?></h2>
             <h3 class="post-subtitle"><?php echo $summary ?>...</h3>
           </a>
-          <p class="post-meta">Posted by <a href=""><?php echo $userName['username']; ?></a> on <?php echo $page['created']; ?></p>
+          <p class="post-meta"><span class="border-right"><?php echo $result['COUNT(*)']; ?> Likes </span>
+            Posted by <a href=""><?php echo $userName['username']; ?></a> on <?php echo $page['created']; ?></p>
           <?php foreach (explode(',',$page['tags']) as $tag): ?>
           <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
           <?php endforeach; ?>
