@@ -17,8 +17,10 @@
  <div class="row">
 
 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+
   <?php if (empty($pages)): ?>
     <p>Sorry, no posts at the moment</p>
+
   <?php else: ?>
       <?php foreach ($pages as $page): ?>
         <?php $plainTextBody = strip_tags($page['body']);
@@ -29,7 +31,8 @@
             <h2 class="post-title"><?php echo escape($page['title']); ?></h2>
             <h3 class="post-subtitle"><?php echo $summary ?>...</h3>
           </a>
-          <p class="post-meta">Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']; ?></p>
+          <p class="post-meta"><span class="border-right"><?php echo Likes::count_likes($page['post_id'], $pdo); ?> Likes </span> 
+          Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']; ?></p>
           <?php foreach (explode(',',$page['tags']) as $tag): ?>
           <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
           <?php endforeach; ?>
