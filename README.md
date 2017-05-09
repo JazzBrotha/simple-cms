@@ -144,7 +144,7 @@ $pdo = new PDO(
 * _post\_id_ -- `INT`, ~~foreign key --> posts (`ON DELETE RESTRICT , ON UPDATE CASCADE`)~~*
 * _user\_id_ -- `INT`, ~~foreign key --> users (`ON DELETE RESTRICT, ON UPDATE CASCADE`)~~*
 
-\* Är post_id och user_id i likes är inte längre länkad till de andra tabellerna.
+\* post_id och user_id i likes är inte längre länkad till de andra tabellerna.
 
 ### Klasser
 
