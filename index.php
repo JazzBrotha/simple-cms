@@ -16,4 +16,6 @@ else {
   $pagesSplit = $pages;
 }
 
+// echo json_encode($pagesSplit);
+
 require VIEW_ROOT . '/home.php';

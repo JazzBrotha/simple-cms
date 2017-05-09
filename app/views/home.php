@@ -1,5 +1,7 @@
 <?php require VIEW_ROOT . '/public/templates/header.php'; ?>
 
+
+
 <header class="masthead" style="background-image:url(<?php echo BASE_URL; ?>/assets/img/home-bg.jpg)">
         <div class="container">
             <div class="row">
@@ -43,7 +45,7 @@
   <?php endif; ?>
 
   <div class="clearfix">
-      <a class="btn btn-secondary float-right" href="#">Older Posts &rarr;</a>
+      <a class="btn btn-secondary float-right" id="older-posts">Older Posts &rarr;</a>
   </div>
 
 </div><!-- /.blog-main -->
@@ -53,3 +55,23 @@
 
 </div><!-- /.container -->
 <?php require VIEW_ROOT . '/public/templates/footer.php'; ?>
+
+
+<!-- <script type="text/javascript" language="javascript">
+
+$(document).ready(function() {
+    $("#older-posts").click(function() { changePostView(); });
+});
+
+function changePostView()
+{
+    jQuery.ajax({
+        type: "POST",
+        url: 'servicios.php',
+        data: {functionname: 'enviaCorreo', arguments: [$(".Txt_Nombre").val(), $(".Txt_Correo").val(), $(".Txt_Pregunta").val()]},
+         success:function(data) {
+        alert(data);
+         }
+    });
+}
+</script> -->
