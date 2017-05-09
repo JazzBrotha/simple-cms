@@ -17,19 +17,31 @@
  <div class="row">
 
 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+
   <?php if (empty($pages)): ?>
-    <p>Sorry, no posts at the moment</p>
+    <h1>No posts at the moment</h1>
   <?php else: ?>
       <?php foreach ($pages as $page): ?>
-        <?php $plainTextBody = strip_tags($page['body']);
+        <?php
+              $plainTextBody = strip_tags($page['body']);
               $summary = substr($plainTextBody, 0, 50);
         ?>
-        <div class="post-preview">
+
+        <div class="post-preview" id="posts">
+            <!--print title-->
           <a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
             <h2 class="post-title"><?php echo escape($page['title']); ?></h2>
+            <!--print summary-->
             <h3 class="post-subtitle"><?php echo $summary ?>...</h3>
           </a>
-          <p class="post-meta">Posted by <a href=""><?php echo $page['user_id']; ?></a> on <?php echo $page['created']; ?></p>
+          <!--print likes-->
+          <p class="post-meta"><span class="border-right"><?php echo Likes::count_likes($page['post_id'], $pdo); ?> Likes </span>
+          <!--print author-->
+          Posted by <a href="<?php echo BASE_URL . '/user.php?user_id=' . $page['user_id'];?>">
+          <?php echo $page['firstname'] . " " . $page['lastname']; ?></a>
+          <!--print dates-->
+          on <?php echo $page['created']; ?></p>
+          <!--print tags-->
           <?php foreach (explode(',',$page['tags']) as $tag): ?>
           <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
           <?php endforeach; ?>
@@ -39,8 +51,8 @@
   <?php endif; ?>
 
   <div class="clearfix">
-                    <a class="btn btn-secondary float-right" href="#">Older Posts &rarr;</a>
-                </div>
+      <a class="btn btn-secondary float-right" id="older-posts" onclick="getSummary(posts)">Older Posts &rarr;</a>
+  </div>
 
 </div><!-- /.blog-main -->
  <hr>

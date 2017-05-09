@@ -39,8 +39,8 @@ $user = $result->fetch();
 if (!$user){
 	echo "Your username or password is incorrect"; 
 } 
-if($user) {
-	
+if($user) {	
+	$_SESSION["loggedin"] = true;
 	$_SESSION["username"]=$user["username"];
 	$_SESSION["user_id"]=$user["user_id"];
 	header('Location: ' . BASE_URL . '/user/list.php');
@@ -49,6 +49,5 @@ if($user) {
 }
 require VIEW_ROOT . '/public/login.php';
 
-	var_dump($_SESSION['username']);
 
 ?>
