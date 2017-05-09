@@ -15,8 +15,10 @@
 
 <div class="container">
  <div class="row">
-
-<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1" id="test">
+   <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 flex-center">
+   <div id="loader"></div>
+ </div>
+<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1" id="posts-container">
 
   <?php if (empty($pages)): ?>
     <h1>No posts at the moment</h1>
@@ -51,7 +53,8 @@
   <?php endif; ?>
 
   <div class="clearfix">
-      <a class="btn btn-secondary float-right" id="older-posts">Older Posts &rarr;</a>
+      <!-- <a class="btn btn-secondary float-left pointer" id="newer-posts">&larr; Newer Posts</a> -->
+      <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
   </div>
 
 </div><!-- /.blog-main -->

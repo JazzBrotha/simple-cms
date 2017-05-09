@@ -70,7 +70,7 @@ class Posts {
             INNER JOIN users
             ON posts.user_id = users.user_id
             ORDER BY post_id DESC
-            LIMIT 20
+            LIMIT 10 OFFSET 10
             ");
         $stmt->execute();
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);

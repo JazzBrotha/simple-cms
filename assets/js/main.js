@@ -21,14 +21,17 @@
 
 
 $('#older-posts').click(function(e) {
+  $('#posts-container').html('');
+  $('#loader').addClass('loader');
   e.preventDefault();
   $.ajax({
     url : 'http://localhost/simple-cms/app/ajax.php',
     type : 'POST',
-    data : {action: 'test'},
+    data : {action: 'older'},
     success : function(data) {
-      var content = $(data).find('div#test').html();
-      $('#test').html(content);
+      $('#loader').removeClass('loader');
+      const postContainer = $(data).find('div#posts-container').html();
+      $('#posts-container').html(postContainer);
     },
     error : function() {
       sweetAlert("Oops...", "Something went wrong!", "error");
