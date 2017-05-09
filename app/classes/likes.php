@@ -1,14 +1,14 @@
 <?php
 
 class Likes {
-    public static function count_likes($postId, $pdo) {
-        $likes = $pdo->prepare(
-        "SELECT COUNT(*) FROM likes
-        WHERE post_id = $postId;");
-        $likes->execute();
-        $result = $likes->fetch(PDO::FETCH_ASSOC);
-        return $result['COUNT(*)'];
-    }
+  public static function count_likes($postId, $pdo) {
+         $likes = $pdo->prepare(
+         "SELECT COUNT(*) FROM likes
+         WHERE post_id = $postId;");
+         $likes->execute();
+         $result = $likes->fetch(PDO::FETCH_ASSOC);
+         return $result['COUNT(*)'];
+     }
 
     public static function add_like($postId, $userId, $pdo) {
         $like = $pdo->prepare(
@@ -41,6 +41,6 @@ class Likes {
             WHERE post_id = $postId AND user_id = $userId;");
         $hasLiked->execute();
         $result = $hasLiked->fetch(PDO::FETCH_ASSOC);
-        return ($result['COUNT(*)'] !== 0);
+        return ($result['COUNT(*)'] > 0);
     }
 }

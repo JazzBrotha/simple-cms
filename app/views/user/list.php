@@ -2,7 +2,7 @@
 <?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
 
   <h2>Your posts</h2>
-  <?php if (empty($pages)): ?>
+  <?php if (empty($userPosts)): ?>
     <p>No posts at the moment.</p>
   <?php else: ?>
     <table class="table table-hover">
@@ -16,13 +16,13 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach($pages as $page): ?>
+        <?php foreach($userPosts as $post): ?>
           <tr>
-            <td><?php echo $page['post_id']; ?></td>
-            <td><a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>"><?php echo escape($page['title']); ?></a></td>
-            <td><?php echo $page['created']; ?></td>
-            <td><a href="<?php echo BASE_URL; ?>/user/edit.php?post_id=<?php echo $page['post_id']; ?>">Edit</a></td>
-            <td><a href="<?php echo BASE_URL; ?>/user/delete.php?post_id=<?php echo $page['post_id']; ?>">Delete</a></td>
+            <td><?php echo $post['post_id']; ?></td>
+            <td><a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $post['post_id']; ?>"><?php echo escape($post['title']); ?></a></td>
+            <td><?php echo $post['created']; ?></td>
+            <td><a href="<?php echo BASE_URL; ?>/user/edit.php?post_id=<?php echo $post['post_id']; ?>">Edit</a></td>
+            <td><a href="<?php echo BASE_URL; ?>/user/delete.php?post_id=<?php echo $post['post_id']; ?>">Delete</a></td>
           </tr>
         <?php endforeach; ?>
       </tbody>

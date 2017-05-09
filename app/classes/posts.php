@@ -3,17 +3,17 @@
 
 class Posts {
     public static function get_all_posts($pdo){
-        $stmt = $pdo->prepare("SELECT 
+        $stmt = $pdo->prepare("SELECT
             posts.post_id,
-            posts.title, 
-            posts.body, 
-            posts.tags, 
-            posts.created, 
+            posts.title,
+            posts.body,
+            posts.tags,
+            posts.created,
             posts.user_id,
-            users.firstname, 
-            users.lastname 
+            users.firstname,
+            users.lastname
             FROM posts
-            INNER JOIN users 
+            INNER JOIN users
             ON posts.user_id = users.user_id");
         $stmt->execute();
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -24,16 +24,16 @@ class Posts {
         $post_id = $_GET['post_id'];
         $page = $pdo->prepare("SELECT
             posts.post_id,
-            posts.title, 
-            posts.body, 
-            posts.tags, 
+            posts.title,
+            posts.body,
+            posts.tags,
             posts.created,
-            posts.updated, 
+            posts.updated,
             posts.user_id,
-            users.firstname, 
+            users.firstname,
             users.lastname  
             FROM posts
-            INNER JOIN users 
+            INNER JOIN users
             ON posts.user_id = users.user_id
             WHERE post_id = :id
             LIMIT 1

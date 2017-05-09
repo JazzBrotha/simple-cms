@@ -3,8 +3,11 @@
 require '../app/start.php';
 require APP_ROOT . '/classes/post.php';
 
-  //Måste ändras till variabeln i Session
-  $userId = 1;
+if (!isset($_SESSION)) {
+  session_start();
+}
+
+$userId = $_SESSION["user_id"];
 
 if (!empty($_POST)) {
 
