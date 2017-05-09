@@ -18,24 +18,23 @@
   //     }
   // });
 //
-// function changePostView(posts) {
-//   $.ajax({
-//       url : 'http://localhost/simple-cms/app/ajax.php',
-//       type : 'POST',
-//       // data : data,
-//       dataType : 'json',
-//       success : function() {
-//         for (const post of posts[1]) {
-//           $('#posts').html("hej");
-//           }
-//
-//       },
-//       error : function() {
-//          sweetAlert("Oops...", "Something went wrong!", "error");
-//       }
-//   });
-//
-// }
+
+
+$('#older-posts').click(function(e) {
+  e.preventDefault();
+  $.ajax({
+    url : 'http://localhost/simple-cms/app/ajax.php',
+    type : 'POST',
+    data : {action: 'test'},
+    success : function(data) {
+      var content = $(data).find('div#test').html();
+      $('#test').html(content);
+    },
+    error : function() {
+      sweetAlert("Oops...", "Something went wrong!", "error");
+    }
+  });
+});
 
 // function getSummary(id)
 // {

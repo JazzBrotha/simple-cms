@@ -1,17 +1,24 @@
 <?php
-// require 'start.php';
-// require 'classes/posts.php';
+require 'start.php';
+require 'classes/posts.php';
+require 'classes/users.php';
+require 'classes/likes.php';
 
-// $pages = Posts::get_all_posts($pdo);
 
-// usort($pages, "sortByDate");
+if(isset($_POST['action']) && !empty($_POST['action'])) {
+  $pages = Posts::get_next_posts($pdo);
+  var_dump($pages);
+}
+
+
+require VIEW_ROOT . '/home.php';
+// if(isset($_POST['action']) && !empty($_POST['action'])) {
+//     $action = $_POST['action'];
+//     switch($action) {
 //
-// $count = count($pages);
-// if ($count > 10) {
-//   $pagesSplit = array_chunk($pages, 10);
+//     }
 // }
-// else {
-//   $pagesSplit = $pages;
-// }
-    // echo json_encode($pages);
+
+
+
 ?>

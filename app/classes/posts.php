@@ -56,4 +56,24 @@ class Posts {
         return $pages;
 
     }
+    public static function get_next_posts($pdo){
+        $stmt = $pdo->prepare("SELECT
+            posts.post_id,
+            posts.title,
+            posts.body,
+            posts.tags,
+            posts.created,
+            posts.user_id,
+            users.firstname,
+            users.lastname
+            FROM posts
+            INNER JOIN users
+            ON posts.user_id = users.user_id
+            ORDER BY post_id DESC
+            LIMIT 20
+            ");
+        $stmt->execute();
+        $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $posts;
+    }
 }

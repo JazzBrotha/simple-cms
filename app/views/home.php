@@ -16,7 +16,7 @@
 <div class="container">
  <div class="row">
 
-<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1" id="test">
 
   <?php if (empty($pages)): ?>
     <h1>No posts at the moment</h1>
