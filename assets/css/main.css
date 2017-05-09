@@ -14,3 +14,7 @@
 .border-white {
     border-color: #FFFFFF;
 }
+
+.thin {
+    font-weight: 400 !important;
+}

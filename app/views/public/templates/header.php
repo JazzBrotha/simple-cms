@@ -50,7 +50,7 @@
                     </li>
                     <?php if ($_SESSION['loggedin']): ?>
                     <li class="nav-item">
-                        <a class="nav-link">Logged in as <?php echo $_SESSION['username']?></a>
+                        <a class="nav-link thin">Logged in as <?php echo $_SESSION['username']?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL . '/user/list.php'?>">Admin panel</a>
