@@ -8,11 +8,16 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
+//check if user is logged in & set the correct user id
+if ($_SESSION['loggedin']) {
+  $userId = $_SESSION["user_id"];
+} else {
+  header('Location: ' . BASE_URL . '/public/login.php?forced=true');
+}
 
-$userId = $_SESSION["user_id"];
 
+//check if update is posted
 if (!empty($_POST)) {
-
   $updateUser = new User($_POST['username'], null, $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['profession'], $_POST['description'], $pdo);
   $updateUser->update_user($userId);
 
@@ -20,10 +25,5 @@ if (!empty($_POST)) {
 
 }
 
-if (!isset($_GET['user_id'])) {
-    header('Location: ' . BASE_URL . '/user/list.php');
-    die();
-}
-
-$user = Users::get_full_user($pdo);
+$user = Users::get_full_user($userId, $pdo);
 require VIEW_ROOT . '/user/edit_user.php';
