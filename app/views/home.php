@@ -39,7 +39,7 @@
           <!--print likes-->
           <p class="post-meta"><span class="border-right"><?php echo Likes::count_likes($page['post_id'], $pdo); ?> Likes </span>
           <!--print author-->
-          Posted by <a href="<?php echo BASE_URL . '/user.php?user_id=' . $page['user_id'];?>">
+          Posted by <a href="<?php echo BASE_URL . '/public/user.php?user_id=' . $page['user_id'];?>">
           <?php echo $page['firstname'] . " " . $page['lastname']; ?></a>
           <!--print dates-->
           on <?php echo $page['created']; ?></p>
