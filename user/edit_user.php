@@ -4,18 +4,12 @@ require '../app/start.php';
 require APP_ROOT . '/classes/users.php';
 require APP_ROOT . '/classes/user.php';
 
-if (!isset($_SESSION)) {
-  session_start();
-}
-
-
 //check if user is logged in & set the correct user id
 if ($_SESSION['loggedin']) {
   $userId = $_SESSION["user_id"];
 } else {
   header('Location: ' . BASE_URL . '/public/login.php?forced=true');
 }
-
 
 //check if update is posted
 if (!empty($_POST)) {

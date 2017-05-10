@@ -2,17 +2,13 @@
 require '../app/start.php';
 require APP_ROOT . '/classes/likes.php';
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
 //if we don't have a query string, send back to index
 if (empty($_GET['post_id'])) {
     header('Location: ' . BASE_URL);
 }
 //If user not logged in, send to login.
 if (!$_SESSION['loggedin']){
-    header('Location: ' . BASE_URL . '/public/login.php?forced=true'); 
+    header('Location: ' . BASE_URL . '/public/login.php?forced=true');
 }
 //if user is logged in...
 if ($_SESSION['loggedin']) {
@@ -30,5 +26,5 @@ if ($_SESSION['loggedin']) {
         Likes::remove_like($post, $userId, $pdo);
     }
     header('Location: ' . BASE_URL . '/page.php?post_id=' . $post);
-    
+
 }
