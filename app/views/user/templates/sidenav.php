@@ -5,7 +5,7 @@
                 <?php
         if ($_SESSION['is_admin']): ?>
         <li class="nav-item">
-          <a class="nav-link" href="#">VIEW ALL POSTS</a>
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/user/admin_list.php">VIEW ALL POSTS</a>
         </li>
         <div class="dropdown-divider"></div>
         <?php endif; ?>

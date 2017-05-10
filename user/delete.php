@@ -6,14 +6,23 @@ require APP_ROOT . '/classes/posts.php';
 
 $userId = $_SESSION['user_id'];
 $postId = $_GET['post_id'];
-//checking user right to delete page
-$hasAccess = Users::has_access($userId, $postId, $pdo);
 
-if ($hasAccess) {
+//checking user right to delete page by ownership...
+$hasAccess = Users::has_access($userId, $postId, $pdo);
+//... or admin
+$isAdmin = $_SESSION['is_admin'];
+
+if ($hasAccess || $isAdmin) {
   Posts::delete_post($postId, $pdo);
-  header('Location: ' . BASE_URL . '/user/list.php?success=deleted');
+  //sending back to admin list view if we came from there
+  if ($_GET['admin']) {
+  header('Location: ' . BASE_URL . '/user/admin_list.php?success=deleted');
+  } else {
+    header('Location: ' . BASE_URL . '/user/list.php?success=deleted');
+  }
+//no access
 } else {
-    header('Location: ' . BASE_URL . '/user/list.php?access=false');
+    header('Location: ' . BASE_URL . '/user/list.php?access=denied');
   die();
 }
 

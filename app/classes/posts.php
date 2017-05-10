@@ -10,6 +10,7 @@ class Posts {
             posts.tags,
             posts.created,
             posts.user_id,
+            users.username,
             users.firstname,
             users.lastname
             FROM posts
