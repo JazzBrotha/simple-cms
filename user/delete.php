@@ -4,10 +4,6 @@ require '../app/start.php';
 require APP_ROOT . '/classes/users.php';
 require APP_ROOT . '/classes/posts.php';
 
-if (!isset($_SESSION)) {
-  session_start();
-}
-
 $userId = $_SESSION['user_id'];
 $postId = $_GET['post_id'];
 //checking user right to delete page

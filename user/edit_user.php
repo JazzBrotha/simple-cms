@@ -4,11 +4,6 @@ require '../app/start.php';
 require APP_ROOT . '/classes/users.php';
 require APP_ROOT . '/classes/user.php';
 
-if (!isset($_SESSION)) {
-  session_start();
-}
-
-
 //check if user is logged in & set the correct user id
 if ($_SESSION['loggedin']) {
   $userId = $_SESSION["user_id"];
