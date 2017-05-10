@@ -52,8 +52,7 @@
       <?php endforeach; ?>
   <?php endif; ?>
 
-  <div class="clearfix">
-      <!-- <a class="btn btn-secondary float-left pointer" id="newer-posts">&larr; Newer Posts</a> -->
+  <div class="clearfix" id="page-navigation">
       <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
   </div>
 

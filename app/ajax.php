@@ -5,18 +5,16 @@ require 'classes/users.php';
 require 'classes/likes.php';
 
 
-if(isset($_POST['action']) && !empty($_POST['action'])) {
+if(isset($_POST['next']) && !empty($_POST['next'])) {
   $pages = Posts::get_next_posts($pdo);
+}
+
+if(isset($_POST['prev']) && !empty($_POST['prev'])) {
+  $pages = Posts::get_prev_posts($pdo);
 }
 
 
 require VIEW_ROOT . '/home.php';
-// if(isset($_POST['action']) && !empty($_POST['action'])) {
-//     $action = $_POST['action'];
-//     switch($action) {
-//
-//     }
-// }
 
 
 
