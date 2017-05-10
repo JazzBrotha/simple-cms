@@ -16,12 +16,23 @@ if (!empty($_POST)) {
 		$checkUser->bindParam(':user', $newUser->username);
 		$checkUser->execute();
 
+		$checkEmail = $pdo->prepare("SELECT email 
+			FROM users 
+			WHERE email = :user");
+		$checkEmail->bindParam(':user', $newUser->email);
+		$checkEmail->execute();
+
 		if ($checkUser->rowCount() > 0) {
-			echo 'Sorry, username already exists';
-		}
-		else {
+			echo '<script type="text/javascript">';
+  			echo 'setTimeout(function () { swal("Sorry, Username already exists");';
+  			echo '}, 1000);</script>';
+		} elseif($checkEmail->rowCount() > 0) {
+			echo '<script type="text/javascript">';
+  			echo 'setTimeout(function () { swal("Sorry, Email already exists");';
+  			echo '}, 1000);</script>';
+		} else {
 			$newUser->store_user();
-	    header('Location: ' . BASE_URL . '/user/list.php');
+	    header('Location: ' . BASE_URL . '/public/login.php?newuser=true');
 		}
 
 }

@@ -15,6 +15,7 @@
     border-color: #FFFFFF;
 }
 
+
 /* loader symbol */
 
 .loader {
@@ -47,4 +48,8 @@
 /* Utility classes */
 .pointer {
   cursor: pointer;
+}
+
+.thin {
+    font-weight: 400 !important;
 }

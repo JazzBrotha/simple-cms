@@ -27,8 +27,6 @@ function bindOldPosts() {
   });
 }
 
-
-
 function bindNewPosts() {
   $('#newer-posts').click(function(e) {
     $('#posts-container').html('');
@@ -50,7 +48,3 @@ function bindNewPosts() {
     });
   });
 }
-
-
-
-// sweetAlert("Sorry...", "Username already exists!", "error");

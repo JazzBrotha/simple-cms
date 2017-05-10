@@ -46,11 +46,10 @@ class Posts {
         return $page;
     }
 
-    //kanske bättre att kolla user id via session än skicka in i funktionen
-    public static function get_user_posts($pdo, $user_id){
+    public static function get_user_posts($pdo, $userId){
         $pages = $pdo->query("SELECT post_id, user_id, title, created
         FROM posts
-        WHERE user_id = $user_id
+        WHERE user_id = $userId
         ORDER BY created DESC
         ")->fetchAll(PDO::FETCH_ASSOC);
         return $pages;
@@ -95,5 +94,12 @@ class Posts {
         $stmt->execute();
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $posts;
+    }
+    public static function delete_post($postId, $pdo){
+        $deletePage = $pdo->prepare(
+        "DELETE FROM posts
+        WHERE post_id = :id
+        ");
+        $deletePage->execute([':id' => $postId]);
     }
 }

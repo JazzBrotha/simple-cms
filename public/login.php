@@ -4,10 +4,6 @@ session_start();
 
 require '../app/start.php';
 
-// if(isset($_POST['submitLogin'])) {
-
-// }
-
 if (!empty($_POST)) {
 require APP_ROOT . '/classes/user.php';
 
