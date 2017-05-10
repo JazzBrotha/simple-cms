@@ -15,8 +15,10 @@
 
 <div class="container">
  <div class="row">
-
-<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+   <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 flex-center">
+   <div id="loader"></div>
+ </div>
+<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1" id="posts-container">
 
   <?php if (empty($pages)): ?>
     <h1>No posts at the moment</h1>
@@ -27,7 +29,7 @@
               $summary = substr($plainTextBody, 0, 50);
         ?>
 
-        <div class="post-preview" id="posts">
+        <div class="post-preview">
             <!--print title-->
           <a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
             <h2 class="post-title"><?php echo escape($page['title']); ?></h2>
@@ -50,8 +52,8 @@
       <?php endforeach; ?>
   <?php endif; ?>
 
-  <div class="clearfix">
-      <a class="btn btn-secondary float-right" id="older-posts" onclick="getSummary(posts)">Older Posts &rarr;</a>
+  <div class="clearfix" id="page-navigation">
+      <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
   </div>
 
 </div><!-- /.blog-main -->

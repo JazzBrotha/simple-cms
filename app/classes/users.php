@@ -11,7 +11,6 @@ class Users {
         $result = $user->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
-
     public static function has_access($userId, $postId, $pdo) {
         $hasAccess = $pdo->prepare(
             "SELECT COUNT(*) FROM posts
