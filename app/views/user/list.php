@@ -17,9 +17,9 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Post id</th>
           <th>Title</th>
           <th>Created</th>
+          <th>Updated</th>
           <th></th>
           <th></th>
         </tr>
@@ -27,9 +27,9 @@
       <tbody>
         <?php foreach($userPosts as $post): ?>
           <tr>
-            <td><?php echo $post['post_id']; ?></td>
             <td><a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $post['post_id']; ?>"><?php echo escape($post['title']); ?></a></td>
             <td><?php echo $post['created']; ?></td>
+            <td><?php if (isset($post['updated'])) echo $post['updated']; ?></td>
             <td><a class="btn btn-info" role="button" href="<?php echo BASE_URL; ?>/user/edit.php?post_id=<?php echo $post['post_id']; ?>">Edit</a></td>
             <td><button class="btn btn-info delete-btn" data-name="<?php echo $post['title'];?>" data-link="<?php echo BASE_URL . '/user/delete.php?post_id=' . $post['post_id']; ?>">Delete</button></td>
           </tr>

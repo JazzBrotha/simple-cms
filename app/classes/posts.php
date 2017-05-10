@@ -47,7 +47,7 @@ class Posts {
     }
 
     public static function get_user_posts($pdo, $userId){
-        $pages = $pdo->query("SELECT post_id, user_id, title, created
+        $pages = $pdo->query("SELECT post_id, user_id, title, created, updated
         FROM posts
         WHERE user_id = $userId
         ORDER BY created DESC

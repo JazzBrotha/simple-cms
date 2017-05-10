@@ -16,3 +16,4 @@ if (!isset($_SESSION['loggedin'])){
 };
 
 require VIEW_ROOT . '/home.php';
+var_dump($_SESSION);

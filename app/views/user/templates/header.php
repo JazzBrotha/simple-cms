@@ -21,15 +21,20 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo BASE_URL; ?>/index.php">< BACK TO BLOG</a>
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/index.php">&#171; BACK TO BLOG</a>
         </li>
       </ul>
         <a class="navbar-brand" href="#">
            <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-           WELCOME :  
+           Welcome,   
            <?php
-           if(isset($_SESSION["username"]))
-            echo $_SESSION["username"]; 
+           if ($_SESSION["loggedin"]) {
+              echo $_SESSION["username"]; 
+              if ($_SESSION['is_admin']) {
+                echo ' (admin)';
+              };
+           }
+
           else {
             echo "Guest";
           }
