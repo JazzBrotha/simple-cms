@@ -14,7 +14,7 @@ if (!empty($_POST)) {
   $insertPage = new Post($userId, $_POST['title'], $_POST['body'], $_POST['tags'], $pdo);
   $insertPage->store_post();
 
-  header('Location: ' . BASE_URL . '/user/list.php');
+  header('Location: ' . BASE_URL . '/user/list.php?success=created');
 }
 
 require VIEW_ROOT . '/user/add.php';

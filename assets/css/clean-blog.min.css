@@ -28,8 +28,8 @@ body {
 
 
 #mainNav {
-    background-color: #333;
-    border-bottom: 1px solid #333;
+    background-color: #222;
+    border-bottom: 1px solid #222;
 }
 
 #mainNav .navbar-brand {
@@ -41,3 +41,16 @@ body {
     color: #fff;
  
 }
+
+h2.post-title::first-letter {
+	text-transform: uppercase;
+}
+
+h3.post-subtitle::first-letter {
+	text-transform: uppercase;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255,255,255,0.9);
+}
+

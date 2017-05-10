@@ -32,7 +32,8 @@ if (!empty($_POST)) {
   			echo '}, 1000);</script>';
 		} else {
 			$newUser->store_user();
-	    header('Location: ' . BASE_URL . '/public/login.php');
+
+	    header('Location: ' . BASE_URL . '/public/login.php?newuser=true');
 		}
 
 }

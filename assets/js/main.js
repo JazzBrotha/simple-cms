@@ -1,30 +1,50 @@
 // jshint esversion:6
-// const loginBtn = document.getElementById('login-button');
-// loginBtn.addEventListener('click', function(e) {
-//   e.preventDefault();
-//   swal('Grattis, du har loggat in!');
-// });
+$(document).ready(function() {
+    bindOldPosts();
+});
 
-function loginError() {
-console.log('hej');
+function bindOldPosts() {
+  $('#older-posts').click(function(e) {
+    $('#posts-container').html('');
+    $('#loader').addClass('loader');
+    e.preventDefault();
+    $.ajax({
+      url : 'http://localhost/simple-cms/app/ajax.php',
+      type : 'POST',
+      data : {next: 'get'},
+      success : function(data) {
+        $('#loader').removeClass('loader');
+        const postContainer = $(data).find('div#posts-container').html();
+        $('#posts-container').html(postContainer);
+        $('#page-navigation').append('<a class="btn btn-secondary float-left pointer" id="newer-posts">&larr; Newer Posts</a>');
+        $('#older-posts').remove();
+        bindNewPosts();
+      },
+      error : function() {
+        sweetAlert("Oops...", "Something went wrong!", "error");
+      }
+    });
+  });
 }
 
-function getSummary(id)
-{
-   $.ajax({
-
-     type: "GET",
-     url: "http://localhost/simple-cms/index.php",
-     data: "id=" + id, // appears as $_GET['id'] @ your backend side
-     success: function(data) {
-           // data is ur summary
-          // $('#summary').html(data);
-          console.log(data);
-     }
-
-   });
-
+function bindNewPosts() {
+  $('#newer-posts').click(function(e) {
+    $('#posts-container').html('');
+    $('#loader').addClass('loader');
+    e.preventDefault();
+    $.ajax({
+      url : 'http://localhost/simple-cms/app/ajax.php',
+      type : 'POST',
+      data : {prev: 'get'},
+      success : function(data) {
+        $('#loader').removeClass('loader');
+        const postContainer = $(data).find('div#posts-container').html();
+        $('#posts-container').html(postContainer);
+        bindOldPosts();
+      },
+      error : function() {
+        sweetAlert("Oops...", "Something went wrong!", "error");
+      }
+    });
+  });
 }
-
-
-// sweetAlert("Sorry...", "Username already exists!", "error");

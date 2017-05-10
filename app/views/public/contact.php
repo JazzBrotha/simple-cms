@@ -1,4 +1,5 @@
-<?php require VIEW_ROOT . '/public/templates/header.php'; ?>
+<?php 
+require VIEW_ROOT . '/public/templates/header.php'; ?>
 
   <header class="masthead" style="background-image:url(<?php echo BASE_URL; ?>/assets/img/contact-bg.jpg)">
       <div class="container">
@@ -61,5 +62,6 @@
 </div>
 
 <hr>
+
 
 <?php require VIEW_ROOT . '/public/templates/footer.php'; ?>
