@@ -60,7 +60,7 @@
                     </li>
                     <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>/public/login.php">Login</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>/public/login.php"> Login  <img src = "<?php echo BASE_URL; ?>/assets/img/loginuser.svg" height = "20" width = "20"> </a>
                     </li>
                     <?php endif; ?>
                 </ul>
