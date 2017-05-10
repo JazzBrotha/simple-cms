@@ -3,10 +3,6 @@ require 'app/start.php';
 require 'app/classes/posts.php';
 require 'app/classes/likes.php';
 
-if (!isset($_SESSION)) {
-    session_start();
-}
-
 if (empty($_GET['post_id'])) {
   $page = false;
 } else {
