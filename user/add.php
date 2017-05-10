@@ -3,10 +3,6 @@
 require '../app/start.php';
 require APP_ROOT . '/classes/post.php';
 
-if (!isset($_SESSION)) {
-  session_start();
-}
-
 $userId = $_SESSION["user_id"];
 
 if (!empty($_POST)) {
