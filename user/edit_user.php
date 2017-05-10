@@ -8,6 +8,7 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
+
 //check if user is logged in & set the correct user id
 if ($_SESSION['loggedin']) {
   $userId = $_SESSION["user_id"];
@@ -26,4 +27,5 @@ if (!empty($_POST)) {
 }
 
 $user = Users::get_full_user($userId, $pdo);
+
 require VIEW_ROOT . '/user/edit_user.php';

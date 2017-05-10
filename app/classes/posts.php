@@ -14,7 +14,10 @@ class Posts {
             users.lastname
             FROM posts
             INNER JOIN users
-            ON posts.user_id = users.user_id");
+            ON posts.user_id = users.user_id
+            ORDER BY post_id DESC
+            LIMIT 10
+            ");
         $stmt->execute();
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $posts;
@@ -31,7 +34,7 @@ class Posts {
             posts.updated,
             posts.user_id,
             users.firstname,
-            users.lastname  
+            users.lastname
             FROM posts
             INNER JOIN users
             ON posts.user_id = users.user_id
@@ -51,6 +54,46 @@ class Posts {
         ")->fetchAll(PDO::FETCH_ASSOC);
         return $pages;
 
+    }
+    public static function get_next_posts($pdo){
+        $stmt = $pdo->prepare("SELECT
+            posts.post_id,
+            posts.title,
+            posts.body,
+            posts.tags,
+            posts.created,
+            posts.user_id,
+            users.firstname,
+            users.lastname
+            FROM posts
+            INNER JOIN users
+            ON posts.user_id = users.user_id
+            ORDER BY post_id DESC
+            LIMIT 10 OFFSET 10
+            ");
+        $stmt->execute();
+        $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $posts;
+    }
+    public static function get_prev_posts($pdo){
+        $stmt = $pdo->prepare("SELECT
+            posts.post_id,
+            posts.title,
+            posts.body,
+            posts.tags,
+            posts.created,
+            posts.user_id,
+            users.firstname,
+            users.lastname
+            FROM posts
+            INNER JOIN users
+            ON posts.user_id = users.user_id
+            ORDER BY post_id DESC
+            LIMIT 10
+            ");
+        $stmt->execute();
+        $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $posts;
     }
     public static function delete_post($postId, $pdo){
         $deletePage = $pdo->prepare(
