@@ -17,7 +17,7 @@ if (!empty($_POST)) {
   $updateUser = new User($_POST['username'], null, $_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['profession'], $_POST['description'], $pdo);
   $updateUser->update_user($userId);
 
-  header('Location: ' . BASE_URL . '/user/list.php?updated=true');
+  header('Location: ' . BASE_URL . '/user/list.php?success=updated');
 
 }
 

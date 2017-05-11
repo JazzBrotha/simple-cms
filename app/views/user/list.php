@@ -31,7 +31,7 @@
             <td><?php echo $post['created']; ?></td>
             <td><?php if (isset($post['updated'])) echo $post['updated']; ?></td>
             <td><a class="btn btn-info" role="button" href="<?php echo BASE_URL; ?>/user/edit.php?post_id=<?php echo $post['post_id']; ?>">Edit</a></td>
-            <td><button class="btn btn-info delete-btn" data-name="<?php echo $post['title'];?>" data-link="<?php echo BASE_URL . '/user/delete.php?post_id=' . $post['post_id']; ?>">Delete</button></td>
+            <td><button class="btn btn-info delete-btn pointer" data-name="<?php echo $post['title'];?>" data-link="<?php echo BASE_URL . '/user/delete.php?post_id=' . $post['post_id']; ?>">Delete</button></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
