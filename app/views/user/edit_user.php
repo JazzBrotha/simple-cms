@@ -43,7 +43,7 @@
           </form>
         </div>
         <div class="container">
-              <a class="btn btn-danger" role="button" data-link="<?php echo BASE_URL; ?>/user/delete_user.php" id="delete-user-btn">Delete account</a>
+              <button class="btn btn-danger" role="button" data-link="<?php echo BASE_URL; ?>/user/delete_user.php" id="delete-user-btn">Delete account</button>
             </div>
 
 <?php require VIEW_ROOT . '/user/templates/footer.php'; ?>
