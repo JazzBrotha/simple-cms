@@ -11,7 +11,11 @@ if (empty($_GET['post_id'])) {
 
   if ($page) {
     $page['created'] = new DateTime($page['created']);
-    $page['likes'] = $LIKES->count_likes($_GET['post_id']);
+
+    $likeCount = $LIKES->count_likes();
+    $likeCount->execute([':postId' => $_GET['post_id']]);
+    $page['likes'] = $likeCount->fetch(PDO::FETCH_ASSOC)['COUNT(*)'];
+
 
     if ($_SESSION['loggedin']){
       //returns true or false

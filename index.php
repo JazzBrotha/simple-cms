@@ -5,6 +5,10 @@ require 'app/classes/users.php';
 require 'app/classes/likes.php';
 
 $pages = $POSTS->get_all_posts();
+$likeCount = $LIKES->count_likes();
+
+         
+// echo $LIKES->count_likes($page['post_id']); 
 
 //checking at index if user is logged in to display navbar correctly etc.
 if (!isset($_SESSION['loggedin'])){

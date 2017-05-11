@@ -9,12 +9,7 @@ class Posts {
     }
     public function get_all_posts(){
         $stmt = $this->pdo->prepare("SELECT
-            posts.post_id,
-            posts.title,
-            posts.body,
-            posts.tags,
-            posts.created,
-            posts.user_id,
+            posts.*,
             users.username,
             users.firstname,
             users.lastname
@@ -32,13 +27,7 @@ class Posts {
     public function get_full_post() {
         $post_id = $_GET['post_id'];
         $page = $this->pdo->prepare("SELECT
-            posts.post_id,
-            posts.title,
-            posts.body,
-            posts.tags,
-            posts.created,
-            posts.updated,
-            posts.user_id,
+            posts.*,
             users.firstname,
             users.lastname
             FROM posts

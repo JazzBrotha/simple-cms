@@ -32,7 +32,7 @@
                     <?php echo $page['firstname'] . " " . $page['lastname'] ?></a> 
                     
                     <!--print dates-->
-                    on <?php echo $page['created']->format('jS M Y'); ?></span>
+                    on <?php echo $page['created']->format('M jS Y'); ?></span>
                   </div>
                   <?php if ($page['updated'] !== null) { ?>
                   <span class="meta">Last updated on <?php echo $page['updated']->format('jS M Y h:i a'); ?></span>

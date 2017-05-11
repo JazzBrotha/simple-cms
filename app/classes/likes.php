@@ -5,13 +5,10 @@ class Likes {
     public function __CONSTRUCT($pdo){
         $this->pdo = $pdo;
     }
-  public function count_likes($postId) {
-         $likes = $this->pdo->prepare(
+  public function count_likes() {
+         return $this->pdo->prepare(
          "SELECT COUNT(*) FROM likes
-         WHERE post_id = $postId;");
-         $likes->execute();
-         $result = $likes->fetch(PDO::FETCH_ASSOC);
-         return $result['COUNT(*)'];
+         WHERE post_id = :postId;");
      }
 
     public function add_like($postId, $userId) {
