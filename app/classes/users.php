@@ -21,4 +21,12 @@ class Users {
         $result = $hasAccess->fetch(PDO::FETCH_ASSOC);
         return ($result['COUNT(*)'] > 0);
     }
+    public static function delete_user($userId, $pdo){
+        $deleteUser = $pdo->prepare(
+        "DELETE
+        FROM users
+        WHERE user_id = :id
+        ");
+        $deleteUser->execute([':id' => $userId]);
+    }
 }
