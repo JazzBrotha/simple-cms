@@ -10,8 +10,8 @@
       <div class="alert alert-danger" role="alert">Acess was <?php echo $_GET['access'] . '.';?></div>
   <?php endif ?>
 
-  <h2>Your posts</h2>
-  <?php if (empty($userPosts)): ?>
+  <h2>All posts</h2>
+  <?php if (empty($allPosts)): ?>
     <p>No posts at the moment.</p>
   <?php else: ?>
     <table class="table table-hover">
@@ -20,18 +20,18 @@
           <th>Title</th>
           <th>Created</th>
           <th>Updated</th>
-          <th></th>
+          <th>User</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <?php foreach($userPosts as $post): ?>
+        <?php foreach($allPosts as $post): ?>
           <tr>
             <td><a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $post['post_id']; ?>"><?php echo escape($post['title']); ?></a></td>
             <td><?php echo $post['created']; ?></td>
             <td><?php if (isset($post['updated'])) echo $post['updated']; ?></td>
-            <td><a class="btn btn-info" role="button" href="<?php echo BASE_URL; ?>/user/edit.php?post_id=<?php echo $post['post_id']; ?>">Edit</a></td>
-            <td><button class="btn btn-info delete-btn pointer" data-name="<?php echo $post['title'];?>" data-link="<?php echo BASE_URL . '/user/delete.php?post_id=' . $post['post_id']; ?>">Delete</button></td>
+            <td><?php echo $post['username']; ?></td>
+            <td><button class="btn btn-info delete-btn pointer" data-name="<?php echo $post['title'];?>" data-link="<?php echo BASE_URL . '/user/delete.php?post_id=' . $post['post_id'] . '&admin=true'; ?>">Delete</button></td>
           </tr>
         <?php endforeach; ?>
       </tbody>

@@ -34,6 +34,7 @@ if (!$user){
 }
 if($user) {
 	$_SESSION["loggedin"] = true;
+	$_SESSION["is_admin"] = $user["is_admin"];
 	$_SESSION["username"]=$user["username"];
 	$_SESSION["user_id"]=$user["user_id"];
 	header('Location: ' . BASE_URL . '/user/list.php');

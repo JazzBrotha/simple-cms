@@ -33,7 +33,7 @@
                             <input type="text" name="profession" class="form-control" maxlength="30" placeholder="What do you do?">
                         </div>
                         <div class="form-group">
-                            <label for="description">Description</label>
+                            <label for="description">Presentation</label>
                             <textarea name="description" class="form-control" rows="3" maxlength="200" placeholder="Tell us something about yourself!"></textarea>
                         </div>
                         <div class="form-group">
