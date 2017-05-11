@@ -1,8 +1,12 @@
 <?php
 
 class Likes {
-  public static function count_likes($postId, $pdo) {
-         $likes = $pdo->prepare(
+    public $pdo;
+    public function __CONSTRUCT($pdo){
+        $this->pdo = $pdo;
+    }
+  public function count_likes($postId) {
+         $likes = $this->pdo->prepare(
          "SELECT COUNT(*) FROM likes
          WHERE post_id = $postId;");
          $likes->execute();
@@ -10,8 +14,8 @@ class Likes {
          return $result['COUNT(*)'];
      }
 
-    public static function add_like($postId, $userId, $pdo) {
-        $like = $pdo->prepare(
+    public function add_like($postId, $userId) {
+        $like = $this->pdo->prepare(
             "INSERT INTO likes
             (post_id, user_id)
             VALUES (:postId, :userId)"
@@ -22,8 +26,8 @@ class Likes {
         ]);
     }
 
-    public static function remove_like($postId, $userId, $pdo) {
-        $like = $pdo->prepare(
+    public function remove_like($postId, $userId) {
+        $like = $this->pdo->prepare(
             "DELETE FROM likes
             WHERE post_id = :postId
             AND user_id = :userId;"
@@ -35,8 +39,8 @@ class Likes {
     }
 
     //returns true if post is liked by user and false if not
-    public static function check_like($postId, $userId, $pdo) {
-        $hasLiked = $pdo->prepare(
+    public function check_like($postId, $userId) {
+        $hasLiked = $this->pdo->prepare(
             "SELECT COUNT(*) FROM likes
             WHERE post_id = $postId AND user_id = $userId;");
         $hasLiked->execute();
@@ -44,3 +48,5 @@ class Likes {
         return ($result['COUNT(*)'] > 0);
     }
 }
+
+$LIKES = new Likes($pdo);

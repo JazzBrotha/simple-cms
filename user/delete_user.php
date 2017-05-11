@@ -4,7 +4,7 @@ require APP_ROOT . '/classes/users.php';
 
 $userId = $_SESSION["user_id"];
 
-$user = Users::delete_user($userId, $pdo);
+$user = $USERS->delete_user($userId);
 
 session_unset();
 session_destroy();

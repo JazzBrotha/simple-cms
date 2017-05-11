@@ -1,9 +1,14 @@
 <?php
+
 //Class Posts makes selections of posts from the DB
 
 class Posts {
-    public static function get_all_posts($pdo){
-        $stmt = $pdo->prepare("SELECT
+    public $pdo;
+    public function __CONSTRUCT($pdo) {
+        $this->pdo = $pdo;
+    }
+    public function get_all_posts(){
+        $stmt = $this->pdo->prepare("SELECT
             posts.post_id,
             posts.title,
             posts.body,
@@ -24,9 +29,9 @@ class Posts {
         return $posts;
     }
 
-    public static function get_full_post($pdo) {
+    public function get_full_post() {
         $post_id = $_GET['post_id'];
-        $page = $pdo->prepare("SELECT
+        $page = $this->pdo->prepare("SELECT
             posts.post_id,
             posts.title,
             posts.body,
@@ -47,8 +52,8 @@ class Posts {
         return $page;
     }
 
-    public static function get_user_posts($pdo, $userId){
-        $pages = $pdo->query("SELECT post_id, user_id, title, created, updated, tags, body
+    public function get_user_posts($userId){
+        $pages = $this->pdo->query("SELECT post_id, user_id, title, created, updated, tags, body
         FROM posts
         WHERE user_id = $userId
         ORDER BY created DESC
@@ -56,8 +61,8 @@ class Posts {
         return $pages;
 
     }
-    public static function get_next_posts($pdo){
-        $stmt = $pdo->prepare("SELECT
+    public function get_next_posts(){
+        $stmt = $this->pdo->prepare("SELECT
             posts.post_id,
             posts.title,
             posts.body,
@@ -76,8 +81,8 @@ class Posts {
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $posts;
     }
-    public static function get_prev_posts($pdo){
-        $stmt = $pdo->prepare("SELECT
+    public function get_prev_posts(){
+        $stmt = $this->pdo->prepare("SELECT
             posts.post_id,
             posts.title,
             posts.body,
@@ -96,11 +101,13 @@ class Posts {
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $posts;
     }
-    public static function delete_post($postId, $pdo){
-        $deletePage = $pdo->prepare(
+    public function delete_post($postId){
+        $deletePage = $this->pdo->prepare(
         "DELETE FROM posts
         WHERE post_id = :id
         ");
         $deletePage->execute([':id' => $postId]);
     }
 }
+
+$POSTS = new Posts($pdo);

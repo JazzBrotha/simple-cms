@@ -6,7 +6,7 @@
             <?php if(isset($_GET['forced'])): ?>
                 <div class="alert alert-warning" role="alert">You need to log in to do that.</div>
             <?php endif ?>
-            <?php if(!empty($_GET) && $_GET['newuser']): ?>
+            <?php if(isset($_GET['newuser'])): ?>
                 <div class="alert alert-success" role="alert">Your account was created. Please log in.</div>
             <?php endif ?>
             <h2 class="text-center">Login</h2>

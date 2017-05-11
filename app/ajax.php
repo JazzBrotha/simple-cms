@@ -6,11 +6,11 @@ require 'classes/likes.php';
 
 
 if(isset($_POST['next']) && !empty($_POST['next'])) {
-  $pages = Posts::get_next_posts($pdo);
+  $pages = $POSTS->get_next_posts();
 }
 
 if(isset($_POST['prev']) && !empty($_POST['prev'])) {
-  $pages = Posts::get_prev_posts($pdo);
+  $pages = $POSTS->get_prev_posts();
 }
 
 

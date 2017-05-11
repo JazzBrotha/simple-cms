@@ -37,7 +37,7 @@
             <h3 class="post-subtitle"><?php echo $summary ?>...</h3>
           </a>
           <!--print likes-->
-          <p class="post-meta"><span class="border-right"><?php echo Likes::count_likes($page['post_id'], $pdo); ?> Likes </span>
+          <p class="post-meta"><span class="border-right"><?php echo $LIKES->count_likes($page['post_id']); ?> Likes </span>
           <!--print author-->
           Posted by <a href="<?php echo BASE_URL . '/public/user.php?user_id=' . $page['user_id'];?>">
           <?php echo $page['firstname'] . " " . $page['lastname']; ?></a>

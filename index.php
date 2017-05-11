@@ -4,7 +4,7 @@ require 'app/classes/posts.php';
 require 'app/classes/users.php';
 require 'app/classes/likes.php';
 
-$pages = Posts::get_all_posts($pdo);
+$pages = $POSTS->get_all_posts();
 
 //checking at index if user is logged in to display navbar correctly etc.
 if (!isset($_SESSION['loggedin'])){

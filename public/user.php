@@ -11,7 +11,7 @@ if (!isset($_GET['user_id'])) {
 $userId = $_GET['user_id'];
 
 
-$posts = Posts::get_user_posts($pdo, $userId);
-$user = Users::get_full_user($userId, $pdo);
+$posts = $POSTS->get_user_posts($userId);
+$user = $USERS->get_full_user($userId);
 
 require VIEW_ROOT . '/public/user.php';

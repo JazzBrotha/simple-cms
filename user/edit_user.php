@@ -20,6 +20,6 @@ if (!empty($_POST)) {
 
 }
 
-$user = Users::get_full_user($userId, $pdo);
+$user = $USERS->get_full_user($userId);
 
 require VIEW_ROOT . '/user/edit_user.php';
