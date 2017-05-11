@@ -1,14 +1,16 @@
 <?php require VIEW_ROOT . '/user/templates/header.php'; ?>
 <?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
-
-<div class="container">
-
+ <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-xs-12">
   <?php if(isset($_GET['success'])): ?>
       <div class="alert alert-success" role="alert">Post was successfully <?php echo $_GET['success'] . '!'; ?></div>
   <?php endif ?>
   <?php if (isset($_GET['access'])): ?>
       <div class="alert alert-danger" role="alert">Acess was <?php echo $_GET['access'] . '.';?></div>
   <?php endif ?>
+
 
   <h2>Your posts</h2>
   <?php if (empty($userPosts)): ?>
@@ -17,27 +19,41 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Post id</th>
           <th>Title</th>
           <th>Created</th>
+          <th>Updated</th>
           <th></th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <?php foreach($userPosts as $post): ?>
-          <tr>
-            <td><?php echo $post['post_id']; ?></td>
+          <tr scope ="row">
             <td><a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $post['post_id']; ?>"><?php echo escape($post['title']); ?></a></td>
             <td><?php echo $post['created']; ?></td>
+            <td><?php if (isset($post['updated'])) echo $post['updated']; ?></td>
             <td><a class="btn btn-info" role="button" href="<?php echo BASE_URL; ?>/user/edit.php?post_id=<?php echo $post['post_id']; ?>">Edit</a></td>
-            <td><button class="btn btn-info delete-btn" data-name="<?php echo $post['title'];?>" data-link="<?php echo BASE_URL . '/user/delete.php?post_id=' . $post['post_id']; ?>">Delete</button></td>
+            <td><button class="btn btn-info delete-btn pointer" data-name="<?php echo $post['title'];?>" data-link="<?php echo BASE_URL . '/user/delete.php?post_id=' . $post['post_id']; ?>">Delete</button></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
     </table>
+    </div>
+    </div>
   <?php endif; ?>
-</div>
+
+    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+
+    </div>
+
+
+
 <!--script for sweet-alert popups on delete-->
 <script src="<?php echo BASE_URL?>/assets/js/delete-alerts.js"></script>
 

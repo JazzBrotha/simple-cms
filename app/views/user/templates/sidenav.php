@@ -1,25 +1,45 @@
-<div id="wrapper">
-<div class="container-fluid">
-  <div class="row">
-    <nav class="col-xs-6 col-sm-2 bg-inverse sidebar">
-    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-      <ul class="nav flex-column">
+    <div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+          <li class="sidebar-brand text-white">
+           Welcome,   
+           <?php
+           if ($_SESSION["loggedin"]) {
+              echo $_SESSION["username"]; 
+            if ($_SESSION['is_admin']) {
+                echo ' (admin)';
+              };
+           }
+          else {
+            echo "Guest";
+          }
+           ?>
+        </li>
+          <?php
+        if ($_SESSION['is_admin']): ?>
         <li class="nav-item">
-          <a class="nav-link text-white" href="<?php echo BASE_URL; ?>/user/list.php">VIEW POSTS <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/user/admin_list.php">VIEW ALL POSTS</a>
+        </li>
+        <div class="dropdown-divider"></div>
+        <?php endif; ?>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/user/list.php">VIEW YOUR POSTS<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?php echo BASE_URL; ?>/user/add.php">CREATE POST</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo BASE_URL; ?>/user/edit_user.php">EDIT PROFILE</a>
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/user/edit_user.php">EDIT YOUR PROFILE</a>
         </li>
-      <li class="nav-item">
-          <a class="nav-link" href="<?php echo BASE_URL; ?>/public/logout.php">LOG OUT</a>
+          <li>
+            <a class="nav-link back-blog" href="<?php echo BASE_URL; ?>/index.php">&#171; BACK TO BLOG</a>
         </li>
-      </ul>
-    </nav>
-    </div>
-
-    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+          <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/public/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> LOG OUT</a>
+        </li>
+            </ul>
+        </div>
 
 

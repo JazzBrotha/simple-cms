@@ -8,33 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL?>/assets/css/dashboard.css">
     <link rel="stylesheet" href="<?php echo BASE_URL?>/assets/css/main.css">
     <title>Front End Blog</title>
 </head>
 <body>
-  <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
-    <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo BASE_URL; ?>/index.php">< BACK TO BLOG</a>
-        </li>
-      </ul>
-        <a class="navbar-brand" href="#">
-           <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-           WELCOME :  
-           <?php
-           if(isset($_SESSION["username"]))
-            echo $_SESSION["username"]; 
-          else {
-            echo "Guest";
-          }
-           ?>
-          
-         </a>
-    </div>
-  </nav>

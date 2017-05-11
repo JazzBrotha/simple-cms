@@ -48,3 +48,25 @@ function bindNewPosts() {
     });
   });
 }
+
+$('#delete-user-btn').click(function(e) {
+  e.preventDefault();
+  swal({
+    title: 'Are you sure you want to delete your account?',
+    text: "You won't be able to recover it.",
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it.'
+  }).then(function () {
+    swal(
+      'Deleted.',
+      'Your account has been deleted.',
+      'success'
+    );
+    window.location.href = e.target.getAttribute('data-link');
+  });
+});
+
+

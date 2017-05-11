@@ -162,7 +162,7 @@ $pdo = new PDO(
 * [Bootstrap 4 alpha](https://v4-alpha.getbootstrap.com/)
 * [TinyMCE](https://www.tinymce.com/docs/)
 * [HTML Purifier](http://htmlpurifier.org)
-* [Sweet Alert](http://t4t5.github.io/sweetalert/)
+* [Sweet Alert](https://limonte.github.io/sweetalert2/)
 
 ## Länkar
 

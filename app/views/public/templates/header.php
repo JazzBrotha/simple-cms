@@ -54,7 +54,11 @@
                         <a class="nav-link" href="<?php echo BASE_URL . '/user/list.php'?>">Admin panel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link thin">Logged in as <?php echo $_SESSION['username']?></a>
+                        <a class="nav-link thin">Logged in as <?php echo $_SESSION['username']?>
+                        <?php if ($_SESSION['is_admin']): ?>
+                        (admin)
+                        <?php endif; ?>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL; ?>/public/logout.php">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>

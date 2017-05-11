@@ -4,7 +4,7 @@
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding-top: 50px;
+  padding-top: 0px;
 }
 
 /*
@@ -208,3 +208,27 @@ h1 {
         margin-right: 0;
     }
 }
+.sidebar-brand {
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+}
+
+.back-blog {
+  margin-top: 15rem;
+}
+
+a:active {
+    background-color: #012232;
+}
+
+.sidebar-nav li a:active {
+    background-color: #fff;
+}
+/*#menu-toggle {
+  background-color: #fff;
+  border-radius: 0;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+}
+*/
