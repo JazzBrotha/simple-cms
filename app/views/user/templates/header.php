@@ -13,7 +13,7 @@
     <title>Front End Blog</title>
 </head>
 <body>
-  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-black">
+  <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
     <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
