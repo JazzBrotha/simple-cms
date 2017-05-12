@@ -6,7 +6,7 @@
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                     <div class="site-heading">
                         <h1>Front End Blog</h1>
-                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                        <span class="subheading">A Blog About Front End</span>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
   <?php endif; ?>
 
   <div class="clearfix" id="page-navigation">
-      <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
+      <a class="btn btn-secondary float-right pointer" id="older-posts" data-link="2">Older Posts &rarr;</a>
   </div>
 
 </div><!-- /.blog-main -->

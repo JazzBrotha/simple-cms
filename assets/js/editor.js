@@ -30,7 +30,7 @@
       ],
       content_css: [
           'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css',
-          '../assets/css/blog.css',
+          '../assets/css/clean-blog.min.css',
           '../assets/css/main.css'
       ],
       plugin_preview_width: 1000,

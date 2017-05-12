@@ -1,6 +1,9 @@
 <?php require VIEW_ROOT . '/user/templates/header.php'; ?>
 <?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
-
+<div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-xs-12">
 <div class="container">
     <h2>Edit user</h2>
     <form method="POST" action="<?php echo BASE_URL . '/user/edit_user.php?user_id=' . $userId ?>" class="d-flex mt-2">
@@ -43,7 +46,18 @@
           </form>
         </div>
         <div class="container">
-              <a class="btn btn-danger" role="button" data-link="<?php echo BASE_URL; ?>/user/delete_user.php" id="delete-user-btn">Delete account</a>
+              <button class="btn btn-danger" role="button" data-link="<?php echo BASE_URL; ?>/user/delete_user.php" id="delete-user-btn">Delete account</button>
             </div>
+
+    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+
+    </div>
+
 
 <?php require VIEW_ROOT . '/user/templates/footer.php'; ?>

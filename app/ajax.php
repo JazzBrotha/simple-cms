@@ -6,6 +6,7 @@ require 'classes/likes.php';
 
 
 if(isset($_POST['next']) && !empty($_POST['next'])) {
+  var_dump($_POST['next']);
   $pages = Posts::get_next_posts($pdo);
 }
 
