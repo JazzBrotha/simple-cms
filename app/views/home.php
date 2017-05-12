@@ -6,7 +6,7 @@
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                     <div class="site-heading">
                         <h1>Front End Blog</h1>
-                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                        <span class="subheading">A Blog About Front End</span>
                     </div>
                 </div>
             </div>

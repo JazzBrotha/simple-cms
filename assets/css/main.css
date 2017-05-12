@@ -66,6 +66,11 @@
     font-weight: 400 !important;
 }
 
+#mainNav {
+    background-color: #222;
+    border-bottom: 1px solid #222;
+}
+
 
 /*profile pic*/
 

@@ -1,6 +1,11 @@
 <?php require VIEW_ROOT . '/user/templates/header.php'; ?>
 <?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
 
+<div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-xs-12">
+
 <div class="container">
 
   <?php if(isset($_GET['success'])): ?>
@@ -38,6 +43,16 @@
     </table>
   <?php endif; ?>
 </div>
+
+    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+
 <!--script for sweet-alert popups on delete-->
 <script src="<?php echo BASE_URL?>/assets/js/delete-alerts.js"></script>
 

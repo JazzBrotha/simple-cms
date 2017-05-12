@@ -68,3 +68,5 @@ $('#delete-user-btn').click(function(e) {
     window.location.href = e.target.getAttribute('data-link');
   });
 });
+
+
