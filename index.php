@@ -3,7 +3,6 @@ require 'app/start.php';
 require 'app/classes/posts.php';
 require 'app/classes/users.php';
 require 'app/classes/likes.php';
-
 $pages = $POSTS->get_all_posts();
 $likeCount = $LIKES->count_likes();
 

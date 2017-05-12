@@ -50,7 +50,7 @@
                     </li>
                     <?php if ($_SESSION['loggedin']): ?>
                     <li class="nav-item">
-                        <a class="nav-link thin">Logged in as <?php echo $_SESSION['username']?>
+                        <a class="nav-link thin" href="<?php echo BASE_URL . '/public/user.php?user_id=' . $_SESSION['user_id'];?>">Logged in as <?php echo $_SESSION['username']?>
                         <?php if ($_SESSION['is_admin']): ?>
                         (admin)
                         <?php endif; ?>
