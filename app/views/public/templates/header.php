@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo BASE_URL?>/assets/css/main.css">
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +40,7 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
             </button>
-            <a class="navbar-brand" href="<?php echo BASE_URL; ?>/index.php">Home</a>
+            <a class="navbar-brand" href="<?php echo BASE_URL; ?>/index.php"> <i class="fa fa-home" aria-hidden="true"></i> Home</a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -50,6 +51,9 @@
                     </li>
                     <?php if ($_SESSION['loggedin']): ?>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo BASE_URL . '/user/list.php'?>">Admin panel</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link thin" href="<?php echo BASE_URL . '/public/user.php?user_id=' . $_SESSION['user_id'];?>">Logged in as <?php echo $_SESSION['username']?>
                         <?php if ($_SESSION['is_admin']): ?>
                         (admin)
@@ -57,14 +61,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL . '/user/list.php'?>">Admin panel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>/public/logout.php">Logout</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>/public/logout.php">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
                     </li>
                     <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>/public/login.php">Login</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>/public/login.php"> Login <i class="fa fa-sign-in" aria-hidden="true"></i> </a>
                     </li>
                     <?php endif; ?>
                 </ul>

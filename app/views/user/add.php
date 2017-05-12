@@ -2,6 +2,11 @@
 <?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
 <?php require APP_ROOT . '/password.php'; ?>
 
+ <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-xs-6">
+
 <!--JS for editor-->
 <script src="<?php echo 'https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=' . $mce_key; ?>"></script>
 <script src="<?php echo BASE_URL . '/assets/js/editor.js' ?>"></script>
@@ -28,5 +33,14 @@
         </div>
     </form>
 </div>
+
+    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
 
 <?php require VIEW_ROOT . '/user/templates/footer.php'; ?>
