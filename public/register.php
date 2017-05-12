@@ -8,7 +8,7 @@ if (!empty($_POST)) {
 
 	$encryptpwd = password_hash($password, PASSWORD_DEFAULT);
 
-    $newUser = new User($_POST["username"], $encryptpwd, $_POST["firstname"], $_POST["lastname"], $_POST["email"], $_POST["profession"], $_POST["description"], $pdo);
+    $newUser = new User($_POST["username"], $encryptpwd, $_POST["firstname"], $_POST["lastname"], $_POST["email"], $_POST["profession"], $_POST["picture"], $_POST["description"], $pdo);
 		$checkUser = $pdo->prepare("SELECT username
 				FROM users
 				WHERE username = :user

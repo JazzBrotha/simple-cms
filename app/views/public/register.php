@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <h2 class="text-center">Create account</h2>
-                <form method="POST" action="<?php BASE_URL . '/public/register.php'?>" class="d-flex mt-2">
+                <form method="POST" action="<?php BASE_URL . '/public/register.php'?>" class="d-flex mt-2" autocomplete="off">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="username">Choose a username</label>
@@ -31,6 +31,10 @@
                         <div class="form-group">
                             <label for="profession">Profession</label>
                             <input type="text" name="profession" class="form-control" maxlength="30" placeholder="What do you do?">
+                        </div>
+                        <div class="form-group">
+                            <label for="picture">Profile pic URL</label>
+                            <input type="text" name="picture" class="form-control" maxlength="200" placeholder="http://www.example/image.jpg">
                         </div>
                         <div class="form-group">
                             <label for="description">Presentation</label>
