@@ -98,3 +98,10 @@
         padding: 100px 0 !important;
     }
 }
+
+
+/*admin side panel*/
+
+.active-page {
+    color: #fff!important;
+}
