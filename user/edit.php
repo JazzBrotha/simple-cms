@@ -7,7 +7,7 @@ require APP_ROOT . '/classes/users.php';
 
 $userId = $_SESSION['user_id'];
 //checking user right to edit page
-$hasAccess = Users::has_access($userId, $_GET['post_id'], $pdo);
+$hasAccess = $USERS->has_access($userId, $_GET['post_id']);
 
 //if access...
 if ($hasAccess){
@@ -18,7 +18,7 @@ if ($hasAccess){
     header('Location: ' . BASE_URL . '/user/list.php?success=updated');
   }
 
-  $page = Posts::get_full_post($pdo);
+  $page = $POSTS->get_full_post();
   require VIEW_ROOT . '/user/edit.php';
 //no access
 } else {

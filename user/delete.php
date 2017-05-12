@@ -8,12 +8,12 @@ $userId = $_SESSION['user_id'];
 $postId = $_GET['post_id'];
 
 //checking user right to delete page by ownership...
-$hasAccess = Users::has_access($userId, $postId, $pdo);
+$hasAccess = $USERS->has_access($userId, $postId);
 //... or admin
 $isAdmin = $_SESSION['is_admin'];
 
 if ($hasAccess || $isAdmin) {
-  Posts::delete_post($postId, $pdo);
+  $POSTS->delete_post($postId);
   //sending back to admin list view if we came from there
   if ($_GET['admin']) {
   header('Location: ' . BASE_URL . '/user/admin_list.php?success=deleted');

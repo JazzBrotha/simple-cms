@@ -7,15 +7,19 @@ if (empty($_GET['post_id'])) {
   $page = false;
 } else {
 
-  $page = Posts::get_full_post($pdo);
+  $page = $POSTS->get_full_post();
 
   if ($page) {
     $page['created'] = new DateTime($page['created']);
-    $page['likes'] = Likes::count_likes($_GET['post_id'], $pdo);
+
+    $likeCount = $LIKES->count_likes();
+    $likeCount->execute([':postId' => $_GET['post_id']]);
+    $page['likes'] = $likeCount->fetch(PDO::FETCH_ASSOC)['COUNT(*)'];
+
 
     if ($_SESSION['loggedin']){
       //returns true or false
-      $page['user_liked'] = Likes::check_like($_GET['post_id'], $_SESSION['user_id'], $pdo);
+      $page['user_liked'] = $LIKES->check_like($_GET['post_id'], $_SESSION['user_id']);
     } else {
       $page ['user_liked'] = false;
     }

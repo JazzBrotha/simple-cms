@@ -9,9 +9,9 @@ if (!isset($_GET['user_id'])) {
     header('Location: ' . BASE_URL);
 }
 $userId = $_GET['user_id'];
+$likeCount = $LIKES->count_likes();
 
-
-$posts = Posts::get_user_posts($pdo, $userId);
-$user = Users::get_full_user($userId, $pdo);
+$posts = $POSTS->get_user_posts($userId);
+$user = $USERS->get_full_user($userId);
 
 require VIEW_ROOT . '/public/user.php';
