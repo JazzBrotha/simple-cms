@@ -4,55 +4,60 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                 <div class="post-heading">
-                  <?php if (!$page) { ?>
+                    <?php if (!$page) { ?>
                     <h1>No post found, sorry.</h1>
-                  <?php } else { ?>
+                    <?php } else { ?>
 
-                  <!--print title-->
-                    <h1><?php echo escape($page['title']); ?></h1>
-
-                    <!--print tags-->
-                  <?php foreach (explode(',',$page['tags']) as $tag): ?>
-                    <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
-                  <?php endforeach; ?>
-                  
-
-                    <!--print likes-->
-                    <div class="mt-3">
-                    <span class="meta"><span class="border-right border-white"><?php echo $page['likes']?> likes </span>
-                    <?php if ($page['user_liked']):?>
-                    <a href="<?php echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=unlike'; ?>">Unlike</a></span>
-                    <?php else: ?>
-                    <a href="<?php echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=like'; ?>">Like</a></span>
-                    <?php endif; ?> 
-                    </div>
-                    <div class="mt-3">
+                    <!--print title-->
+                    <h1>
+                        <?php echo escape($page['title']); ?>
+                    </h1>
                     <!--print author-->
-                    <span class="meta">Posted by <a href="<?php echo BASE_URL . '/public/user.php?user_id=' . $page['user_id'];?>">
+                    <div class="mt-3">
+                        <span class="meta">Posted by <a href="<?php echo BASE_URL . '/public/user.php?user_id=' . $page['user_id'];?>">
                     <?php echo $page['firstname'] . " " . $page['lastname'] ?></a> 
-                    
+
                     <!--print dates-->
                     on <?php echo $page['created']->format('M jS Y'); ?></span>
-                  </div>
-                  <?php if ($page['updated'] !== null) { ?>
-                  <span class="meta">Last updated on <?php echo $page['updated']->format('jS M Y h:i a'); ?></span>
-                  <?php } ?>
-                  <?php } ?>
+                    </div>
+                    <?php if ($page['updated'] !== null) { ?>
+                    <span class="meta">Last updated on <?php echo $page['updated']->format('jS M Y h:i a'); ?></span>
+                    <?php } ?>
+
+                    <!--print tags-->
+                    <div class="mt-4">
+                        <?php foreach (explode(',',$page['tags']) as $tag): ?>
+                        <a href="<?php echo BASE_URL . '/public/tag.php?tag=' . $tag?>" class="badge badge-pill badge-default">
+                            <?php echo $tag; ?>
+                        </a>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <!--print likes-->
+                    <div class="mt-2">
+                        <span class="meta"><span class="border-right border-white"><i class="fa fa-heart-o" aria-hidden="true"></i>
+                    <?php echo $page['likes']?> </span>
+                        <?php if ($page['user_liked']):?>
+                        <a href="<?php echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=unlike'; ?>">Unlike</a></span>
+                        <?php else: ?>
+                        <a href="<?php echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=like'; ?>">Like</a></span>
+                        <?php endif; ?>
+                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
     </div>
 </header>
-
 <!-- Post Content -->
 <article>
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-      <?php echo $page['body']; ?></div>
-          </div>
-      </div>
-  </article>
-
-   <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <?php echo $page['body']; ?>
+            </div>
+        </div>
+    </div>
+</article>
+<hr>
 <?php require VIEW_ROOT . '/public/templates/footer.php'; ?>

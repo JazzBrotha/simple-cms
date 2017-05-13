@@ -50,6 +50,26 @@ class Posts {
         return $pages;
 
     }
+
+    public function get_tag_posts($tag){
+            $stmt = $this->pdo->prepare("SELECT
+            posts.*,
+            users.username,
+            users.firstname,
+            users.lastname
+            FROM posts
+            INNER JOIN users
+            ON posts.user_id = users.user_id
+            WHERE tags LIKE '%$tag%'
+            ORDER BY post_id DESC;
+            ");
+        $stmt->execute();
+        $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $posts;
+
+    }
+
+
     public function get_next_posts(){
         $stmt = $this->pdo->prepare("SELECT
             posts.post_id,
