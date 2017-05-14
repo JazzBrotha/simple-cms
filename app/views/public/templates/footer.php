@@ -40,5 +40,6 @@
 <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.js"></script>
 <script src="<?php echo BASE_URL?>/assets/js/clean-blog.min.js"></script>
 <script src="<?php echo BASE_URL?>/assets/js/main.js"></script>
+<script src="<?php echo BASE_URL?>/assets/js/ajax.js"></script>
 </body>
 </html>
