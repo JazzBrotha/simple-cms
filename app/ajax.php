@@ -5,16 +5,19 @@ require 'classes/users.php';
 require 'classes/likes.php';
 $likeCount = $LIKES->count_likes();
 
-if(isset($_POST['next']) && !empty($_POST['next'])) {
-  $pages = $POSTS->get_next_posts();
-}
-
-if(isset($_POST['prev']) && !empty($_POST['prev'])) {
-  $pages = $POSTS->get_prev_posts();
-}
-
+$pages = $POSTS->get_all_posts();
 
 require VIEW_ROOT . '/home.php';
+
+// if(isset($_POST['page']) && !empty($_POST['page'])) {
+//   $pageNumber = $_POST['page'];
+//   $offset = $pageNumber * 10;
+//   $posts = $POSTS->get_next_posts();
+//   $posts->bindParam(':page', $offset);
+//   $posts->execute();
+//   $pages = $posts->fetchAll(PDO::FETCH_ASSOC);
+// }
+
 
 
 
