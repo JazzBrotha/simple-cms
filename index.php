@@ -3,8 +3,11 @@ require 'app/start.php';
 require 'app/classes/posts.php';
 require 'app/classes/users.php';
 require 'app/classes/likes.php';
-$pages = $POSTS->get_next_posts();
+
+$pages = $POSTS->get_first_ten_posts();
 $likeCount = $LIKES->count_likes();
+$allPosts = $POSTS->get_all_posts();
+$postNumber = count($allPosts);
 
 
 // echo $LIKES->count_likes($page['post_id']);
