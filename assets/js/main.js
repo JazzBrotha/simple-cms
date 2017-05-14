@@ -57,26 +57,64 @@ function getOlderPosts(postsAmount, postsHtml, data) {
   if (lastPost !== undefined) {
     $('#posts-container').append(
       `<div class="clearfix" id="page-navigation">
+      <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
+      <a class="btn btn-secondary float-left pointer" id="newer-posts">&larr; Newer Posts</a>
+    </div>`
+    );
+  } else {
+    $('#posts-container').append(
+      `<div class="clearfix" id="page-navigation">
       <a class="btn btn-secondary float-left pointer" id="newer-posts">&larr; Newer Posts</a>
     </div>`
     );
   }
-  // $('#page-navigation').append(
-  //   `<a class="btn btn-secondary float-left pointer" id="newer-posts">&larr; Newer Posts</a>`
-  // );
-  // $('#newer-posts').click(() => {
-  //   pageNumber--;
-  //   getNewerPosts(postsAmount, postsHtml, data);
-  // });
+
+  $('#newer-posts').click(() => {
+    pageNumber--;
+    getNewerPosts(postsAmount, postsHtml, data);
+  });
 }
 
 function getNewerPosts(postsAmount, postsHtml, data) {
+  let firstPostNumber, lastPostNumber, lastPost;
+
+  if (pageNumber > 1) {
+    firstPostNumber = postsAmount.toString().charAt(0) * 10;
+    lastPostNumber = pageNumber * 10;
+    lastPost = $(data).find(`.post-preview:eq( ${lastPostNumber} )`).html();
+  } else {
+    firstPostNumber = 0;
+    lastPostNumber = 10;
+    lastPost = $(data).find(`.post-preview:eq( 10 )`).html();
+  }
+
   $('#posts-container').html('');
-  $('#posts-container').html(postsHtml);
-  console.log(pageNumber);
-  $('#page-navigation').append(
-    `<a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>`
-  );
+  for (let i = firstPostNumber; i <= lastPostNumber; i++) {
+    const post = $(data).find(`.post-preview:eq( ${i} )`).html();
+    if (post !== undefined) {
+      $('#posts-container').append(
+        `<div class="post-preview">
+          ${post}
+        </div>
+        <hr>`
+      );
+    }
+  }
+  if (lastPost !== undefined && pageNumber !== 1) {
+    $('#posts-container').append(
+      `<div class="clearfix" id="page-navigation">
+      <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
+      <a class="btn btn-secondary float-left pointer" id="newer-posts">&larr; Newer Posts</a>
+    </div>`
+    );
+  } else {
+    $('#posts-container').append(
+      `<div class="clearfix" id="page-navigation">
+        <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
+    </div>`
+    );
+  }
+
   $('#older-posts').click(() => {
     pageNumber++;
     getOlderPosts(postsAmount, postsHtml, data);
