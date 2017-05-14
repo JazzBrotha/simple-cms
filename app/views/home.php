@@ -67,7 +67,6 @@
                 <?php endif; ?>
 
                 <div class="clearfix" id="page-navigation">
-                    <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
                 </div>
         </div>
         <!-- /.blog-main -->
