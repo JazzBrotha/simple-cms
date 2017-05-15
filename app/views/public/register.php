@@ -1,8 +1,8 @@
 <?php require VIEW_ROOT . '/public/templates/header.php'; ?>
 
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-sm-12">
+        <div class="row justify-content-center">
+            <div class="col-sm-10">
                 <h2 class="text-center">Create account</h2>
                 <form method="POST" action="<?php BASE_URL . '/public/register.php'?>" class="d-flex mt-2" autocomplete="off">
                     <div class="col-md-6">

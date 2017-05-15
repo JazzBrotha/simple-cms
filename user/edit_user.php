@@ -3,6 +3,7 @@
 require '../app/start.php';
 require APP_ROOT . '/classes/users.php';
 require APP_ROOT . '/classes/user.php';
+$currentPage = 'edit_user.php';
 
 //check if user is logged in & set the correct user id
 if ($_SESSION['loggedin']) {

@@ -1,16 +1,16 @@
 <?php require VIEW_ROOT . '/public/templates/header.php'; ?>
 
 <header class="masthead" style="background-image:url(<?php echo BASE_URL; ?>/assets/img/home-bg.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                    <div class="site-heading">
-                        <h1>Front End Blog</h1>
-                        <span class="subheading">A Blog About Front End</span>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="site-heading">
+                    <h1>Front End Blog</h1>
+                    <span class="subheading">A Blog About Front End</span>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </header>
 
@@ -37,29 +37,32 @@
                         </h2>
                         <!--print summary-->
                         <h3 class="post-subtitle">
-                        <?php echo $summary ?>...</h3>
+                            <?php echo $summary ?>...</h3>
                     </a>
-                    <!--print likes-->
-                    <p class="post-meta"><span class="border-right">
-                    <?php
-                        $likeCount->execute([':postId' => $page['post_id']]);
-                        $res = $likeCount->fetch(PDO::FETCH_ASSOC);
-                        echo $res['COUNT(*)'];
-                    ?> Likes </span>
-                        <!--print author-->
+                    <!--print author-->
+                    <p class="post-meta mt-4">
                         Posted by
                         <a href="<?php echo BASE_URL . '/public/user.php?user_id=' . $page['user_id'];?>">
-                        <?php echo $page['firstname'] . " " . $page['lastname']; ?>
-                        </a>
-                        <!--print dates-->
+                            <?php echo $page['firstname'] . " " . $page['lastname']; ?>
+                        </a> <span class="border-right">
+                    <!--print dates-->
                         on
                         <?php $page['created'] = new DateTime($page['created']);
                         echo $page['created']->format('M jS Y'); ?>
+                        </span>
+                        <!--print likes-->
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        <?php
+                        $likeCount->execute([':postId' => $page['post_id']]);
+                        $res = $likeCount->fetch(PDO::FETCH_ASSOC);
+                        echo $res['COUNT(*)']; ?>
+                            <!--print tags-->
+                            <br>
+                            <?php foreach (explode(',',$page['tags']) as $tag): ?>
+                            <a href="<?php echo BASE_URL . '/public/tag.php?tag=' . $tag?>">
+                                <span href="#" class="badge badge-pill badge-default"><?php echo $tag; ?></span></a>
+                            <?php endforeach; ?>
                     </p>
-                    <!--print tags-->
-                    <?php foreach (explode(',',$page['tags']) as $tag): ?>
-                    <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
-                    <?php endforeach; ?>
                 </div>
                 <!-- /.blog-post -->
                 <hr>
