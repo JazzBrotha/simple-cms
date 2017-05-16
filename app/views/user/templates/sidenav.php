@@ -16,6 +16,12 @@
             echo "Guest";
           }
            ?>
+
+           <div class="profile-pic-container">
+                        <img class="profile-pic" src="<?php if ($user['picture']) {
+                            echo $user['picture'];
+                            } else echo BASE_URL . '/assets/img/mona-lisa.jpg' ?>" alt="user-profilepic">
+          </div>
         </li>
           <?php
         if ($_SESSION['is_admin']): ?>
@@ -41,3 +47,4 @@
         </li>
             </ul>
         </div>
+
