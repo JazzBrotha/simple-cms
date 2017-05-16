@@ -21,9 +21,16 @@ $options = [
     PDO::MYSQL_ATTR_INIT_COMMAND =>"SET time_zone = '+02:00'"
     ];
 
+// $pdo = new PDO(
+//     "mysql:host=johnny.heliohost.org;dbname=phpgrupp_cms;charset=utf8",
+//     "phpgrupp",
+//     $db_pass,
+//     $options
+//     );
+
 $pdo = new PDO(
-    "mysql:host=johnny.heliohost.org;dbname=phpgrupp_cms;charset=utf8",
-    "phpgrupp",
+    "mysql:host=tommy.heliohost.org;dbname=jengstro_phpgrupp_cms;charset=utf8",
+    "jengstro",
     $db_pass,
     $options
     );
