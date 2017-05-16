@@ -15,15 +15,15 @@ if ($_SESSION['loggedin']) {
     $userId = $_SESSION['user_id'];
     $post = $_GET['post_id'];
     //checking for existing like once again to prevent url query cheating
-    $liked = Likes::check_like($post, $userId, $pdo);
+    $liked = $LIKES->check_like($post, $userId);
 
     //either like or unlike and return where u came from
     if ($_GET['action'] === 'like' && !$liked) {
         //Borde kanske kolla med check_like här igen
-        Likes::add_like($post, $userId, $pdo);
+        $LIKES->add_like($post, $userId);
     }
     if ($_GET['action'] === 'unlike' && $liked) {
-        Likes::remove_like($post, $userId, $pdo);
+        $LIKES->remove_like($post, $userId);
     }
     header('Location: ' . BASE_URL . '/page.php?post_id=' . $post);
 

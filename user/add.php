@@ -4,6 +4,7 @@ require '../app/start.php';
 require APP_ROOT . '/classes/post.php';
 
 $userId = $_SESSION["user_id"];
+$currentPage = 'add.php';
 
 if (!empty($_POST)) {
 

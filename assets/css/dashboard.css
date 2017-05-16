@@ -145,7 +145,6 @@ h1 {
 }
 
 .sidebar-nav li {
-    text-indent: 0px;
     line-height: 40px;
 }
 
@@ -210,11 +209,11 @@ h1 {
 }
 .sidebar-brand {
   margin-top: 2rem;
-  margin-bottom: 10rem;
+  margin-bottom: 8rem;
 }
 
 .back-blog {
-  margin-top: 11rem;
+  margin-top: 10rem;
 }
 
 a:active {
@@ -242,7 +241,7 @@ a:active {
 
 #sidebar-wrapper > ul > li.sidebar-brand.text-white {
   line-height: 25px;
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
 } 
 

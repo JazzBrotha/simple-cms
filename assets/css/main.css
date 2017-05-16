@@ -85,7 +85,7 @@
 .profile-pic {
     height: 100%;
     position: relative;
-    right: 50px;
+    right: 40px;
 }
 
 
@@ -97,4 +97,17 @@
     .site-heading {
         padding: 100px 0 !important;
     }
+}
+
+/*admin side panel*/
+
+.active-page {
+    color: #fff!important;
+}
+
+
+/*footer*/
+
+footer {
+    padding: 1rem;
 }
