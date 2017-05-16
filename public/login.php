@@ -41,6 +41,8 @@ if($user) {
 }
 }
 }
+
+$headTitle = 'Login';
 require VIEW_ROOT . '/public/login.php';
 
 
