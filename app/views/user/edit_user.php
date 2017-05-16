@@ -31,7 +31,7 @@
                 <input type="text" name="profession" class="form-control" maxlength="30" value="<?php echo $user['profession']?>">
             </div>
             <div class="form-group">
-                <label for="profession">Pofile pic URL</label>
+                <label for="profession">Profile pic URL</label>
                 <input type="text" name="picture" class="form-control" maxlength="30" value="<?php echo $user['picture']?>">
             </div>
             <div class="form-group">
