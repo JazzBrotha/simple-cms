@@ -9,5 +9,5 @@ if (!isset($_SESSION['loggedin'])){
     $_SESSION['loggedin'] = false;
 };
 
-
+$headTitle = 'About';
 require VIEW_ROOT . '/public/about.php';

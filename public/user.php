@@ -14,4 +14,5 @@ $likeCount = $LIKES->count_likes();
 $posts = $POSTS->get_user_posts($userId);
 $user = $USERS->get_full_user($userId);
 
+$headTitle = 'User ' . $user['username'];
 require VIEW_ROOT . '/public/user.php';

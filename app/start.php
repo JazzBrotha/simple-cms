@@ -8,10 +8,11 @@ define('VIEW_ROOT', APP_ROOT . '/views');
 define('BASE_URL', 'http://localhost/simple-cms');
 
 
-// Display errors
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+
+//Display errors
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 
 
@@ -23,9 +24,16 @@ $options = [
     PDO::MYSQL_ATTR_INIT_COMMAND =>"SET time_zone = '+02:00'"
     ];
 
+// $pdo = new PDO(
+//     "mysql:host=johnny.heliohost.org;dbname=phpgrupp_cms;charset=utf8",
+//     "phpgrupp",
+//     $db_pass,
+//     $options
+//     );
+
 $pdo = new PDO(
-    "mysql:host=johnny.heliohost.org;dbname=phpgrupp_cms;charset=utf8",
-    "phpgrupp",
+    "mysql:host=tommy.heliohost.org;dbname=jengstro_phpgrupp_cms;charset=utf8",
+    "jengstro",
     $db_pass,
     $options
     );
