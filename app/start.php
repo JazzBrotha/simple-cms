@@ -8,7 +8,7 @@ define('VIEW_ROOT', APP_ROOT . '/views');
 define('BASE_URL', 'http://localhost/simple-cms');
 
 
-//Display errors
+// Display errors
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);

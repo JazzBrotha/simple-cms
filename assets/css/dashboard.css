@@ -223,7 +223,9 @@ a:active {
 .sidebar-nav li a:active {
     background-color: #fff;
 }
-
+/*
+profile pics 
+*/
 #sidebar-wrapper > ul > li.sidebar-brand.text-white > div {
   width: 50px;
   min-width: 50px;
