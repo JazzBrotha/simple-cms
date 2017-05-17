@@ -11,4 +11,5 @@ $tag = $_GET['tag'];
 $posts = $POSTS->get_tag_posts($tag);
 $likeCount = $LIKES->count_likes();
 
+$headTitle = 'Tag ' . $tag;
 require VIEW_ROOT . '/public/tag.php';

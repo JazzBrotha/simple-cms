@@ -36,12 +36,23 @@
                     <!--print likes-->
                     <div class="mt-2">
                         <span class="meta"><span class="border-right border-white"><i class="fa fa-heart-o" aria-hidden="true"></i>
-                    <?php echo $page['likes']?> </span>
+                            <span id="like-count"><?php echo $page['likes']?></span></span>
                         <?php if ($page['user_liked']):?>
-                        <a href="<?php echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=unlike'; ?>">Unlike</a></span>
+                        <a href="
+                        <?php 
+                        // echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=unlike'; 
+                        ?>
+                        #" class="likebtn like-toggles" data-post="<?php echo $page['post_id']?>" data-action="unlike">Unlike</a>
                         <?php else: ?>
-                        <a href="<?php echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=like'; ?>">Like</a></span>
+                        <a href="
+                        <?php 
+                        // echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=like'; 
+                        ?>
+                        #" class="likebtn like-toggles" data-post="<?php echo $page['post_id']?>" data-action="like">Like</a>
                         <?php endif; ?>
+                        <!--loading spinner-->
+                        <i class="fa fa-refresh fa-spin fa-md fa-fw like-toggles hidden"></i>
+                        <span class="sr-only">Loading...</span></span>
                     </div>
                     <?php } ?>
                 </div>
@@ -60,4 +71,5 @@
     </div>
 </article>
 <hr>
+<script src="<?php echo BASE_URL?>/assets/js/ajax-like.js"></script>
 <?php require VIEW_ROOT . '/public/templates/footer.php'; ?>

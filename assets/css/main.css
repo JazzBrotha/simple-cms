@@ -6,7 +6,7 @@
 /*adds a thin separator for inline elements*/
 
 .border-right {
-    padding-right: 0.5rem;
+    padding-right: 0.7rem;
     border-right: 1px solid rgba(0, 0, 0, .1);
     margin-right: 0.5rem;
 }
@@ -99,6 +99,7 @@
     }
 }
 
+
 /*admin side panel*/
 
 .active-page {
@@ -110,4 +111,23 @@
 
 footer {
     padding: 1rem;
+}
+
+
+/*hide*/
+
+.hidden {
+    display: none!important;
+}
+
+
+/*like animation*/
+
+.fa-heart-o {
+    transition: transform 0.5s ease;
+}
+
+.animate {
+    transform: scale(1.5);
+    color: gold;
 }
