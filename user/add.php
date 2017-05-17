@@ -2,9 +2,11 @@
 
 require '../app/start.php';
 require APP_ROOT . '/classes/post.php';
+require APP_ROOT . '/classes/users.php';
 
 $userId = $_SESSION["user_id"];
 $currentPage = 'add.php';
+$user = $USERS->get_full_user($userId);
 
 if (!empty($_POST)) {
 

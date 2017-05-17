@@ -80,11 +80,12 @@
     height: 250px;
     border-radius: 50%;
     overflow: hidden;
+    position: relative;
 }
 
 .profile-pic {
     height: 100%;
-    position: relative;
+    position: absolute;
     right: 40px;
 }
 
@@ -99,7 +100,6 @@
     }
 }
 
-
 /*admin side panel*/
 
 .active-page {
@@ -112,7 +112,6 @@
 footer {
     padding: 1rem;
 }
-
 
 /*hide*/
 

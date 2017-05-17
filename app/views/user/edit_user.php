@@ -10,7 +10,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" class="form-control" maxlength="20" value="<?php echo $user['username']?>" readonly>
+                <input type="text" name="username" class="form-control" maxlength="30" value="<?php echo $user['username']?>" readonly>
             </div>
             <div class="form-group">
                 <label for="firstname">Firstname</label>
@@ -18,21 +18,21 @@
             </div>
             <div class="form-group">
                 <label for="lastname">Lastname</label>
-                <input type="text" name="lastname" class="form-control" maxlength="30" value="<?php echo $user['lastname']?>" required>
+                <input type="text" name="lastname" class="form-control" maxlength="50" value="<?php echo $user['lastname']?>" required>
             </div>
             <div class="form-group">
                 <label for="email">E-mail</label>
-                <input type="email" name="email" class="form-control" maxlength="30" value="<?php echo $user['email']?>" required>
+                <input type="email" name="email" class="form-control" maxlength="50" value="<?php echo $user['email']?>" required>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="profession">Profession</label>
-                <input type="text" name="profession" class="form-control" maxlength="30" value="<?php echo $user['profession']?>">
+                <input type="text" name="profession" class="form-control" maxlength="50" value="<?php echo $user['profession']?>">
             </div>
             <div class="form-group">
                 <label for="profession">Profile pic URL</label>
-                <input type="text" name="picture" class="form-control" maxlength="30" value="<?php echo $user['picture']?>">
+                <input type="text" name="picture" class="form-control" value="<?php echo $user['picture']?>">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
