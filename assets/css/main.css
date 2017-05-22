@@ -89,6 +89,21 @@
     right: 40px;
 }
 
+.profile-pic-container-mini {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-pic-mini {
+    height: 100%;
+    position: absolute;
+    /*right: 40px;*/
+}
+
 
 /*Jumbotron*/
 
@@ -99,6 +114,7 @@
         padding: 100px 0 !important;
     }
 }
+
 
 /*admin side panel*/
 
@@ -112,6 +128,7 @@
 footer {
     padding: 1rem;
 }
+
 
 /*hide*/
 
@@ -129,4 +146,8 @@ footer {
 .animate {
     transform: scale(1.5);
     color: gold;
+}
+
+.full-height {
+    height: 100%;
 }
