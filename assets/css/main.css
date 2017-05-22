@@ -87,6 +87,7 @@
     height: 100%;
     position: absolute;
     right: 40px;
+    margin-right: -90px;
 }
 
 .profile-pic-container-mini {
