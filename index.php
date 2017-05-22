@@ -4,7 +4,7 @@ require 'app/classes/posts.php';
 require 'app/classes/users.php';
 require 'app/classes/likes.php';
 
-$pages = $POSTS->get_first_ten_posts();
+$posts = $POSTS->get_first_ten_posts();
 $likeCount = $LIKES->count_likes();
 $headTitle = 'Home';
 
