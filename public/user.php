@@ -11,7 +11,7 @@ if (!isset($_GET['user_id'])) {
 $userId = $_GET['user_id'];
 $likeCount = $LIKES->count_likes();
 
-$posts = $POSTS->get_user_posts($userId);
+$posts = $POSTS->get_all_posts('WHERE posts.user_id =' . $userId);
 $user = $USERS->get_full_user($userId);
 
 $headTitle = 'User ' . $user['username'];
