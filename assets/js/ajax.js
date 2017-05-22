@@ -11,8 +11,9 @@ $(document).ready(() => {
       const postsAmount = $(data).find('div.post-preview').length;
       if (postsAmount > 10) {
         $('#older-posts').click(() => {
+          let prevPage = pageNumber;
           pageNumber++;
-          getOlderPosts(postsAmount, postsHtml, data);
+          getOlderPosts(postsAmount, prevPage, data);
         });
       }
     },
@@ -22,13 +23,12 @@ $(document).ready(() => {
   });
 });
 
-function getOlderPosts(postsAmount, postsHtml, data) {
-  const firstPostNumber = postsAmount.toString().charAt(0) * 10;
+function getOlderPosts(postsAmount, prevPage, data) {
+  const firstPostNumber = prevPage * 10 + 1;
   const lastPostNumber = pageNumber * 10;
   const lastPost = $(data)
     .find(`.post-preview:eq( ${lastPostNumber + 1} )`)
     .html();
-
   $('#posts-container').html('');
   for (let i = firstPostNumber; i <= lastPostNumber; i++) {
     const post = $(data).find(`.post-preview:eq( ${i} )`).html();
@@ -48,6 +48,11 @@ function getOlderPosts(postsAmount, postsHtml, data) {
       <a class="btn btn-secondary float-left pointer" id="newer-posts">&larr; Newer Posts</a>
     </div>`
     );
+    $('#older-posts').click(() => {
+      prevPage = pageNumber;
+      pageNumber++;
+      getOlderPosts(postsAmount, prevPage, data);
+    });
   } else {
     $('#posts-container').append(
       `<div class="clearfix" id="page-navigation">
@@ -57,21 +62,22 @@ function getOlderPosts(postsAmount, postsHtml, data) {
   }
 
   $('#newer-posts').click(() => {
+    prevPage = pageNumber;
     pageNumber--;
-    getNewerPosts(postsAmount, postsHtml, data);
+    getNewerPosts(postsAmount, prevPage, data);
   });
 }
 
-function getNewerPosts(postsAmount, postsHtml, data) {
+function getNewerPosts(postsAmount, prevPage, data) {
   let firstPostNumber, lastPostNumber, lastPost;
 
   if (pageNumber > 1) {
-    firstPostNumber = postsAmount.toString().charAt(0) * 10;
-    lastPostNumber = pageNumber * 10;
+    firstPostNumber = pageNumber * 10 + 1 - 10;
+    lastPostNumber = prevPage * 10 - 10;
     lastPost = $(data).find(`.post-preview:eq( ${lastPostNumber + 1} )`).html();
   } else {
     firstPostNumber = 0;
-    lastPostNumber = 10;
+    lastPostNumber = 9;
     lastPost = $(data).find(`.post-preview:eq( 10 )`).html();
   }
 
@@ -94,6 +100,11 @@ function getNewerPosts(postsAmount, postsHtml, data) {
       <a class="btn btn-secondary float-left pointer" id="newer-posts">&larr; Newer Posts</a>
     </div>`
     );
+    $('#newer-posts').click(() => {
+      prevPage = pageNumber;
+      pageNumber--;
+      getNewerPosts(postsAmount, prevPage, data);
+    });
   } else {
     $('#posts-container').append(
       `<div class="clearfix" id="page-navigation">
@@ -103,7 +114,8 @@ function getNewerPosts(postsAmount, postsHtml, data) {
   }
 
   $('#older-posts').click(() => {
+    prevPage = pageNumber;
     pageNumber++;
-    getOlderPosts(postsAmount, postsHtml, data);
+    getOlderPosts(postsAmount, prevPage, data);
   });
 }
