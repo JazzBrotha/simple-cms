@@ -1,4 +1,5 @@
 // jshint esversion:6
+
 // $(document).ready(() => {
 //   $('#page-navigation').append(
 //     `<a class="btn btn-secondary float-right pointer" id="older-posts" data-link="1">&larr; Older Posts</a>`

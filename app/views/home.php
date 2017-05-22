@@ -12,6 +12,7 @@
             </div>
         </div>
     </div>
+    </div>
 </header>
 
 <div class="container">
@@ -37,37 +38,43 @@
                         </h2>
                         <!--print summary-->
                         <h3 class="post-subtitle">
-                        <?php echo $summary ?>...</h3>
+                            <?php echo $summary ?>...</h3>
                     </a>
-                    <!--print likes-->
-                    <p class="post-meta"><span class="border-right">
-                    <?php
-                        $likeCount->execute([':postId' => $page['post_id']]);
-                        $res = $likeCount->fetch(PDO::FETCH_ASSOC);
-                        echo $res['COUNT(*)'];
-                    ?> Likes </span>
-                        <!--print author-->
+                    <!--print author-->
+                    <p class="post-meta mt-4">
                         Posted by
                         <a href="<?php echo BASE_URL . '/public/user.php?user_id=' . $page['user_id'];?>">
-                        <?php echo $page['firstname'] . " " . $page['lastname']; ?>
-                        </a>
-                        <!--print dates-->
+                            <?php echo $page['firstname'] . " " . $page['lastname']; ?>
+                        </a> <span class="border-right">
+                    <!--print dates-->
                         on
                         <?php $page['created'] = new DateTime($page['created']);
                         echo $page['created']->format('M jS Y'); ?>
+                        </span>
+                        <!--print likes-->
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        <?php
+                        $likeCount->execute([':postId' => $page['post_id']]);
+                        $res = $likeCount->fetch(PDO::FETCH_ASSOC);
+                        echo $res['COUNT(*)']; ?>
+                            <!--print tags-->
+                            <br>
+                            <?php foreach (explode(',',$page['tags']) as $tag): ?>
+                            <a href="<?php echo BASE_URL . '/public/tag.php?tag=' . $tag?>">
+                                <span href="#" class="badge badge-pill badge-default"><?php echo $tag; ?></span></a>
+                            <?php endforeach; ?>
                     </p>
-                    <!--print tags-->
-                    <?php foreach (explode(',',$page['tags']) as $tag): ?>
-                    <span class="badge badge-pill badge-default"><?php echo $tag; ?></span>
-                    <?php endforeach; ?>
                 </div>
                 <!-- /.blog-post -->
                 <hr>
                 <?php endforeach; ?>
                 <?php endif; ?>
 
+                <?php if ($postNumber > 10): ?>
                 <div class="clearfix" id="page-navigation">
+                  <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
                 </div>
+                <?php endif; ?>
         </div>
         <!-- /.blog-main -->
         <hr>

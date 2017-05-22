@@ -1,8 +1,8 @@
 <?php require VIEW_ROOT . '/public/templates/header.php'; ?>
 
 <section class="container mt-5">
-    <div class="row">
-        <div class="col-sm-6">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-4">
             <?php if(isset($_GET['forced'])): ?>
                 <div class="alert alert-warning" role="alert">You need to log in to do that.</div>
             <?php endif ?>
@@ -24,11 +24,9 @@
                     <input class="btn" type="submit">
                 </div>
             </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <a href="<?php echo BASE_URL; ?>/public/register.php">Register account</a>
+            <div class="mt-4">
+                <a href="<?php echo BASE_URL; ?>/public/register.php" class="mt-2">Register account</a>
+            </div>
         </div>
     </div>
 </section>

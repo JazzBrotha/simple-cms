@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Front End Blog</title>
+    <title>Front End Blog <?php if (isset($headTitle)) echo '- ' . $headTitle ?></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo BASE_URL?>/assets/css/clean-blog.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.css">
@@ -54,7 +54,7 @@
                         <a class="nav-link" href="<?php echo BASE_URL . '/user/list.php'?>">Admin panel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link thin" href="<?php echo BASE_URL . '/public/user.php?user_id=' . $_SESSION['user_id'];?>">Logged in as <?php echo $_SESSION['username']?>
+                        <a class="nav-link thin">Logged in as <?php echo $_SESSION['username']?>
                         <?php if ($_SESSION['is_admin']): ?>
                         (admin)
                         <?php endif; ?>

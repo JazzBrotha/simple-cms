@@ -4,10 +4,13 @@ require '../app/start.php';
 require APP_ROOT . '/classes/post.php';
 require APP_ROOT . '/classes/posts.php';
 require APP_ROOT . '/classes/users.php';
+require APP_ROOT . '/classes/users.php';
 
 $userId = $_SESSION['user_id'];
 //checking user right to edit page
 $hasAccess = $USERS->has_access($userId, $_GET['post_id']);
+
+$user = $USERS->get_full_user($userId);
 
 //if access...
 if ($hasAccess){

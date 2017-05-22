@@ -6,7 +6,7 @@
 /*adds a thin separator for inline elements*/
 
 .border-right {
-    padding-right: 0.5rem;
+    padding-right: 0.7rem;
     border-right: 1px solid rgba(0, 0, 0, .1);
     margin-right: 0.5rem;
 }
@@ -80,11 +80,12 @@
     height: 250px;
     border-radius: 50%;
     overflow: hidden;
+    position: relative;
 }
 
 .profile-pic {
     height: 100%;
-    position: relative;
+    position: absolute;
     right: 40px;
 }
 
@@ -97,4 +98,35 @@
     .site-heading {
         padding: 100px 0 !important;
     }
+}
+
+/*admin side panel*/
+
+.active-page {
+    color: #fff!important;
+}
+
+
+/*footer*/
+
+footer {
+    padding: 1rem;
+}
+
+/*hide*/
+
+.hidden {
+    display: none!important;
+}
+
+
+/*like animation*/
+
+.fa-heart-o {
+    transition: transform 0.5s ease;
+}
+
+.animate {
+    transform: scale(1.5);
+    color: gold;
 }
