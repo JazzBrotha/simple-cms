@@ -9,6 +9,9 @@
             <?php if(isset($_GET['newuser'])): ?>
                 <div class="alert alert-success" role="alert">Your account was created. Please log in.</div>
             <?php endif ?>
+            <?php if(isset($_GET['failed'])): ?>
+                <div class="alert alert-danger" role="alert">Your username or password is incorrect.</div>
+            <?php endif ?>
             <h2 class="text-center">Login</h2>
             <form method="POST" action="<?php echo BASE_URL; ?>/public/login.php"> 
 

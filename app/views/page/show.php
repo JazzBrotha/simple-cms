@@ -38,17 +38,9 @@
                         <span class="meta"><span class="border-right border-white"><i class="fa fa-heart-o" aria-hidden="true"></i>
                             <span id="like-count"><?php echo $page['likes']?></span></span>
                         <?php if ($page['user_liked']):?>
-                        <a href="
-                        <?php 
-                        // echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=unlike'; 
-                        ?>
-                        #" class="likebtn like-toggles" data-post="<?php echo $page['post_id']?>" data-action="unlike">Unlike</a>
+                        <a href="#" class="likebtn like-toggles" data-post="<?php echo $page['post_id']?>" data-action="unlike">Unlike</a>
                         <?php else: ?>
-                        <a href="
-                        <?php 
-                        // echo BASE_URL . '/user/like.php?post_id=' . $page['post_id'] . '&action=like'; 
-                        ?>
-                        #" class="likebtn like-toggles" data-post="<?php echo $page['post_id']?>" data-action="like">Like</a>
+                        <a href="#" class="likebtn like-toggles" data-post="<?php echo $page['post_id']?>" data-action="like">Like</a>
                         <?php endif; ?>
                         <!--loading spinner-->
                         <i class="fa fa-refresh fa-spin fa-md fa-fw like-toggles hidden"></i>
