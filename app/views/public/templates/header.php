@@ -42,7 +42,7 @@
             </button>
             <a class="navbar-brand" href="<?php echo BASE_URL; ?>/index.php"> <i class="fa fa-home" aria-hidden="true"></i> Home</a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL; ?>/public/about.php">About</a>
                     </li>
@@ -50,6 +50,8 @@
                         <a class="nav-link" href="<?php echo BASE_URL; ?>/public/contact.php">Contact</a>
                     </li>
                     <?php if ($_SESSION['loggedin']): ?>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL . '/user/list.php'?>">Admin panel</a>
                     </li>

@@ -1,7 +1,7 @@
 <?php require VIEW_ROOT . '/user/templates/header.php'; ?>
 <?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
  <div id="page-content-wrapper">
-            <div class="container-fluid">
+            <div class="container mt-3">
                 <div class="row">
                     <div class="col-lg-12 col-xs-12">
   <?php if(isset($_GET['success'])): ?>
