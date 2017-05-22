@@ -3,10 +3,12 @@
 require '../app/start.php';
 require APP_ROOT . '/classes/users.php';
 require APP_ROOT . '/classes/user.php';
+$currentPage = 'edit_user.php';
 
 //check if user is logged in & set the correct user id
 if ($_SESSION['loggedin']) {
   $userId = $_SESSION["user_id"];
+  $user = $USERS->get_full_user($userId);
 } else {
   header('Location: ' . BASE_URL . '/public/login.php?forced=true');
 }
@@ -20,6 +22,6 @@ if (!empty($_POST)) {
 
 }
 
-$user = $USERS->get_full_user($userId);
+
 
 require VIEW_ROOT . '/user/edit_user.php';

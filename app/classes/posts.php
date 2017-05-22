@@ -41,14 +41,38 @@ class Posts {
     }
 
     public function get_user_posts($userId){
-        $pages = $this->pdo->query("SELECT post_id, user_id, title, created, updated, tags, body
+        $pages = $this->pdo->query("SELECT
+        posts.*,
+        users.firstname,
+        users.lastname
         FROM posts
-        WHERE user_id = $userId
+        INNER JOIN users
+        ON posts.user_id = users.user_id
+        WHERE posts.user_id = $userId
         ORDER BY created DESC
         ")->fetchAll(PDO::FETCH_ASSOC);
         return $pages;
 
     }
+
+    public function get_tag_posts($tag){
+            $stmt = $this->pdo->prepare("SELECT
+            posts.*,
+            users.username,
+            users.firstname,
+            users.lastname
+            FROM posts
+            INNER JOIN users
+            ON posts.user_id = users.user_id
+            WHERE tags LIKE '%$tag%'
+            ORDER BY post_id DESC;
+            ");
+        $stmt->execute();
+        $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $posts;
+
+    }
+
     public function get_first_ten_posts(){
         $stmt = $this->pdo->prepare("SELECT
             posts.post_id,

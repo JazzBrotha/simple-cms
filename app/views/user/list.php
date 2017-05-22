@@ -16,7 +16,7 @@
   <?php if (empty($userPosts)): ?>
     <p>No posts at the moment.</p>
   <?php else: ?>
-    <table class="table table-hover">
+    <table class="table table-responsive table-hover">
       <thead>
         <tr>
           <th>Title</th>

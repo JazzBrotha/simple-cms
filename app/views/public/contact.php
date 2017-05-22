@@ -7,7 +7,6 @@ require VIEW_ROOT . '/public/templates/header.php'; ?>
               <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                   <div class="page-heading">
                       <h1>Contact Us</h1>
-                      <hr class="small">
                       <span class="subheading">Have questions? We have answers (maybe).</span>
                   </div>
               </div>

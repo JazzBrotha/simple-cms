@@ -31,4 +31,5 @@ if (empty($_GET['post_id'])) {
   }
 }
 
+$headTitle = $page['title'];
 require VIEW_ROOT . '/page/show.php';

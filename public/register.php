@@ -38,4 +38,5 @@ if (!empty($_POST)) {
 
 }
 
+$headTitle = 'Register account';
 require VIEW_ROOT . '/public/register.php';
