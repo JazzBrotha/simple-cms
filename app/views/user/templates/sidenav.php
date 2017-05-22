@@ -8,7 +8,7 @@
         Welcome,
         <?php
            if ($_SESSION["loggedin"]) {
-              echo $_SESSION["username"]; 
+              echo $_SESSION["username"];
             if ($_SESSION['is_admin']) {
                 echo ' (admin)';
               };
@@ -30,8 +30,14 @@
       <?php
         if ($_SESSION['is_admin']): ?>
         <li class="nav-item">
-          <a class="nav-link <?php if($currentPage === 'admin_list.php') echo 'active-page'?>" href="<?php echo BASE_URL; ?>/user/admin_list.php">VIEW ALL POSTS <i class="fa fa-folder-o" aria-hidden="true"></i>
-</a>
+          <a class="nav-link <?php if($currentPage === 'admin_posts_list.php') echo 'active-page'?>" href="<?php echo BASE_URL; ?>/user/admin_posts_list.php">VIEW ALL POSTS
+            <i class="fa fa-folder-o" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if($currentPage === 'admin_users_list.php') echo 'active-page'?>" href="<?php echo BASE_URL; ?>/user/admin_users_list.php">VIEW ALL USERS
+            <i class="fa fa-folder-o" aria-hidden="true"></i>
+          </a>
         </li>
         <div class="dropdown-divider"></div>
         <?php endif; ?>
