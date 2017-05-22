@@ -6,8 +6,6 @@ require 'app/classes/likes.php';
 
 $pages = $POSTS->get_first_ten_posts();
 $likeCount = $LIKES->count_likes();
-$allPosts = $POSTS->get_all_posts();
-$postNumber = count($allPosts);
 $headTitle = 'Home';
 
 

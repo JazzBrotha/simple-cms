@@ -69,12 +69,6 @@
                 <hr>
                 <?php endforeach; ?>
                 <?php endif; ?>
-
-                <?php if ($postNumber > 10): ?>
-                <div class="clearfix" id="page-navigation">
-                  <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
-                </div>
-                <?php endif; ?>
         </div>
         <!-- /.blog-main -->
         <hr>
