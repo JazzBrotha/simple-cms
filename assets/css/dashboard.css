@@ -236,10 +236,10 @@ profile pics
 }
 
 #sidebar-wrapper > ul > li.sidebar-brand.text-white > div > img {
-     height: 100%;
+    height: 100%;
     position: relative;
-    right: 20px;
 }
+    
 
 #sidebar-wrapper > ul > li.sidebar-brand.text-white {
   line-height: 25px;

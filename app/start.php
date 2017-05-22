@@ -31,6 +31,15 @@ $pdo = new PDO(
     $options
     );
 
+
+// $pdo = new PDO(
+// "mysql:host=tommy.heliohost.org;dbname=jengstro_phpgrupp_cms;charset=utf8",
+// "jengstro",
+// $db_pass,
+// $options
+// );
+
+
 // $pdo = new PDO(
 //     "mysql:host=tommy.heliohost.org;dbname=jengstro_phpgrupp_cms;charset=utf8",
 //     "jengstro",
