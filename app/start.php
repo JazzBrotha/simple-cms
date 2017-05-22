@@ -31,12 +31,13 @@ $options = [
 //     $options
 //     );
 
+
 $pdo = new PDO(
-    "mysql:host=tommy.heliohost.org;dbname=jengstro_phpgrupp_cms;charset=utf8",
-    "jengstro",
-    $db_pass,
-    $options
-    );
+"mysql:host=tommy.heliohost.org;dbname=jengstro_phpgrupp_cms;charset=utf8",
+"jengstro",
+$db_pass,
+$options
+);
 
 if (!isset($_SESSION)) {
   session_start();
