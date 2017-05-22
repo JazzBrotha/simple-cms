@@ -41,9 +41,9 @@ class Posts {
     }
 
     public function get_user_posts($userId){
-        $pages = $this->pdo->query("SELECT 
-        posts.*, 
-        users.firstname, 
+        $pages = $this->pdo->query("SELECT
+        posts.*,
+        users.firstname,
         users.lastname
         FROM posts
         INNER JOIN users

@@ -11,6 +11,7 @@ $postNumber = count($allPosts);
 $headTitle = 'Home';
 
 
+
 // echo $LIKES->count_likes($page['post_id']);
 
 //checking at index if user is logged in to display navbar correctly etc.
