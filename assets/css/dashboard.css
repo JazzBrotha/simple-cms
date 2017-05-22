@@ -2,80 +2,90 @@
  * Base structure
  */
 
+
 /* Move down content because we have a fixed navbar that is 50px tall */
+
 body {
-  padding-top: 0px;
+    padding-top: 0px;
 }
+
 
 /*
  * Typography
  */
 
 h1 {
-  margin-bottom: 20px;
-  padding-bottom: 9px;
-  border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #eee;
 }
+
 
 /*
  * Sidebar
  */
 
 .sidebar {
-  position: fixed;
-  top: 51px;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 20px;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  border-right: 1px solid #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
+
 /* Sidebar navigation */
+
 .sidebar {
-  padding-left: 0;
-  padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .sidebar .nav {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .sidebar .nav-item {
-  width: 100%;
+    width: 100%;
 }
 
-.sidebar .nav-item + .nav-item {
-  margin-left: 0;
+.sidebar .nav-item+.nav-item {
+    margin-left: 0;
 }
 
 .sidebar .nav-link {
-  border-radius: 0;
-  color: #636c72;
+    border-radius: 0;
+    color: #636c72;
 }
 
 .sidebar .nav-link:hover {
-  color: rgba(255,255,255,.75);
+    color: rgba(255, 255, 255, .75);
 }
+
 
 /*
  * Dashboard
  */
 
- /* Placeholders */
+
+/* Placeholders */
+
 .placeholders {
-  padding-bottom: 3rem;
+    padding-bottom: 3rem;
 }
 
 .placeholder img {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 
@@ -85,9 +95,10 @@ h1 {
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
- body {
+body {
     overflow-x: hidden;
- }
+}
+
 
 /* Toggle Styles */
 
@@ -133,6 +144,7 @@ h1 {
     margin-right: -250px;
 }
 
+
 /* Sidebar Styles */
 
 .sidebar-nav {
@@ -157,7 +169,7 @@ h1 {
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #fff;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .sidebar-nav li a:active,
@@ -165,17 +177,17 @@ h1 {
     text-decoration: none;
 }
 
-.sidebar-nav > .sidebar-brand {
+.sidebar-nav>.sidebar-brand {
     height: 65px;
     font-size: 18px;
     line-height: 60px;
 }
 
-.sidebar-nav > .sidebar-brand a {
+.sidebar-nav>.sidebar-brand a {
     color: #999999;
 }
 
-.sidebar-nav > .sidebar-brand a:hover {
+.sidebar-nav>.sidebar-brand a:hover {
     color: #fff;
     background: none;
 }
@@ -184,36 +196,32 @@ h1 {
     #wrapper {
         padding-left: 0;
     }
-
     #wrapper.toggled {
         padding-left: 250px;
     }
-
     #sidebar-wrapper {
         width: 0;
     }
-
     #wrapper.toggled #sidebar-wrapper {
         width: 250px;
     }
-
     #page-content-wrapper {
         padding: 20px;
         position: relative;
     }
-
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
     }
 }
+
 .sidebar-brand {
-  margin-top: 2rem;
-  margin-bottom: 8rem;
+    margin-top: 2rem;
+    /*margin-bottom: 8rem;*/
 }
 
 .back-blog {
-  margin-top: 10rem;
+    margin-top: 10rem;
 }
 
 a:active {
@@ -223,29 +231,31 @@ a:active {
 .sidebar-nav li a:active {
     background-color: #fff;
 }
+
+
 /*
 profile pics 
 */
-#sidebar-wrapper > ul > li.sidebar-brand.text-white > div {
-  width: 50px;
-  min-width: 50px;
-  height: 50px;
-  margin-left: 95px;
-  margin-top: 20px;
 
+#sidebar-wrapper>ul>li.sidebar-brand.text-white>div {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    margin-left: 95px;
+    margin-top: 20px;
 }
 
-#sidebar-wrapper > ul > li.sidebar-brand.text-white > div > img {
-     height: 100%;
+#sidebar-wrapper>ul>li.sidebar-brand.text-white>div>img {
+    height: 100%;
     position: relative;
-    right: 20px;
 }
 
-#sidebar-wrapper > ul > li.sidebar-brand.text-white {
-  line-height: 25px;
-  font-size: 13px;
-  text-align: center;
-} 
+#sidebar-wrapper>ul>li.sidebar-brand.text-white {
+    line-height: 25px;
+    font-size: 13px;
+    text-align: center;
+}
+
 
 /*.profile-pic-container {
   height: 50px;
@@ -281,6 +291,7 @@ profile pics
 #sidebar-wrapper > ul > li.sidebar-brand.text-white > div > img {
 
 }*/
+
 
 /*#menu-toggle {
   background-color: #fff;

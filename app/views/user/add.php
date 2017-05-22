@@ -3,7 +3,7 @@
 <?php require APP_ROOT . '/password.php'; ?>
 
  <div id="page-content-wrapper">
-            <div class="container-fluid">
+            <div class="container mt-3">
                 <div class="row">
                     <div class="col-lg-12 col-xs-6">
 
