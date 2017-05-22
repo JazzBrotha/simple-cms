@@ -2,7 +2,7 @@
 
   <!-- Sidebar -->
   <div id="sidebar-wrapper">
-    <ul class="sidebar-nav d-flex align-items-stretch flex-column full-height">
+    <ul class="sidebar-nav d-flex align-items-stretch flex-column full">
       <div class="first p-3">
       <li class="sidebar-brand text-white">
         Welcome,
@@ -48,7 +48,7 @@
 </a>
         </li>
         </div>
-        <div class="third mt-auto">
+        <div class="third mt-auto mb-2">
         <li>
           <a class="nav-link" href="<?php echo BASE_URL; ?>/index.php">&#171; BACK TO BLOG</a>
         </li>
