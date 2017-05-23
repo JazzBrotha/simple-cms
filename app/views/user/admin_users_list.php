@@ -37,7 +37,7 @@
             <td><?php echo escape($user['firstname']); ?></td>
             <td><?php echo escape($user['lastname']); ?></td>
             <td><?php echo escape($user['email']); ?></td>
-            <td><button class="btn btn-danger delete-btn pointer" data-name="<?php echo $user['username'];?>" data-link="<?php echo BASE_URL . '/user/delete_user.php?user_id=' . $user['user_id'] . '&admin=true'; ?>">Delete</button></td>
+            <td><button name='user' class="btn btn-danger delete-btn pointer" data-name="<?php echo $user['username'];?>" data-link="<?php echo BASE_URL . '/user/delete_user.php?user_id=' . $user['user_id'] . '&admin=true'; ?>">Delete</button></td>
           </tr>
           <?php endif ?>
         <?php endforeach; ?>
