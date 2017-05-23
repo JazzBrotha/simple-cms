@@ -46,6 +46,8 @@ En blogg om webbutveckling med inriktning på front end där man kan posta tips 
     - `post.php` - Hanterar _en_ enskild post: Skapar ny m konstruktor + metoder för att lägga till samt uppdatera i databas
     - `posts.php` - Hanterar urval av poster: metoder för att hämta alla, hämta en etc.
     - `user.php` - Hanterar _en_ användare: skapar + lagrar i db.
+    - `users.php`
+    - `likes.php`
   - `views` - Allt visuellt
     - `page`
       - `show.php` - Visningssida för varje post
@@ -65,25 +67,45 @@ En blogg om webbutveckling med inriktning på front end där man kan posta tips 
         - `header.php` - Header
         - `sidenav.php`
     - `home.php` - Visning av appens landingssida
+  - `libs`
+    - `htmlpurifier-4.9.2-standalone`
+    - `HTMLPurifier.standalone.php`
+  - `ajax.php` - jQuery ajax request för navigation mellan posts
   - `functions.php` - Hjälpfunktioner som exempelvis lösenordshashing
   - `password.php` - Lösenord för anslutning till databasen. **OBS!** Ska endast ligga lokalt!
   - `start.php` - Länkar ihop allt i `app`: Rootmappar för projektet. Visar error `ini_set(display_errors)`.`PDO`-objektet, Uppkoppling till databasen.
 * `assets` - Icke-php innehåll
   - `css`
-    - `blog.css`
+    - `clean-blog.min.css`
     - `dashboard.css`
     - `main.css`
   - `js`
     - `editor.js` - JS för att köra WYSIWYG-editor
-    - `main.js`
+    - `ajax.js`
+    - `ajax-like.js`
+    - `clean-blog.min.js`
+    - `delete-alerts.js`
+  - `img`
+  - `sql`
+    - `backup-db.sql` - lokal databas
 * `public` - Funktionalitet för sidor som alla ser (Se `public` under `views` för mer info)
   - `login.php` - Hanterar o validerar loginförsök
   - `register.php` - Postar en användare till databasen baserad på klassen `User`
+  - `about.php`
+  - `contact.php`
+  - `logout.php`
+  - `tag.php`
+  - `user.php`
 * `user` - Funktionalitet för sidor som bara användare ser (Se `user` under `views` för mer info)
   - `add.php` - Postar ett inlägg till databasen baserad på klassen `Post`
   - `delete.php` - Tar bort ett inlägg
   - `edit.php` - Uppdaterar ett inlägg till databasen baserat på klassen `Post`
   - `list.php` - Hanterar en användares posts
+  - `admin_posts_list.php`
+  - `admin_users_list.php`
+  - `delete_user.php`
+  - `edit_user.php`
+  - `like.php`
 * `index.php` - Funktionalitet för appens landningssida
 * `page.php` - Funktionalitet för varje post
 
