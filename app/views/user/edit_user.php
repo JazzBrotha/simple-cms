@@ -44,15 +44,18 @@
                             </div>
                     </form>
                     </div>
+                    <?php if(!$_SESSION['is_admin']): ?>
                     <div class="container">
                         <button class="btn btn-danger" role="button" data-link="<?php echo BASE_URL; ?>/user/delete_user.php" id="delete-user-btn">Delete account</button>
                     </div>
-
+                  <?php endif; ?>
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle menu</a>
                 </div>
         </div>
 </div>
 </div>
-    <!-- /#page-content-wrapper -->
+<?php if(!$_SESSION['is_admin']): ?>
+<script src="<?php echo BASE_URL?>/assets/js/delete-alerts.js"></script>
+<?php endif; ?>
 
 <?php require VIEW_ROOT . '/user/templates/footer.php'; ?>
