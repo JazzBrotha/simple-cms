@@ -34,13 +34,13 @@
     </form>
 </div>
 
-    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
+<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle menu</a>
+</div>
+</div>
+</div>
+</div>
+<!-- /#page-content-wrapper -->
 
-    </div>
+</div>
 
 <?php require VIEW_ROOT . '/user/templates/footer.php'; ?>
