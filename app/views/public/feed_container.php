@@ -11,10 +11,6 @@
             }
             ?>
             <?php endif; ?>
-
-            <!--<div class="clearfix" id="post-navigation">
-      <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
-  </div>-->
         </div>
         <hr>
     </div>

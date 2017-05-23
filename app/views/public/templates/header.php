@@ -66,9 +66,12 @@
                         <a class="nav-link" href="<?php echo BASE_URL; ?>/public/logout.php">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
                     </li>
                     <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>/public/login.php"> Login <i class="fa fa-sign-in" aria-hidden="true"></i> </a>
-                    </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo BASE_URL; ?>/public/login.php"> Login <i class="fa fa-sign-in" aria-hidden="true"></i> </a>
+                        </li>
+                    </ul>
                     <?php endif; ?>
                 </ul>
             </div>

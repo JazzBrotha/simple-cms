@@ -48,14 +48,11 @@
                         <button class="btn btn-danger" role="button" data-link="<?php echo BASE_URL; ?>/user/delete_user.php" id="delete-user-btn">Delete account</button>
                     </div>
 
-                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle</a>
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle menu</a>
                 </div>
         </div>
     </div>
     <!-- /#page-content-wrapper -->
-
-
 </div>
-
 
 <?php require VIEW_ROOT . '/user/templates/footer.php'; ?>
