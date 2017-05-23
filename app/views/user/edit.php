@@ -1,11 +1,9 @@
 <?php require VIEW_ROOT . '/user/templates/header.php'; ?>
 <?php require VIEW_ROOT . '/user/templates/sidenav.php'; ?>
 <?php require APP_ROOT . '/password.php';?>
-
 <!--JS for editor-->
 <script src="<?php echo 'https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=' . $mce_key; ?>"></script>
 <script src="<?php echo BASE_URL . '/assets/js/editor.js' ?>"></script>
-
 <div class="container">
     <h2>Edit post</h2>
     <form method="POST" action="<?php echo BASE_URL . '/user/edit.php?post_id=' . $_GET['post_id'] ?>" class="d-flex mt-2" autocomplete="off">
@@ -16,7 +14,9 @@
             </div>
             <div class="form-group">
                 <label for="body">Body</label>
-                <textarea name="body" id="text-area" class="form-control" required><?php echo $page['body']; ?></textarea>
+                <textarea name="body" id="text-area" class="form-control" required>
+                    <?php echo $page['body']; ?>
+                </textarea>
             </div>
             <div class="form-group">
                 <label for="tags">Tags:</label>
@@ -30,5 +30,5 @@
         </div>
     </form>
 </div>
-
+</div>
 <?php require VIEW_ROOT . '/user/templates/footer.php'; ?>

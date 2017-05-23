@@ -59,6 +59,7 @@
             </div>
         </div>
     </div>
+</div>
 </div> <!-- /#page-content-wrapper -->
 <!--script for sweet-alert popups on delete-->
 <script src="<?php echo BASE_URL?>/assets/js/delete-alerts.js"></script>

@@ -51,8 +51,8 @@
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle menu</a>
                 </div>
         </div>
-    </div>
-    <!-- /#page-content-wrapper -->
 </div>
+</div>
+    <!-- /#page-content-wrapper -->
 
 <?php require VIEW_ROOT . '/user/templates/footer.php'; ?>
