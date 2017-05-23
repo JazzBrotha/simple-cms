@@ -26,6 +26,8 @@ En blogg om Front end / webbutveckling där man kan posta tips o tricks inom omr
 * Admin kan se alla användare som inte är admin och ta bort deras konto
 * Redigering av användarprofil
 * Information om när varje post är senast uppdaterad
+* Lösenordshashing
+* Escapefunktioner
 
 ## Klasser
 
