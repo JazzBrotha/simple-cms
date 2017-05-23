@@ -9,35 +9,37 @@
 <div class="container">
 
   <?php if(isset($_GET['success'])): ?>
-      <div class="alert alert-success" role="alert">Post was successfully <?php echo $_GET['success'] . '!'; ?></div>
+      <div class="alert alert-success" role="alert">User was successfully <?php echo $_GET['success'] . '!'; ?></div>
   <?php endif ?>
   <?php if (isset($_GET['access'])): ?>
       <div class="alert alert-danger" role="alert">Acess was <?php echo $_GET['access'] . '.';?></div>
   <?php endif ?>
 
-  <h2>All posts</h2>
-  <?php if (empty($allPosts)): ?>
-    <p>No posts at the moment.</p>
+  <h2>All users</h2>
+  <?php if (empty($allUsers)): ?>
+    <p>No users at the moment.</p>
   <?php else: ?>
     <table class="table table-responsive table-hover">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Created</th>
-          <th>Updated</th>
-          <th>User</th>
+          <th>Username</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Email</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <?php foreach($allPosts as $post): ?>
+        <?php foreach($allUsers as $user): ?>
+          <?php if(!$user['is_admin']): ?>
           <tr>
-            <td><a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $post['post_id']; ?>"><?php echo escape($post['title']); ?></a></td>
-            <td><?php echo $post['created']; ?></td>
-            <td><?php if (isset($post['updated'])) echo $post['updated']; ?></td>
-            <td><?php echo $post['username']; ?></td>
-            <td><button class="btn btn-info delete-btn pointer" data-name="<?php echo $post['title'];?>" data-link="<?php echo BASE_URL . '/user/delete.php?post_id=' . $post['post_id'] . '&admin=true'; ?>">Delete</button></td>
+            <td><a href="<?php echo BASE_URL . '/public/user.php?user_id=' . $user['user_id'];?>"><?php echo escape($user['username']); ?></a></td>
+            <td><?php echo escape($user['firstname']); ?></td>
+            <td><?php echo escape($user['lastname']); ?></td>
+            <td><?php echo escape($user['email']); ?></td>
+            <td><button name='user' class="btn btn-danger delete-btn pointer" data-name="<?php echo $user['username'];?>" data-link="<?php echo BASE_URL . '/user/delete_user.php?user_id=' . $user['user_id'] . '&admin=true'; ?>">Delete</button></td>
           </tr>
+          <?php endif ?>
         <?php endforeach; ?>
       </tbody>
     </table>

@@ -16,7 +16,7 @@ if ($hasAccess || $isAdmin) {
   $POSTS->delete_post($postId);
   //sending back to admin list view if we came from there
   if ($_GET['admin']) {
-  header('Location: ' . BASE_URL . '/user/admin_list.php?success=deleted');
+  header('Location: ' . BASE_URL . '/user/admin_posts_list.php?success=deleted');
   } else {
     header('Location: ' . BASE_URL . '/user/list.php?success=deleted');
   }

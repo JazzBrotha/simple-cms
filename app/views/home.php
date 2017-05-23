@@ -15,65 +15,7 @@
     </div>
 </header>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 flex-center">
-            <div id="loader"></div>
-        </div>
-        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1" id="posts-container">
-
-            <?php if (empty($pages)): ?>
-            <h1>No posts at the moment</h1>
-            <?php else: ?>
-            <?php foreach ($pages as $page): ?>
-            <?php
-              $plainTextBody = strip_tags($page['body']);
-              $summary = substr($plainTextBody, 0, 50);?>
-
-                <div class="post-preview">
-                    <!--print title-->
-                    <a href="<?php echo BASE_URL; ?>/page.php?post_id=<?php echo $page['post_id']; ?>">
-                        <h2 class="post-title">
-                            <?php echo escape($page['title']); ?>
-                        </h2>
-                        <!--print summary-->
-                        <h3 class="post-subtitle">
-                            <?php echo $summary ?>...</h3>
-                    </a>
-                    <!--print author-->
-                    <p class="post-meta mt-4">
-                        Posted by
-                        <a href="<?php echo BASE_URL . '/public/user.php?user_id=' . $page['user_id'];?>">
-                            <?php echo $page['firstname'] . " " . $page['lastname']; ?>
-                        </a> <span class="border-right">
-                    <!--print dates-->
-                        on
-                        <?php $page['created'] = new DateTime($page['created']);
-                        echo $page['created']->format('M jS Y'); ?>
-                        </span>
-                        <!--print likes-->
-                        <i class="fa fa-heart-o" aria-hidden="true"></i>
-                        <?php
-                        $likeCount->execute([':postId' => $page['post_id']]);
-                        $res = $likeCount->fetch(PDO::FETCH_ASSOC);
-                        echo $res['COUNT(*)']; ?>
-                            <!--print tags-->
-                            <br>
-                            <?php foreach (explode(',',$page['tags']) as $tag): ?>
-                            <a href="<?php echo BASE_URL . '/public/tag.php?tag=' . $tag?>">
-                                <span href="#" class="badge badge-pill badge-default"><?php echo $tag; ?></span></a>
-                            <?php endforeach; ?>
-                    </p>
-                </div>
-                <!-- /.blog-post -->
-                <hr>
-                <?php endforeach; ?>
-                <?php endif; ?>
-        </div>
-        <!-- /.blog-main -->
-        <hr>
-    </div>
-    <!-- /.row -->
-</div>
-<!-- /.container -->
-<?php require VIEW_ROOT . '/public/templates/footer.php'; ?>
+<?php 
+require VIEW_ROOT . '/public/feed_container.php';
+require VIEW_ROOT . '/public/templates/footer.php'; 
+?>

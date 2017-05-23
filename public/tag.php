@@ -8,7 +8,7 @@ if (!isset($_GET['tag'])) {
     header('Location: ' . BASE_URL);
 }
 $tag = $_GET['tag'];
-$posts = $POSTS->get_tag_posts($tag);
+$posts = $POSTS->get_all_posts("WHERE tags LIKE '%" . $tag . "%'");
 $likeCount = $LIKES->count_likes();
 
 $headTitle = 'Tag ' . $tag;
