@@ -1,6 +1,6 @@
 <?php require VIEW_ROOT . '/public/templates/header.php'; ?>
 
-<header class="masthead" style="background-image:url(<?php echo BASE_URL; ?>/assets/img/home-bg.jpg)">
+<header class="masthead" id="main-header" style="background-image:url(<?php echo BASE_URL; ?>/assets/img/home-bg.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">

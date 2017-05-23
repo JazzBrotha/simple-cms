@@ -1,13 +1,14 @@
 // jshint esversion:6
 
-window.onload = function() {
-  if (localStorage.getItem('hasCodeRunBefore') === null) {
-    let pageNumber = 1;
+let pageNumber = 1;
+
+$(document).ready(() => {
+  const header = $('#main-header').html();
+  if (header !== undefined) {
     $.ajax({
       url: 'http://localhost/simple-cms/app/ajax.php',
       type: 'GET',
       success: data => {
-        const postsHtml = $(data).find('div#posts-container').html();
         const postsAmount = $(data).find('div.post-preview').length;
         if (postsAmount > 10) {
           $('#posts-container').append(
@@ -18,7 +19,7 @@ window.onload = function() {
           $('#older-posts').click(() => {
             let prevPage = pageNumber;
             pageNumber++;
-            getOlderPosts(postsAmount, prevPage, data);
+            getOlderPosts(prevPage, data);
           });
         }
       },
@@ -27,7 +28,7 @@ window.onload = function() {
       }
     });
 
-    const getOlderPosts = (postsAmount, prevPage, data) => {
+    const getOlderPosts = (prevPage, data) => {
       $('html, body').animate({ scrollTop: 0 }, 'slow');
       const firstPostNumber = prevPage * 10 + 1;
       const lastPostNumber = pageNumber * 10;
@@ -56,7 +57,7 @@ window.onload = function() {
         $('#older-posts').click(() => {
           prevPage = pageNumber;
           pageNumber++;
-          getOlderPosts(postsAmount, prevPage, data);
+          getOlderPosts(prevPage, data);
         });
       } else {
         $('#posts-container').append(
@@ -69,11 +70,11 @@ window.onload = function() {
       $('#newer-posts').click(() => {
         prevPage = pageNumber;
         pageNumber--;
-        getNewerPosts(postsAmount, prevPage, data);
+        getNewerPosts(prevPage, data);
       });
     };
 
-    const getNewerPosts = (postsAmount, prevPage, data) => {
+    const getNewerPosts = (prevPage, data) => {
       $('html, body').animate({ scrollTop: 0 }, 'slow');
       let firstPostNumber, lastPostNumber, lastPost;
 
@@ -111,7 +112,7 @@ window.onload = function() {
         $('#newer-posts').click(() => {
           prevPage = pageNumber;
           pageNumber--;
-          getNewerPosts(postsAmount, prevPage, data);
+          getNewerPosts(prevPage, data);
         });
       } else {
         $('#posts-container').append(
@@ -124,10 +125,8 @@ window.onload = function() {
       $('#older-posts').click(() => {
         prevPage = pageNumber;
         pageNumber++;
-        getOlderPosts(postsAmount, prevPage, data);
+        getOlderPosts(prevPage, data);
       });
     };
-
-    localStorage.setItem('hasCodeRunBefore', true);
   }
-};
+});
