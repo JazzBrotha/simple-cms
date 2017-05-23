@@ -10,6 +10,11 @@ $(document).ready(() => {
       const postsHtml = $(data).find('div#posts-container').html();
       const postsAmount = $(data).find('div.post-preview').length;
       if (postsAmount > 10) {
+        $('#posts-container').append(
+          `<div class="clearfix" id="page-navigation">
+            <a class="btn btn-secondary float-right pointer" id="older-posts">Older Posts &rarr;</a>
+        </div>`
+        );
         $('#older-posts').click(() => {
           let prevPage = pageNumber;
           pageNumber++;
@@ -24,6 +29,7 @@ $(document).ready(() => {
 });
 
 function getOlderPosts(postsAmount, prevPage, data) {
+  $('html, body').animate({ scrollTop: 0 }, 'slow');
   const firstPostNumber = prevPage * 10 + 1;
   const lastPostNumber = pageNumber * 10;
   const lastPost = $(data)
@@ -69,6 +75,7 @@ function getOlderPosts(postsAmount, prevPage, data) {
 }
 
 function getNewerPosts(postsAmount, prevPage, data) {
+  $('html, body').animate({ scrollTop: 0 }, 'slow');
   let firstPostNumber, lastPostNumber, lastPost;
 
   if (pageNumber > 1) {

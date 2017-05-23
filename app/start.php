@@ -15,7 +15,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-
 //Main PDO object
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -25,19 +24,29 @@ $options = [
     ];
 
 
+//NEW HELIOHOST SERVER
 // $pdo = new PDO(
-// "mysql:host=tommy.heliohost.org;dbname=jengstro_phpgrupp_cms;charset=utf8",
-// "jengstro",
-// $db_pass,
-// $options
-// );
+//     "mysql:host=tommy.heliohost.org;dbname=jengstro_phpgrupp_cms;charset=utf8",
+//     "jengstro",
+//     $db_pass,
+//     $options
+//     );
 
+//OLD HELIOHOST SERVER
 $pdo = new PDO(
     "mysql:host=johnny.heliohost.org;dbname=phpgrupp_cms;charset=utf8",
     "phpgrupp",
     $db_pass,
     $options
     );
+
+//LOCALHOST DB
+// $pdo = new PDO(
+    // "mysql:host=localhost;dbname=phpgrupp_cms;charset=utf8",
+    // "root",
+    // "root",
+    // $options
+    // );
 
 
 if (!isset($_SESSION)) {

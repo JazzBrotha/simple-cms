@@ -33,6 +33,14 @@ class Users {
         ");
         $deleteUser->execute([':id' => $userId]);
     }
+    public function get_all_users(){
+        $stmt = $this->pdo->prepare("SELECT *
+            FROM users
+            ORDER BY user_id DESC
+            ");
+        $stmt->execute();
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $users;
+    }
 }
-
 $USERS = new Users($pdo);

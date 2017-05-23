@@ -5,7 +5,7 @@ require 'classes/users.php';
 require 'classes/likes.php';
 $likeCount = $LIKES->count_likes();
 
-$pages = $POSTS->get_all_posts();
+$posts = $POSTS->get_all_posts();
 
 require VIEW_ROOT . '/home.php';
 
