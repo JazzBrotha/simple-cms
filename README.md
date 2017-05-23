@@ -120,15 +120,15 @@ En blogg om webbutveckling med inriktning på front end där man kan posta tips 
 * _lastname_ -- `VARCHAR, LENGTH 30`
 * _email_ -- `VARCHAR, UNIQUE, LENGTH 50`
 * _description_ -- `TEXT ("om mig", typ)`
-* _profession_ -- `VARCHAR, LENGTH 50` (ex "Front end student")
-* _picture_ -- `VARCHAR, LENGTH 260` (länk/hash om vi får det att funka....)
+* _profession_ -- `VARCHAR, LENGTH 50`
+* _picture_ -- `VARCHAR, LENGTH 260`
 * _created_ -- `TIMIESTAMP, CURRENT_TIMESTAMP`
 * _is\_admin_ -- `BOOLEAN`
 
 ### posts
 
 * _post\_id_ -- `INT, PRIMARY, A_I`
-* _user\_id_ -- `INT`, foreign key --> users (`ON DELETE RESTRICT RESTRICT, ON UPDATE CASCADE`) *
+* _user\_id_ -- `INT`, foreign key --> users (`ON DELETE CASCADE, ON UPDATE NOTHING`)
 * _title_ -- `VARCHAR, LENGTH 26` (rubrik)
 * _body_ -- `TEXT` (brödtext)
 * _tags_ -- `VARCHAR, LENGTH 260` (taggar, separerade av komma)
@@ -138,15 +138,15 @@ En blogg om webbutveckling med inriktning på front end där man kan posta tips 
 ### likes
 
 * _like\_id_ -- `INT, PRIMARY, A_I`
-* _post\_id_ -- `INT`, ~~foreign key --> posts (`ON DELETE RESTRICT , ON UPDATE CASCADE`)~~*
-* _user\_id_ -- `INT`, ~~foreign key --> users (`ON DELETE RESTRICT, ON UPDATE CASCADE`)~~*
+* _post\_id_ -- `INT`, foreign key --> posts (`ON DELETE CASCADE , ON UPDATE NOTHING`)
+* _user\_id_ -- `INT`, foreign key --> users (`ON DELETE CASCADE, ON UPDATE NOTHING`)
 
 \* post_id och user_id i likes är inte längre länkad till de andra tabellerna.
 
 
 ## Bibliotek
 
-* [Bootstrap 4 alpha](https://v4-alpha.getbootstrap.com/)
+* [Bootstrap 4](https://v4-alpha.getbootstrap.com/)
 * [TinyMCE](https://www.tinymce.com/docs/)
 * [HTML Purifier](http://htmlpurifier.org)
 * [Sweet Alert](https://limonte.github.io/sweetalert2/)
