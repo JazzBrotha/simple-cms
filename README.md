@@ -176,3 +176,19 @@ $pdo = new PDO(
 
 * [CMS video tutorial](https://www.youtube.com/watch?v=UbsAdx58ch0&list=PLfdtiltiRHWF0O8kS5D_3-nTzsFiPMOfM)
 * [PHP creating a blog](https://thenewboston.com/videos.php?cat=74&video=19652)
+
+## Extra funktioner
+
+* Automatisk utloggning efter 30 minuters inaktivitet
+* Lägga till taggar på posts
+* Stängd access via url
+* Se en specifik användares poster
+* Se poster baserat på taggar
+* Bildlänk för användarprofil
+* Användare kan ta bort sitt konto
+* Admin kan se alla poster som inte är skapade av en annan admin och ta bort dem
+* Admin kan se alla användare som inte är admin och ta bort deras konto
+* Redigering av användarprofil
+* Information om när varje post är senast uppdaterad
+
+

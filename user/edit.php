@@ -4,7 +4,6 @@ require '../app/start.php';
 require APP_ROOT . '/classes/post.php';
 require APP_ROOT . '/classes/posts.php';
 require APP_ROOT . '/classes/users.php';
-require APP_ROOT . '/classes/users.php';
 
 $userId = $_SESSION['user_id'];
 //checking user right to edit page
