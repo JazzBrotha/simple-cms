@@ -2,8 +2,9 @@
   document.querySelectorAll('.delete-btn').forEach(el => {
     el.addEventListener('click', e => {
       let title = e.target.getAttribute('data-name');
+      let name = e.target.getAttribute('name') || 'post';
       swal({
-        title: 'Sure you want to delete post "' + title + '"?',
+        title: `Sure you want to delete ${name} "${title}" ?`,
         text: "You won't be able to revert this!",
         type: 'warning',
         showCancelButton: true,
