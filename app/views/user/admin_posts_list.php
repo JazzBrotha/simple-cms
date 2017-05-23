@@ -16,7 +16,7 @@
                     </div>
                     <?php endif ?>
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle menu</a>
-                    <h2 class="all-posts-admin">All posts</h2>
+                    <h2 class="admin-heading">All posts</h2>
                     <?php if (empty($allPosts)): ?>
                     <p>No posts at the moment.</p>
                     <?php else: ?>

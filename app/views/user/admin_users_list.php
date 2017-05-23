@@ -15,7 +15,8 @@
                         <?php echo $_GET['access'] . '.';?>
                     </div>
                     <?php endif ?>
-                    <h2>All users</h2>
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-arrows-h" aria-hidden="true"></i> Toggle menu</a>
+                    <h2 class="admin-heading">All users</h2>
                     <?php if (empty($allUsers)): ?>
                     <p>No users at the moment.</p>
                     <?php else: ?>
