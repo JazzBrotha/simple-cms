@@ -13,7 +13,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.js"></script>
 <script src="<?php echo BASE_URL?>/assets/js/clean-blog.min.js"></script>
-<script src="<?php echo BASE_URL?>/assets/js/main.js"></script>
 <script src="<?php echo BASE_URL?>/assets/js/ajax.js"></script>
 </body>
 </html>
