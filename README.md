@@ -127,12 +127,10 @@ En blogg om Front end / webbutveckling där man kan posta tips o tricks inom omr
 * [HTML Purifier](http://htmlpurifier.org)
 * [Sweet Alert](https://limonte.github.io/sweetalert2/)
 
-## Länkar
+## Andra resurser
 
-* [Instruktioner](https://github.com/FEND16/cms-php-mysql/blob/master/group_assignment_simple_cms.md)
-* [Trello](https://trello.com/b/tEPopVij/php-gruppuppgift)
-* [PHP Dokumentation](http://php.net/docs.php)
-* [molnserver](https://www.heliohost.org)
+* [Projektplan](https://trello.com/b/tEPopVij/php-gruppuppgift)
+* [Molnserver](https://www.heliohost.org)
 
 
 ## Wireframe/Mockups
