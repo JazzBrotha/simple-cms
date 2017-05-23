@@ -4,11 +4,9 @@ require 'app/classes/posts.php';
 require 'app/classes/users.php';
 require 'app/classes/likes.php';
 
-
 $posts = $POSTS->get_first_ten_posts();
 $likeCount = $LIKES->count_likes();
 $headTitle = 'Home';
-
 
 
 // echo $LIKES->count_likes($page['post_id']);
@@ -18,4 +16,8 @@ if (!isset($_SESSION['loggedin'])){
     $_SESSION['loggedin'] = false;
 };
 
+$firstPage = true;
+
 require VIEW_ROOT . '/home.php';
+
+$firstPage = false;

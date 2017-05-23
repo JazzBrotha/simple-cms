@@ -15,7 +15,7 @@
     </div>
 </header>
 
-<?php 
+<?php
 require VIEW_ROOT . '/public/feed_container.php';
-require VIEW_ROOT . '/public/templates/footer.php'; 
+require VIEW_ROOT . '/public/templates/footer.php';
 ?>
