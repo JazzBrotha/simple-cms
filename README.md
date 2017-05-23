@@ -1,40 +1,44 @@
 # simple-cms
 
-## Arbetsmetod
-Alla ändringar av README.md görs direkt i `master` på GitHub och inte lokalt eller i andra brancher.
+En blogg om Front end / webbutveckling där man kan posta tips o tricks inom området, intressanta artiklar, etc.
 
-### Versionshantering
-En annan person i gruppen måste alltid godkänna innan något pushas in i `master`. På det sättet håller vi `master` så buggfri som möjligt. Commits skrivs helst på engelska. Vi arbetar enligt följande mönster:
-1. Skapa en ny `branch` varje gång du ska arbeta på en ändring i appen. Enklast är att namnge branchen så den indikerar vilken ändring du arbetar på. Ex, om du arbetar med footern döper du din nya branch till `footer`. Använd [A-Za-z] för namngivning av branches, alltså inga siffror, speciella tecken eller å,ä,ö.
-2. Versionshantera lokalt på det sättet som passar dig bäst men det kan vara en säkerhetsåtgärd att göra commits med jämna mellanrum.
-3. Lägga till alla filer till staging arean  via `git add *` och gör en ny commit `git commit -m "<commit message>"`.
-4. Uppdatera din `master` branch genom `git pull origin master`. Om du vill slippa skriva en anledning till varför du gör en merge så skriver du istället `git pull origin master --no-edit`. Om inte det funkar kan du prova byta plats på `no-edit`: `git pull --no-edit origin master` 
-5. Lös eventuella merge conflicts.
-6. Pusha upp din nya branch till GitHub via `git push <branch name>`.
-7. Gör en pull request från din nya branch intill `master`.
+## Grundfunktioner
+* Lägga till nya _posts_, en _post_ kan vara ett blogginlägg, artikel eller liknande.
+* Ni har en sida där man kan se alla _posts_ samt kunna se när innehållet är skapat och av vem innehållet är skapat.
+* Ta bort samt redigera existerande _posts_.
+* Logga in och logga ut med olika användare som har olika roller.
+    - Det ska finnas minst två roller: __admin__ och vanlig användare.
+    - Man ska __inte__ kunna regga sig med samma användarnamn eller email flera gånger.
+* Bara den användaren som har skapat en viss _post_ kan redigera eller ta bort den. Alternativt så kan man ta bort den om man har admin-rättigheter.
+* En användare ska kunna _gilla_ eller på något sätt rösta på varje _post_.
+    - En användare ska __inte__ kunna rösta på samma _post_ flera gånger.
+    - En användare ska kunna ta bort sin röst från en _post_.
+    
+## Extra funktioner
+* Automatisk utloggning efter 30 minuters inaktivitet
+* Lägga till taggar på posts
+* Stängd access via url
+* Se en specifik användares poster
+* Se poster baserat på taggar
+* Bildlänk för användarprofil
+* Användare kan ta bort sitt konto
+* Admin kan se alla poster som inte är skapade av en annan admin och ta bort dem
+* Admin kan se alla användare som inte är admin och ta bort deras konto
+* Redigering av användarprofil
+* Information om när varje post är senast uppdaterad
 
-Mergea en pull request:
-1. Meddela i Slack att du ska göra en review så det inte blir några kollisioner.
-2. Öppna pull requesten och tryck på "Add your review". Läs igenom ändringarna.
-3. Godkänn om det ser bra ut eller lämna kommentar om något behöver ändras.
-4. Tryck på &#8964; på mergeknappen och välj "squash and merge" för att slå ihop alla commits till en.
-5. Ta bort den gamla branchen
+## Klasser
 
-Tips: Om du inte vill göra en ny commit efter du gjort ändringar lokalt lägger du till `--amend --no-edit` efter kommandot, alltså `git commit --amend --no-edit`. Om du vill se dina senaste ändringar efter en `git pull`, exempelvis för att se eventuella merge conflicts tydligare, så kan du skriva `git diff`.
+* `User` --> Modifiera _en_ användare. Skapa användare, redigera sin profil...
+  * `Admin extends User`
+* `Users.php` - Hanterar hämtar/användare. get_full_user() etc...
 
-### Naming conventions & best practice
-* Försök hålla liknande syntax som resten av dokumentet.
-* Namnge funktioner med `snake_case` och variabler med `camelCase`. Klasser ska börja med stor bokstav, t.ex. `class User`.
-* JavaScript ska hellst skrivas i ES6. Försök följa AirBnb:s [styleguide](https://github.com/airbnb/javascript).
-* Försök använda Bootstraps färdiga CSS-klasser så mycket som möjligt. Namnge dina egna klasser likt Bootstrap gör. I övrigt försök följa AirBnb:s [styleguide](https://github.com/airbnb/css).
+* `Post` --> Skapa/editera poster. `new Post()`
+* `Posts` --> Hantera/hämtar en eller flera poster. get_all_posts(), get_full_post() etc... 
 
-### Säkerhet
-* Alla lösenord hashas.
-* All user input som ska skrivas ut rensas på skadlig kod med funktionen `noScript()` i `functions.php` _innan lagring_, lämpligen i `User` eller `Post`-konstruktorn.
-* All user input som _inte_ ska tolkas som HTML (t.ex post title) escape:as med `escape()` i `functions.php` på stället där den ska skrivas ut. ex `<h2><?php echo escape($page['title']); ?></h2>`
+* `Likes` --> Hanterar likes.
 
 ## Mapp och filstruktur
-Grundstruktur. Kan komma att ändras under arbetets gång.
 * `app` - Huvudinnehåll
   - `classes` - Klasser
     - `post.php` - Hanterar _en_ enskild post: Skapar ny m konstruktor + metoder för att lägga till samt uppdatera i databas
@@ -81,40 +85,9 @@ Grundstruktur. Kan komma att ändras under arbetets gång.
 * `index.php` - Funktionalitet för appens landningssida
 * `page.php` - Funktionalitet för varje post
 
-## Upplägg & struktur
+## Databasstruktur
 
-Anteckningar från 27/4
-
-### Idé
-
-Slutprodukten är tänkt att bli en blogg om Front end / webbutveckling där vi i gruppen kan posta tips o tricks inom vårt område, intressanta artiklar vi läst etc. Ambitionen är att lägga upp sidan live så att den kan bli en del av våra portfolios.
-
-### Sidor / flödesschema
-
-* [Wireframe här](https://drive.google.com/file/d/0B-YWuZQGy3G2VXpyRkZTQmRhbzg/view?usp=sharing)
-* [Mockup - Blogg](https://drive.google.com/file/d/0B-YWuZQGy3G2ZTgzMENmdWNpQ0E/view)
-* [Mockup - Log in edit page](https://drive.google.com/open?id=0B-YWuZQGy3G2c0VvUXdMRFBXSFk)
-
-### Databas
-
-Setup för att köra localhost + db i molnet: [logga in](https://www.heliohost.org) och välj 'remote mySQL' i panelen. Lägg till din publika IP till listan. I panelen finns också phpMyAdmin mm.
-
-* host: [johnny.heliohost.org](johnny.heliohost.org)
-* db: phpgrupp_cms
-* user: phpgrupp
-* pass: se slack
-
-```php
-$pdo = new PDO(
-    "mysql:host=johnny.heliohost.org;dbname=phpgrupp_cms;charset=utf8",
-    "phpgrupp",
-    "xxxxxxxx"
-    );
-```
-
-#### Tabeller i databasen
-
-##### users
+### users
 
 * _user\_id_ -- `INT, PRIMARY, A_I`
 * _username_ -- `VARCHAR, LENGTH 30, UNIQUE`
@@ -128,7 +101,7 @@ $pdo = new PDO(
 * _created_ -- `TIMIESTAMP, CURRENT_TIMESTAMP`
 * _is\_admin_ -- `BOOLEAN`
 
-##### posts
+### posts
 
 * _post\_id_ -- `INT, PRIMARY, A_I`
 * _user\_id_ -- `INT`, foreign key --> users (`ON DELETE RESTRICT RESTRICT, ON UPDATE CASCADE`) *
@@ -138,7 +111,7 @@ $pdo = new PDO(
 * _created_ -- `TIMESTAMP, CURRENT_TIMESTAMP`
 * _updated_ -- `TIMESTAMP, DEFAULT NULL`
 
-##### likes
+### likes
 
 * _like\_id_ -- `INT, PRIMARY, A_I`
 * _post\_id_ -- `INT`, ~~foreign key --> posts (`ON DELETE RESTRICT , ON UPDATE CASCADE`)~~*
@@ -146,16 +119,6 @@ $pdo = new PDO(
 
 \* post_id och user_id i likes är inte längre länkad till de andra tabellerna.
 
-### Klasser
-
-* `User` --> Modifiera _en_ användare. Skapa användare, redigera sin profil...
-  * `Admin extends User`
-* `Users.php` - Hanterar hämtar/användare. get_full_user() etc...
-
-* `Post` --> Skapa/editera poster. `new Post()`
-* `Posts` --> Hantera/hämtar en eller flera poster. get_all_posts(), get_full_post() etc... 
-
-* `Likes` --> Hanterar likes.
 
 ## Bibliotek
 
@@ -170,25 +133,11 @@ $pdo = new PDO(
 * [Trello](https://trello.com/b/tEPopVij/php-gruppuppgift)
 * [PHP Dokumentation](http://php.net/docs.php)
 * [molnserver](https://www.heliohost.org)
-* mejl: phpgruppuppgift@gmail.com
 
-## Bra-att-ha-resurser
 
-* [CMS video tutorial](https://www.youtube.com/watch?v=UbsAdx58ch0&list=PLfdtiltiRHWF0O8kS5D_3-nTzsFiPMOfM)
-* [PHP creating a blog](https://thenewboston.com/videos.php?cat=74&video=19652)
+## Wireframe/Mockups
 
-## Extra funktioner
-
-* Automatisk utloggning efter 30 minuters inaktivitet
-* Lägga till taggar på posts
-* Stängd access via url
-* Se en specifik användares poster
-* Se poster baserat på taggar
-* Bildlänk för användarprofil
-* Användare kan ta bort sitt konto
-* Admin kan se alla poster som inte är skapade av en annan admin och ta bort dem
-* Admin kan se alla användare som inte är admin och ta bort deras konto
-* Redigering av användarprofil
-* Information om när varje post är senast uppdaterad
-
+* [Wireframe](https://drive.google.com/file/d/0B-YWuZQGy3G2VXpyRkZTQmRhbzg/view?usp=sharing)
+* [Mockup - Blogg](https://drive.google.com/file/d/0B-YWuZQGy3G2ZTgzMENmdWNpQ0E/view)
+* [Mockup - Log in edit page](https://drive.google.com/open?id=0B-YWuZQGy3G2c0VvUXdMRFBXSFk)
 
