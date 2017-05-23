@@ -36,6 +36,7 @@
 
 <!--post-->
 
-<?php require VIEW_ROOT . '/public/feed_container.php'; ?>
-
-<?php require VIEW_ROOT . '/public/templates/footer.php'; ?>
+<?php
+require VIEW_ROOT . '/public/feed_container.php';
+require VIEW_ROOT . '/public/templates/footer.php';
+?>
