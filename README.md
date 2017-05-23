@@ -1,6 +1,6 @@
 # simple-cms
 
-En blogg om Front end / webbutveckling där man kan posta tips o tricks inom området, intressanta artiklar, etc.
+En blogg om webbutveckling med inriktning på front end där man kan posta tips och tricks, intressanta artiklar, etc.
 
 ## Grundfunktioner
 * Lägga till nya _posts_, en _post_ kan vara ett blogginlägg, artikel eller liknande.
