@@ -141,8 +141,6 @@ En blogg om webbutveckling med inriktning på front end där man kan posta tips 
 * _post\_id_ -- `INT`, foreign key --> posts (`ON DELETE CASCADE , ON UPDATE NOTHING`)
 * _user\_id_ -- `INT`, foreign key --> users (`ON DELETE CASCADE, ON UPDATE NOTHING`)
 
-\* post_id och user_id i likes är inte längre länkad till de andra tabellerna.
-
 
 ## Bibliotek
 
