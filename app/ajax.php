@@ -7,6 +7,8 @@ $likeCount = $LIKES->count_likes();
 
 $posts = $POSTS->get_all_posts();
 
+
+
 require VIEW_ROOT . '/home.php';
 
 // if(isset($_POST['page']) && !empty($_POST['page'])) {
