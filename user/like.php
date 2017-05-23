@@ -38,6 +38,7 @@ if (empty($_POST['post_id'])) {
 
 // //If user not logged in, send to login.
 if (!$_SESSION['loggedin']){
+    $_SESSION['redirect'] = $_POST['post_id'];
     die('login');
     // header('Location: ' . BASE_URL . '/public/login.php?forced=true');
 }
