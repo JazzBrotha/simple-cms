@@ -51,7 +51,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a id="edit-btn" class="nav-link <?php if($currentPage === 'edit_user.php') echo 'active-page'?>" href="<?php echo BASE_URL; ?>/user/edit_user.php">
+                        <a class="nav-link <?php if($currentPage === 'edit_user.php') echo 'active-page'?>" href="<?php echo BASE_URL; ?>/user/edit_user.php">
                             <i class="fa fa-user" aria-hidden="true"></i> EDIT YOUR PROFILE
                         </a>
                     </li>
